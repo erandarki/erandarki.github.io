@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Site View</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/linearicons@1.0.1/dist/web-font/style.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="intro-filter">
+
+    <div class="intro position-fixed d-flex flex-column slideInDown">
+        <div class="intro-text text-center text-primary mb-4">
+            <span class="lnr lnr-screen mr-2"></span>
+            <span class="lnr lnr-smartphone"></span>
+        </div>
+        <h1 class="text-uppercase text-center mb-4 mt-3">
+            View Your Site on<br>Web & Mobile
+        </h1>
+        <form class="input-group input-group-lg intro-form">
+            <input class="form-control url m-auto" type="text" placeholder="Enter URL or domain name" required></input>
+        </form>
+    </div>
+
+    <nav class="fixed-top d-flex align-items-center justify-content-between pr-3 pl-3">
+        <form class="nav-form">
+            <input class="form-control url m-auto" type="text" placeholder="Enter URL or domain name" required></input>
+        </form>
+        <div class="d-flex nav-items">
+            <div class="nav-btn btn-desktop active" data-desktop="data-desktop">
+                <span class="lnr lnr-screen"></span>
+            </div>
+            <div class="nav-btn btn-mobile" data-mobile="data-mobile">
+                <span class="lnr lnr-smartphone"></span>
+            </div>
+        </div>
+        <div class="close-nav"><span class="lnr lnr-cross"></span></div>
+    </nav>
+
+    <iframe id="iframe" class="iframe-preview" src="https://cdn.dribbble.com/users/1947298/screenshots/4459486/attachments/1050251/3.multiple-isometric-iphone-mockups.jpg" width="100%" height="100%"
+        frameborder="0"></iframe>
+
+</body>
+
+<script src="custom.js"></script>
+
+</html>
