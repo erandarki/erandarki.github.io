@@ -2,28 +2,28 @@
   'use strict';
 
   let mediaQuery = window.matchMedia('(min-width: 767px)');
-  let e = document.querySelectorAll(".stack-cards")
-    , o = ["load", "resize", "scroll"];
-  [].forEach.call(e, function (e) {
-    let t = e.querySelectorAll(".stack-cards-item");
-    o.forEach(function (e) {
-      window.addEventListener(e, function () {
-        let d = [].slice.call(t).reverse();
-        d.reduce(function (e, t, o) {
-          let n = t.clientHeight + parseInt(window.getComputedStyle(t).getPropertyValue("margin-bottom"))
-            , a = e + (n - (d[o - 1] ? d[o - 1].offsetTop - t.offsetTop : n)) / n
-            , r = t.firstElementChild
-            // , l = r.firstElementChild
-            , c = "calc(-1rem * " + a + ")"
-            // , i = "calc(1 - .2 * " + a + ")"
-            , s = "calc(1 - .03 * " + a + ")";
+  let wrapper = document.querySelectorAll('.stack-cards')
+    , array = ['load', 'resize', 'scroll'];
+  [].forEach.call(wrapper, function (wrapper) {
+    let cardParent = wrapper.querySelectorAll('.stack-cards-item');
+    array.forEach(function (wrapper) {
+      window.addEventListener(wrapper, function () {
+        let allCardsParents = [].slice.call(cardParent).reverse();
+        allCardsParents.reduce(function (wrapper, cardParent, array) {
+          let cardHeight = cardParent.clientHeight + parseInt(window.getComputedStyle(cardParent).getPropertyValue('margin-bottom'))
+            , allCardsHeight = wrapper + (cardHeight - (allCardsParents[array - 1] ? allCardsParents[array - 1].offsetTop - cardParent.offsetTop : cardHeight)) / cardHeight
+            , card = cardParent.firstElementChild
+            // , cardContent = card.firstElementChild
+            , translateY = 'calc(-1rem * ' + allCardsHeight + ')'
+            // , opacity = 'calc(1 - .2 * ' + allCardsHeight + ')'
+            , scale = 'calc(1 - .03 * ' + allCardsHeight + ')';
             if(mediaQuery.matches) {
-              return r.style.transform = "translateY(" + c + ") scale(" + s + ")",
-                // l.style.opacity = i,
-                a
+              return card.style.transform = 'translateY(' + translateY + ') scale(' + scale + ')',
+                // cardContent.style.opacity = opacity,
+                allCardsHeight
             } else {
-              return r.style.transform = "translateY(" + c + ")",
-                a
+              return card.style.transform = 'translateY(' + translateY + ')',
+                allCardsHeight
             }
         }, 0)
       })
