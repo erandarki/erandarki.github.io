@@ -1,14 +1,3 @@
-// wow animation effect
-new WOW().init();
-
-// Ease scrolling effect
-$('html').easeScroll();
-
-// Scroll top on page refresh
-$(window).on('beforeunload', function () {
-  $(window).scrollTop(0);
-});
-
 $(document).ready(function () {
   // Intro
   setTimeout(function () {
@@ -67,4 +56,15 @@ $(document).ready(function () {
   tlPreambule.from(".profile .profile-content .top-line", 1, { x: "-20%", opacity: 0, ease: Power3.easeOut }, "-=0.60");
   tlPreambule.from(".profile .profile-content .profile-text p", 1, { y: "100%", ease: Power3.easeOut }, "-=0.60");
 
+});
+
+// wow animation effect
+new WOW().init();
+
+// Ease scrolling effect
+$('html').easeScroll();
+
+// Scroll top on page refresh
+$(window).on('beforeunload', function () {
+  $(window).scrollTop(0);
 });
