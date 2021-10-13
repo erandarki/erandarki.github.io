@@ -22,12 +22,8 @@ header {
 }
 
 .content {
-  /* background-color: rgba(9, 24, 32, .75); */
   padding: 3rem;
   border-radius: 20px;
-  /* -webkit-backdrop-filter: saturate(180%) blur(5px);
-  backdrop-filter: saturate(180%) blur(5px); */
-  /* border: 1px solid rgba(255, 255, 255, 0.1); */
 }
 
 h1 {
@@ -60,8 +56,8 @@ p {
 
 .button:hover {
   box-shadow: 0 11px 19px -5px rgb(0 0 0 / 24%);
-  -webkit-transform: translate(0,-5px);
-  transform: translate(0,-5px);
+  background-color: #fff;
+  color: #0577B6;
 }
 
 .slideshow {
