@@ -25,7 +25,7 @@
         audio.src = source;
         audio.autoplay = true;
         audio.loop = true;
-        audio.volume = 0.01;
+        audio.volume = 0.02;
 
         $('.equalizer').click();
         var playing = true;
