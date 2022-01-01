@@ -180,7 +180,7 @@ $.fn.easeScroll = function(options) {
             // These are the defaults.
             frameRate: 60,
             animationTime: 1000,
-            stepSize: 120,
+            stepSize: 50,
             pulseAlgorithm: !0,
             pulseScale: 8,
             pulseNormalize: 1,
