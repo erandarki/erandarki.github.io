@@ -177,19 +177,29 @@ $.fn.easeScroll = function(options) {
         }
 
         var settings = $.extend({
-            // These are the defaults.
-            frameRate: 60,
-            animationTime: 1000,
-            stepSize: 50,
-            pulseAlgorithm: !0,
-            pulseScale: 8,
+            // Settings
+            frameRate: 150, // frames per second
+
+            // Scrolling Core
+            animationTime: 1000, // [ms]
+            stepSize: 100, // [px]
+
+            // Pulse (less tweakable)
+            // ratio of "tail" to "acceleration"
+            pulseAlgorithm: 1,
+            pulseScale: 4,
             pulseNormalize: 1,
-            accelerationDelta: 20,
-            accelerationMax: 1,
-            keyboardSupport: !0,
-            arrowScroll: 50,
-            touchpadSupport: !0,
-            fixedBackground: !0
+
+            // Acceleration
+            accelerationDelta: 0, // 50
+            accelerationMax: 0, // 3
+
+            // Keyboard Settings
+            keyboardSupport: 1, // option
+            arrowScroll: 100, // [px]
+
+            // Other
+            fixedBackground: 0
         }, options );
 
         var w, g = {
