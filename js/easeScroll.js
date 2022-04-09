@@ -178,16 +178,16 @@ $.fn.easeScroll = function(options) {
 
         var settings = $.extend({
             // Settings
-            frameRate: 150, // frames per second
-
+            frameRate: 0, // frames per second
+            
             // Scrolling Core
-            animationTime: 1000, // [ms]
-            stepSize: 100, // [px]
+            animationTime: 2000, // [ms]
+            stepSize: 50, // [px]
 
             // Pulse (less tweakable)
             // ratio of "tail" to "acceleration"
             pulseAlgorithm: 1,
-            pulseScale: 4,
+            pulseScale: 10,
             pulseNormalize: 1,
 
             // Acceleration
@@ -196,7 +196,7 @@ $.fn.easeScroll = function(options) {
 
             // Keyboard Settings
             keyboardSupport: 1, // option
-            arrowScroll: 100, // [px]
+            arrowScroll: 500, // [px]
 
             // Other
             fixedBackground: 0
