@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A color generator formula to tint (lighten) or shade (darken) a color to create a color scheme.">
+  <meta name="keywords" content="Color Scheme Generator, Color Scheme">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <!-- Page Color Mode -->
+  <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
+  <title>Color Scheme Generator</title>
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      cursor: default;
+    }
+    .container {
+      max-width: 960px;
+    }
+    h1 {
+      font-size: 50px;
+      font-weight: 900;
+      line-height: 1.1em;
+    }
+    .scheme > div{
+      width:100%;
+      height:56px;
+      padding:1rem;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    .scheme > div:last-child {
+      text-shadow: none;
+    }
+    .main-color {background-color:#0d6efd;}
+    .mix-black-20{background-color:#0a58ca;}
+    .mix-white-20{background-color:#3d8bfd;}
+    .mix-black-40{background-color:#084298;}
+    .mix-white-40{background-color:#6ea8fe;}
+    .mix-black-60{background-color:#052c65;}
+    .mix-white-60{background-color:#9ec5fe;}
+    .mix-black-80{background-color:#031633;}
+    .mix-white-80{background-color:#cfe2ff;}
+    /* .mix-black-100{background-color:#000}
+    .mix-white-100{background-color:#fff} */
+    .invalid-feedback {
+      height: 0px;
+      transform: translateY(4px);
+    }
+    .bi {
+      vertical-align: -0.125em;
+      fill: currentColor;
+    }
+    /* Read more button text */
+    [aria-expanded="false"] > .expanded,
+    [aria-expanded="true"] > .collapsed {
+      display: none;
+    }
+    .accordion-button:focus {
+      border-color: transparent;
+      box-shadow: none;
+    }
+    .list {
+      list-style-type: circle;
+      padding-left: 18px;
+    }
+    .hex {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body class="bg-body-tertiary d-flex flex-column">
+  <!-- Theme color mode icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+      <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+    </symbol>
+  </svg>
+  <!-- Theme color mode toggle button -->
+  <div class="dropdown d-flex mt-3 me-5 bd-mode-toggle">
+    <button class="btn btn-primary ms-auto py-2 dropdown-toggle d-flex align-items-center"
+            id="bd-theme"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+            aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container px-5 mt-5">
+    <div class="row">
+      <div class="col-md-7 mb-5">
+        <h1>Color Scheme Generator</h1>
+        <h6>Design system color schemes made easy.</h6>
+        <h5 class="fw-semibold mt-5">How This Works?</h5>
+        <p>
+          This tool created simply to make your life better, and save you a lot of work when building a design system. Which means, this generator formula can be also created manually, if you wish, by following these simple steps:
+        </p>
+        <ul class="list">
+          <li>Open your favorite graphic software, and select a color.</li>
+          <li>Put black/white on top, and lower by 20% opacity gradually.</li>
+          <li>Finally, sample it with color picker to extract the new color.</li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 ms-auto">
+        <div class="mb-4 position-relative">
+          <input type="search" placeholder="Enter HEX color (e.g. 0d6efd)" class="form-control py-2" id="colorInput" autofocus>
+          <span class="invalid-feedback m-0">Enter a valid HEX color.</span>
+        </div>
+        <!-- <input type="color" name="" id="colorPicker"> -->
+        <div class="scheme text-white pt-2">
+          <!-- <div class="mix-white-100"></div> -->
+          <div class="mix-white-80 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#cfe2ff</span>100</div>
+          <div class="mix-white-60 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#9ec5fe</span>200</div>
+          <div class="mix-white-40 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#6ea8fe</span>300</div>
+          <div class="mix-white-20 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#3d8bfd</span>400</div>
+          <div class="main-color d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#0d6efd</span><small class="me-1">(Base)</small>500</div>
+          <div class="mix-black-20 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#0a58ca</span>600</div>
+          <div class="mix-black-40 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#084298</span>700</div>
+          <div class="mix-black-60 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#052c65</span>800</div>
+          <div class="mix-black-80 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#031633</span>900</div>
+          <!-- <div class="mix-black-100"></div> -->
+          <div class="text-secondary"><small>Ratio of 0.2 (20%)</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container -->
+
+  <footer class="container px-5 py-4 text-secondary mt-auto">
+    <small>&copy; Color Scheme Generator by Eran Darki.</small>
+  </footer>
+</body>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script>
+  // Bootstrap enable tooltips
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+  // Copy HEX color to clipboard
+  const allHexColors = document.querySelectorAll('.hex');
+
+  allHexColors.forEach(function(hexColor) {
+
+    hexColor.addEventListener('click', async function() {
+      try {
+        await navigator.clipboard.writeText(hexColor.textContent);
+        // Returns a Bootstrap tooltip instance
+        const tooltip = bootstrap.Tooltip.getOrCreateInstance(hexColor);
+        // Change tooltip text
+        tooltip.setContent({ '.tooltip-inner': 'Copied!' });
+        // Reset default
+        hexColor.addEventListener('mouseout', function() {
+          tooltip.setContent({ '.tooltip-inner': 'Copy to clipboard' });
+        });
+      } catch (error) {
+        // Optional: Display an error message to the user
+        console.error("Failed to copy to clipboard:", error);
+      }
+    });
+
+  });
+</script>
+
+<script>
+  // blend two hex colors together by an amount (like sass mix() or css color-mix())
+  function blendColors(colorA, colorB, amount) {
+    const [rA, gA, bA] = colorA.match(/\w\w/g).map((c) => parseInt(c, 16));
+    const [rB, gB, bB] = colorB.match(/\w\w/g).map((c) => parseInt(c, 16));
+    const r = Math.round(rA + (rB - rA) * amount).toString(16).padStart(2, '0');
+    const g = Math.round(gA + (gB - gA) * amount).toString(16).padStart(2, '0');
+    const b = Math.round(bA + (bB - bA) * amount).toString(16).padStart(2, '0');
+    return '#' + r + g + b;
+}
+// console.log(blendColors('#0d6efd', '#ffffff', 0.2)); // return #3d8bfd
+</script>
+
+<script>
+  // Convert RGB to HEX
+  function rgbToHex(rgbString) {
+    let parts = rgbString.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    // parts now should be e.g. ["rgb(0, 70, 255", "0", "70", "255"]
+
+    delete (parts[0]);
+    for (let i = 1; i <= 3; ++i) {
+        parts[i] = parseInt(parts[i]).toString(16);
+        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+    } 
+    let hexString = '#' + parts.join(''); // "#0070ff"
+    // let hexString ='#'+parts.join('').toUpperCase(); // "#0070FF" (adding # and uppercase)
+    return hexString;
+  }
+</script>
+
+<script>
+  // Allow only numbers and letters (validation)
+  function allowAlphaNumericSpace(thisInput) {
+    thisInput.value = thisInput.value.split(/[^a-zA-Z0-9 ]/).join('');
+  }
+</script>
+
+<script>
+  // Color scheme generator
+  const inputColor = document.getElementById('colorInput');
+  const hexText = document.querySelector('.hex');
+  const mainColor = document.querySelector('.main-color');
+  const invalidFeedback = document.querySelector('.invalid-feedback');
+
+  inputColor.addEventListener('keyup', function(event) {
+    allowAlphaNumericSpace(this);
+
+    if (event.key === 'Enter') {
+      event.preventDefault();
+
+      // Validation (Invalid: empty state, less than 3, less than 6, more than 6)
+      if ((colorInput.value == null || colorInput.value == "" || colorInput.value.length <= 2 || colorInput.value.length > 3 && colorInput.value.length < 6 || colorInput.value.length > 6)) {
+        invalidFeedback.style.display = 'block';
+        return false;
+      }
+
+      // Convert a three-digit hexcolor into a six-digit
+      if (colorInput.value.length === 3) {
+        colorInput.value = colorInput.value.split('').map(function (hex) {
+          return hex + hex;
+        }).join('');
+      }
+
+      // Remove validation error
+      invalidFeedback.style.display = 'none';
+      
+      mainColor.style.backgroundColor = '#' + colorInput.value;
+      mainColor.querySelector('.hex').innerHTML = '#' + colorInput.value.toLowerCase();
+
+      // Run these numbers as precentage for BG color opacity (0.2 or 20% ratio)
+      const mixNumbers = [20, 40, 60, 80];
+
+      mixNumbers.forEach((number) => {
+        // let percentage = number + '%';
+        let percentage = number / 100;
+        let blackClass = document.querySelector('.mix-black-' + number);
+        let whiteClass = document.querySelector('.mix-white-' + number);
+        // blackClass.style.backgroundColor = `color-mix(in srgb, #${inputColor.value}, black ${percentage})`;
+        // whiteClass.style.backgroundColor = `color-mix(in srgb, #${inputColor.value}, white ${percentage})`;
+        
+        // Blend colors
+        blackClass.style.backgroundColor = blendColors(inputColor.value, '#000000', percentage);
+        whiteClass.style.backgroundColor = blendColors(inputColor.value, '#ffffff', percentage);
+        
+        // Display HEX colors
+        blackClass.querySelector('.hex').innerHTML = rgbToHex(blackClass.style.backgroundColor);
+        whiteClass.querySelector('.hex').innerHTML = rgbToHex(whiteClass.style.backgroundColor);
+      });
+    }
+  });
+</script>
+</html>
