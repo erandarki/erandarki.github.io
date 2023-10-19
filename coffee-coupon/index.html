@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./style.css">
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,12 +25,12 @@
 <body>
   <header class="px-4 pt-5 pb-2">
     <div class="logos d-flex justify-content-between align-items-center fixed-top p-4 mb-5">
-      <img src="../img/cyolo-logo.svg" height="30" alt="">
-      <img src="../img/ilans-logo.svg" height="23" alt="">
+      <img src="./img/cyolo-logo.svg" height="30" alt="">
+      <img src="./img/ilans-logo.svg" height="23" alt="">
     </div>
     <div class="cup text-center px-5 pt-5">
-      <img src="../img/coffee-cup.png" class="cup-img img-fluid" alt="">
-      <img src="../img/coffee-cup-shadow.png" class="cup-img-shadow img-fluid" alt="">
+      <img src="./img/coffee-cup.png" class="cup-img img-fluid" alt="">
+      <img src="./img/coffee-cup-shadow.png" class="cup-img-shadow img-fluid" alt="">
     </div>
     <h5 class="user-name color-secodary mb-2">Hi, Diana</h5>
     <h1>Enjoy Original Coffee with Friends at ILAN'S</h1>
@@ -76,7 +76,7 @@
             <br>
             of Coffee
           </h4>
-          <img src="../img/coffee-cup-small.png" width="100" class="align-top" alt="">
+          <img src="./img/coffee-cup-small.png" width="100" class="align-top" alt="">
         </div>
 
         <div class="d-flex justify-content-between align-items-center w-100 color-light">
@@ -109,7 +109,7 @@
             <br>
             of Coffee
           </h4>
-          <img src="../img/coffee-cup-small.png" width="100" class="align-top" alt="">
+          <img src="./img/coffee-cup-small.png" width="100" class="align-top" alt="">
         </div>
 
         <div class="d-flex justify-content-between align-items-center w-100 color-light">
@@ -142,7 +142,7 @@
             <br>
             of Coffee
           </h4>
-          <img src="../img/coffee-cup-small.png" width="100" class="align-top" alt="">
+          <img src="./img/coffee-cup-small.png" width="100" class="align-top" alt="">
         </div>
 
         <div class="d-flex justify-content-between align-items-center w-100 color-light">
@@ -179,20 +179,20 @@
 
   <!-- Success Toast Message -->
   <section class="toast-message fixed-bottom d-none d-flex align-items-center p-4 bg-color-light text-success-emphasis bg-success-subtle border-top border-success-subtle">
-    <img src="../img/check-icon.svg" alt="" class="me-2">
+    <img src="./img/check-icon.svg" alt="" class="me-2">
     Coupon applied! Enjoy coffee for two.
   </section>
 
   <!-- Closure Prompt -->
   <div id="closure" class="d-none fadeIn fixed-top w-100 h-100 d-flex justify-content-center align-items-center p-4">
     <div class="logos d-flex justify-content-between align-items-center fixed-top p-4 mb-5">
-      <img src="../img/cyolo-logo.svg" height="30" alt="">
-      <img src="../img/ilans-logo.svg" height="23" alt="">
+      <img src="./img/cyolo-logo.svg" height="30" alt="">
+      <img src="./img/ilans-logo.svg" height="23" alt="">
     </div>
 
     <div class="card position-relative slideInUp border-0 p-5">
       <div class="closure-card-icon position-absolute top-0 d-flex justify-content-center align-items-center rounded-circle">
-        <img src="../img/clap-icon.svg" alt="">
+        <img src="./img/clap-icon.svg" alt="">
       </div>
       <h1 class="mb-3 pt-2">
         <div class="color-secodary">Nicely Done!</div>
@@ -207,10 +207,10 @@
   <!-- Intro -->
   <section class="intro fadeOut fixed-top w-100 h-100 d-flex justify-content-center align-items-center">
     <div class="logos d-flex justify-content-between align-items-center fixed-top p-4 mb-5">
-      <img src="../img/cyolo-logo-black.svg" height="30" alt="">
-      <img src="../img/ilans-logo-black.svg" height="23" alt="">
+      <img src="./img/cyolo-logo-black.svg" height="30" alt="">
+      <img src="./img/ilans-logo-black.svg" height="23" alt="">
     </div>
-    <img src="../img/intro-animation.gif" alt="" class="intro-animation img-fluid">
+    <img src="./img/intro-animation.gif" alt="" class="intro-animation img-fluid">
   </section>
 
   <!-- Show on mobile only -->
@@ -244,7 +244,7 @@
   // Clear gif cache on every load
   window.addEventListener('load', function() {
     const gifImage = new Image();
-    gifImage.src = "../img/intro-animation.gif";
+    gifImage.src = "./img/intro-animation.gif";
 
     document.querySelector('.intro-animation').src = gifImage.src;
   });
