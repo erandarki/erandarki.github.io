@@ -174,13 +174,28 @@
 
                   <div class="row mb-3">
                     <div class="col">
+                      <label class="form-label">Virtual Credit Card<span class="text-danger">*</span></label>
+                      <div class="dropdown">
+                        <input type="text" value="Gifts" placeholder="Select virtual credit card" class="form-control py-2 rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+  
+                        <ul class="dropdown-menu w-100">
+                          <li><a class="dropdown-item" href="#">Gifts</a></li>
+                          <li><a class="dropdown-item" href="#">Happy Hours</a></li>
+                          <li><a class="dropdown-item" href="#">Special Events</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
                       <label class="form-label">Spent limit per coupon<span class="text-danger">*</span></label>
                       <input type="number" min="1" placeholder="E.g. 15&#8362;" class="form-control py-2 rounded-pill">
                     </div>
                     <div class="col">
-                      <label class="form-label">Currency</label>
+                      <label class="form-label">Currency<span class="text-danger">*</span></label>
                       <div class="dropdown">
-                        <input type="text" value="ILS (Israeli Shekel)" class="form-control py-2 rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <input type="text" value="ILS (Israeli Shekel)" placeholder="Select currency" class="form-control py-2 rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
   
                         <ul class="dropdown-menu w-100">
                           <li><a class="dropdown-item" href="#">ILS (Israeli Shekel)</a></li>
