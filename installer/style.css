@@ -356,6 +356,10 @@ button.decline {
   padding: 0;
 }
 
+button.decline:hover {
+  color: #007bff;
+}
+
 button.decline:focus {
   box-shadow: none;
 }
