@@ -28,6 +28,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f8f9fa;
 }
 
 body.fullscreen {
@@ -60,6 +61,7 @@ body.fullscreen .container {
   padding-bottom: 60px;
   padding-left: 78px;
   display: flex;
+  border-radius: 10px;
 }
 
 .container:after {
