@@ -191,7 +191,7 @@ main {
                 span {
                   position: relative;
                   img {
-                      vertical-align: sub;
+                      vertical-align: middle;
                       margin-right: 5px;
                     }
                 }
@@ -231,6 +231,9 @@ footer {
   color: #8d8d8d;
   a {
     color: black !important;
+    &:hover {
+      color: $light-blue !important;
+    }
   }
 }
 
@@ -320,7 +323,7 @@ footer {
 @media (min-width: 972px) {
   header {
     h1 {
-      font-size: 4rem;
+      font-size: 4.5rem;
     }
   }
   .wrapper {
