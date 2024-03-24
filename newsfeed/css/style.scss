@@ -117,18 +117,10 @@ main {
       &:nth-child(even) {
         -webkit-animation-name: fadeInUp;
         animation-name: fadeInUp;
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-fill-mode: initial;
-        animation-fill-mode: initial;
       }
       &:nth-child(odd) {
         -webkit-animation-name: fadeInDown;
         animation-name: fadeInDown;
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-fill-mode: initial;
-        animation-fill-mode: initial;
       }
       p {
           display: none;
@@ -235,6 +227,13 @@ footer {
       color: $light-blue !important;
     }
   }
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: initial;
+  animation-fill-mode: initial;
 }
 
 @keyframes scaleDown {
