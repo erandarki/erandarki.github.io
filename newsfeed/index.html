@@ -24,7 +24,7 @@
   </header>
 
   <main class="wrapper">
-    <a href="#0" class="item item-wide">
+    <a href="#0" class="item item-wide" data-wow-offset="-50">
       <div class="img-wrapper">
         <img src="img/1.jpg" alt="">
       </div>
@@ -49,7 +49,7 @@
         </div>
       </div>
     </a>
-    <a href="#0" class="item">
+    <a href="#0" class="item" data-wow-offset="-50">
       <div class="img-wrapper">
         <img src="img/2.jpg"
           alt="">
@@ -75,7 +75,7 @@
         </div>
       </div>
     </a>
-    <a href="#0" class="item item-small">
+    <a href="#0" class="item item-small" data-wow-offset="-50">
         <div class="img-wrapper">
           <img src="img/3.jpg"
             alt="">
@@ -101,7 +101,7 @@
           </div>
         </div>
       </a>
-    <a href="#0" class="item item-small">
+    <a href="#0" class="item item-small" data-wow-offset="-50">
       <div class="img-wrapper">
         <img src="img/4.jpg"
           alt="">
@@ -644,4 +644,19 @@
     <small>&copy; NewsFeed by <a href="/" target="_blank">Eran Darki</a></small>
   </footer>
 </body>
+
+<script>
+  const wrapper = document.querySelectorAll('.item');
+
+  wrapper.forEach(function(item) {
+    item.classList.add('wow');
+  });
+</script>
+
+<script src="../js/jquery-3.5.1.slim.min.js"></script>
+  <script src="../js/wow.min.js"></script>
+  <script>
+    // wow animation effect
+    new WOW().init();
+</script>
 </html>
