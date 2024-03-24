@@ -262,7 +262,7 @@
 <script>
   // Allow only numbers and letters (validation)
   function allowAlphaNumericSpace(thisInput) {
-    thisInput.value = thisInput.value.split(/[^a-zA-Z0-9 ]/).join('');
+    thisInput.value = thisInput.value.replace(/[^#a-fA-F0-9]/g,'');
   }
 </script>
 
@@ -278,6 +278,13 @@
 
     if (event.key === 'Enter') {
       event.preventDefault();
+
+      // Remove hash character (#) from input field
+      if (colorInput.value.includes('#')) {
+        colorInput.value = colorInput.value.split('#').map(function (hash) {
+          return hash;
+        }).join('');
+      }
 
       // Validation (Invalid: empty state, less than 3, less than 6, more than 6)
       if ((colorInput.value == null || colorInput.value == "" || colorInput.value.length <= 2 || colorInput.value.length > 3 && colorInput.value.length < 6 || colorInput.value.length > 6)) {
