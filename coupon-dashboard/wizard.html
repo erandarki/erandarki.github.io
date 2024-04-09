@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto" class="h-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <!-- Theme Color Mode -->
+  <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.min.css">
+  <title>Wizard</title>
+</head>
+
+<body class="bg-body-tertiary h-100">
+  <!-- Wizard -->
+  <section class="wizard d-flex flex-column h-100">
+    <div class="py-3 bg-body border-bottom">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <div class="d-flex align-items-center">
+              <span class="wizard-number wizard-number-1 rounded-circle d-flex justify-content-center align-items-center me-2">1</span> Company Profile
+            </div>
+          </div>
+          <div class="col-auto mx-5">
+            <div class="d-flex align-items-center">
+              <span class="wizard-number wizard-number-2 rounded-circle inactive border d-flex justify-content-center align-items-center me-2">2</span> HR Platform
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="d-flex align-items-center">
+              <span class="wizard-number wizard-number-3 rounded-circle inactive border d-flex justify-content-center align-items-center me-2">3</span> Expense Management
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wizard Main -->
+    <div class="wizard-main container my-auto py-5">
+      <!-- Step 1 -->
+      <div class="step-1-content">
+        <div class="d-flex align-items-end mb-5">
+          <div>
+            <div class="fs-4">Company Profile</div>
+            <div class="text-body-secondary">Quick setup to get you up and running</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label class="form-label">Company name<span class="text-danger">*</span></label>
+            <input type="text" placeholder="" class="form-control py-2 rounded-pill">
+          </div>
+          <div class="col-auto">
+            <label class="form-label">Brand logo</label>
+            <div class="input-group">
+              <input type="text" placeholder="+" class="form-control py-2 rounded-pill" style="max-width: 42px; max-height: 42px; font-size: 1.5rem;">
+              <button class="btn btn-outline-primary rounded-pill px-5 ms-2" type="button">Upload</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-end mt-4">
+          <div class="col">
+            <label class="form-label">Brand colors</label>
+            <input type="text" placeholder="E.g. #0d6efd" class="form-control py-2 rounded-pill">
+          </div>
+          <div class="col">
+            <input type="text" placeholder="E.g. #ffff00" class="form-control py-2 rounded-pill">
+          </div>
+          <div class="col">
+            <input type="text" placeholder="E.g. #dc3545" class="form-control py-2 rounded-pill">
+          </div>
+          <div class="form-text" id="basic-addon4"><strong>Tip:</strong> Branded coupons boost  employee engagement.</div>
+        </div>
+      </div>
+      
+      <!-- Step 2 -->
+      <div class="step-2-content d-none">
+        <div class="d-flex align-items-end mb-5">
+          <div>
+            <div class="fs-4">HR Platform</div>
+            <div class="text-body-secondary">Connect your third-party app to upload all employees</div>
+          </div>
+          <input type="search" placeholder="Search (e.g. HiBob)" class="search form-control py-2 rounded-pill ms-auto">
+        </div>
+  
+        <div class="integration-hr row row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/hr-platforms/hibob.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">HiBob</div>
+                    <small class="text-body-secondary">hibob.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/hr-platforms/monday.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Monday</div>
+                    <small class="text-body-secondary">monday.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/hr-platforms/deel.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Deel</div>
+                    <small class="text-body-secondary">deel.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/hr-platforms/pandadoc.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">PandaDoc</div>
+                    <small class="text-body-secondary">pandadoc.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/hr-platforms/rippling.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Rippling</div>
+                    <small class="text-body-secondary">rippling.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/hr-platforms/homebase.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Homebase</div>
+                    <small class="text-body-secondary">homebase.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/hr-platforms/bamboohr.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">BambooHR</div>
+                    <small class="text-body-secondary">bamboohr.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/hr-platforms/gusto.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Gusto</div>
+                    <small class="text-body-secondary">gusto.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-3-content d-none">
+        <div class="d-flex align-items-end mb-5">
+          <div>
+            <div class="fs-4">Expense Management</div>
+            <div class="text-body-secondary">Connect your third-party app to manage expenses</div>
+          </div>
+          <input type="search" placeholder="Search (e.g. Mesh)" class="search form-control py-2 rounded-pill ms-auto">
+        </div>
+  
+        <div class="integration-hr row row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/expense-management/mesh.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Mesh</div>
+                    <small class="text-body-secondary">mesh.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/expense-management/navan.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Navan</div>
+                    <small class="text-body-secondary">navan.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/expense-management/expensify.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Expensify</div>
+                    <small class="text-body-secondary">expensify.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/expense-management/brex.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Brex</div>
+                    <small class="text-body-secondary">brex.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/expense-management/zoho.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Zoho</div>
+                    <small class="text-body-secondary">zoho.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/expense-management/travelperk.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">TravelPerk</div>
+                    <small class="text-body-secondary">travelperk.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/expense-management/spendesk.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Spendesk</div>
+                    <small class="text-body-secondary">spendesk.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="card-body">
+                <div class="card-top d-flex align-items-center">
+                  <img class="icon rounded-circle" src="./img/expense-management/xero.png" alt="">
+                  <div class="card-title mb-0 ms-2 me-auto">
+                    <div class="fs-5 m-0 lh-1">Xero</div>
+                    <small class="text-body-secondary">xero.com</small>
+                  </div>
+                  <button class="btn btn-outline-primary rounded-pill" type="button">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="py-3 bg-body border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col d-flex">
+            <div class="ms-auto">
+              <a href="#" class="btn-skip d-none link-underline link-underline-opacity-0">Skip</a>
+              <button class="btn-back d-none btn btn-outline-primary rounded-pill px-5 ms-3" type="button">Back</button>
+              <button class="btn-next btn btn-primary rounded-pill px-5 ms-3" type="button">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+<script>
+  let count = 1;
+  const btnNext = document.querySelector('.btn-next');
+  const step1 = document.querySelector('.step-1-content');
+  const step2 = document.querySelector('.step-2-content');
+  const step3 = document.querySelector('.step-3-content');
+  const btnBack = document.querySelector('.btn-back');
+  const btnSkip = document.querySelector('.btn-skip');
+
+  btnNext.addEventListener('click', (event) => {
+    if (count == 1) {
+      step1.classList.add('d-none');
+      step2.classList.remove('d-none');
+      btnBack.classList.remove('d-none');
+      btnSkip.classList.remove('d-none');
+      document.querySelector('.wizard-number-1').classList.add('inactive', 'border');
+      document.querySelector('.wizard-number-2').classList.remove('inactive', 'border');
+    }
+    if (count == 2) {
+      step2.classList.add('d-none');
+      step3.classList.remove('d-none');
+      document.querySelector('.wizard-number-2').classList.add('inactive', 'border');
+      document.querySelector('.wizard-number-3').classList.remove('inactive', 'border');
+      btnNext.innerHTML = 'Finish';
+    }
+    if (count == 3) {
+      window.location.href = './index.html';
+    }
+    count++;
+  });
+</script>
+</html>
