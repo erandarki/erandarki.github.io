@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expandable Field</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    html, body {
+      height: 100%;
+    }
+    .container {
+      max-width: 450px;
+      min-width: 200px;
+    }
+    .textarea {
+      resize: none;
+      overflow: hidden;
+    }
+    .textarea-overlay-parent {
+      height: 58px;
+      z-index: 3;
+    }
+    .textarea.collapsed {
+      text-wrap: nowrap;
+      height: 58px !important;
+    }
+    .input {
+      width: 200px;
+      min-width: 200px;
+      max-width: 100%;
+    }
+    .long-text:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    footer a {
+      color: var(--bs-body-color);
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #0d6efd;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-body-tertiary d-flex flex-column">
+  <main class="container pt-5 text-center">
+    <h1>Expand Field with Text</h1>
+    <p class="mb-5">Enter <span class="long-text text-primary" data-bs-toggle="tooltip" data-bs-title="Copy long text to clipboard" data-text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.">long text</span> in each field to see their behavior</p>
+    <!-- Input Expandable -->
+    <div class="form-floating mb-4">
+      <input id="input" class="form-control input" placeholder="Expand by width"></input>
+      <label for="input">Expand by width</label>
+    </div>
+    <!-- Textarea Expandable -->
+    <div class="form-floating mb-4">
+      <textarea id="textarea" rows="1" class="form-control textarea" placeholder="Expand by height"></textarea>
+      <label for="textarea">Expand by height</label>
+    </div>
+    <!-- Textarea Expandable with Overlay -->
+    <div class="form-floating mb-4 textarea-overlay-parent">
+      <textarea id="textarea-overlay" rows="1" class="form-control textarea position-absolute" placeholder="Expand by height with overlay"></textarea>
+      <label for="textarea">Expand by height with overlay</label>
+    </div>
+    <!-- Input -->
+    <div class="form-floating mb-4">
+      <input class="form-control" placeholder="Common field (not expandable)"></input>
+      <label for="input">Common field (not expandable)</label>
+    </div>
+  </main>
+  <footer class="container px-5 py-4 text-secondary text-center mt-auto">
+    <small>&copy; Expandable Field by <a href="/" target="_blank">Eran Darki</a></small>
+  </footer>
+</body>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Textarea Expand with Text
+    const textareaEle = document.getElementById('textarea');
+    textareaEle.addEventListener('input', () => {
+        textareaEle.style.height = 'auto';
+        textareaEle.style.height = `${textareaEle.scrollHeight}px`;
+    });
+    
+    // Textarea Overlay Collapse/Expand
+    const textareaOverlayEle = document.getElementById('textarea-overlay');
+    textareaOverlayEle.addEventListener('input', expand);
+    textareaOverlayEle.addEventListener('focus', expand);
+    textareaOverlayEle.addEventListener('focusout', collapse);
+  
+    function expand() {
+      textareaOverlayEle.classList.remove('collapsed');
+      textareaOverlayEle.style.height = 'auto';
+      textareaOverlayEle.style.height = `${textareaOverlayEle.scrollHeight}px`;
+    }
+  
+    function collapse() {
+      textareaOverlayEle.classList.add('collapsed');
+    }
+  
+    // Input Expand with Text
+    const inputEle = document.getElementById('input');
+    inputEle.addEventListener('input', () => {
+        inputEle.style.width = 'auto';
+        inputEle.style.width = `${inputEle.scrollWidth}px`;
+    });
+  });
+</script>
+
+<script>
+  // Bootstrap enable a single tooltip
+  const tooltipTrigger = document.querySelector('[data-bs-toggle="tooltip"]');
+  const tooltip = new bootstrap.Tooltip(tooltipTrigger);
+
+  // Copy long text to clipboard
+  const longText = document.querySelector('.long-text');
+
+  longText.addEventListener('click', async function() {
+    try {
+      await navigator.clipboard.writeText(longText.getAttribute('data-text'));
+      // Returns a Bootstrap tooltip instance
+      const tooltip = bootstrap.Tooltip.getOrCreateInstance(longText);
+      // Change tooltip text
+      tooltip.setContent({ '.tooltip-inner': 'Copied!' });
+      // Reset default
+      longText.addEventListener('mouseout', function() {
+        tooltip.setContent({ '.tooltip-inner': 'Copy long text to clipboard' });
+      });
+    } catch (error) {
+      // Optional: Display an error message to the user
+      console.error("Failed to copy to clipboard:", error);
+    }
+  });
+</script>
+</html>
