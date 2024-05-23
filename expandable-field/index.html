@@ -40,6 +40,9 @@
       text-decoration: underline;
       cursor: pointer;
     }
+    input[disabled]{
+      cursor: not-allowed;
+    }
     footer a {
       color: var(--bs-body-color);
       text-decoration: none;
@@ -54,7 +57,7 @@
 <body class="bg-body-tertiary d-flex flex-column">
   <main class="container pt-5 text-center">
     <h1>Expand Field with Text</h1>
-    <p class="mb-5">Enter <span class="long-text text-primary" data-bs-toggle="tooltip" data-bs-title="Copy long text to clipboard" data-text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.">long text</span> in each field to see their behavior</p>
+    <p class="mb-5"><span class="long-text text-primary" data-bs-toggle="tooltip" data-bs-title="Copy long text to clipboard" data-text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.">Click to copy long text</span> and paste it into the field</p>
     <!-- Input Expandable -->
     <div class="form-floating mb-4">
       <input id="input" class="form-control input" placeholder="Expand by width"></input>
@@ -72,8 +75,8 @@
     </div>
     <!-- Input -->
     <div class="form-floating mb-4">
-      <input class="form-control" placeholder="Common field (not expandable)"></input>
-      <label for="input">Common field (not expandable)</label>
+      <input class="form-control" placeholder="Common field (not expandable)" disabled></input>
+      <label for="input">Common field (inactive)</label>
     </div>
   </main>
   <footer class="container px-5 py-4 text-secondary text-center mt-auto">
