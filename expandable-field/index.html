@@ -15,6 +15,7 @@
     }
     html, body {
       height: 100%;
+      cursor: default;
     }
     .container {
       max-width: 450px;
@@ -23,19 +24,41 @@
     .textarea {
       resize: none;
       overflow: hidden;
+      text-align: start;
+      cursor: text;
     }
     .textarea-overlay-parent {
       height: 58px;
       z-index: 3;
     }
     .textarea.collapsed {
-      text-wrap: nowrap;
       height: 58px !important;
+      min-height: inherit;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .has-multiline {
+      line-height: 1.6 !important;
+    }
+    .multiline-symbol {
+      visibility: hidden;
+      position: absolute;
+      right: 6px;
+      top: 30px;
+      font-size: 9px;
+      color: rgba(var(--bs-body-color-rgb), .65);
+      cursor: default;
+    }
+    .has-multiline~.multiline-symbol{
+      visibility: visible;
     }
     .input {
       width: 200px;
       min-width: 200px;
       max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .long-text:hover {
       text-decoration: underline;
@@ -43,6 +66,39 @@
     }
     input[disabled]{
       cursor: not-allowed;
+    }
+    input:not([disabled]):hover, .textarea:hover {
+      border-color: #86b7fe;
+    }
+    .placeholder-label {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      height: 100%;
+      padding: 1rem .75rem;
+      overflow: hidden;
+      text-align: start;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      pointer-events: none;
+      border: var(--bs-border-width) solid transparent;
+      transform-origin: 0 0;
+      transition: opacity .1s ease-in-out, transform .1s ease-in-out;
+    }
+    .form-floating>.form-control:focus~.placeholder-label, .form-floating>.form-control.has-text~.placeholder-label {
+      color: rgba(var(--bs-body-color-rgb), .65);
+      transform: scale(.85) translateY(-.5rem) translateX(.15rem);
+    }
+    .form-floating>.form-control:focus~.placeholder-label:after, .form-floating>.form-control.has-text~.placeholder-label:after {
+      position: absolute;
+      inset: 1rem 0.375rem;
+      z-index: -1;
+      height: 1.5em;
+      content: '';
+      background-color: var(--bs-body-bg);
+      border-radius: var(--bs-border-radius);
     }
     footer a {
       color: var(--bs-body-color);
@@ -58,7 +114,7 @@
 <body class="bg-body-tertiary d-flex flex-column">
   <main class="container pt-5 text-center">
     <h1>Expand Field with Text</h1>
-    <p class="mb-5"><span class="long-text text-primary" data-bs-toggle="tooltip" data-bs-title="Copy long text to clipboard" data-text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.">Click to copy long text</span> and paste it into the field</p>
+    <p class="mb-5"><span class="long-text text-primary" data-bs-toggle="tooltip" data-bs-title="Copy long text" data-text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.">Click to copy long text</span> and paste it into the field</p>
     <!-- Input Expandable -->
     <div class="form-floating mb-4">
       <input id="input" class="form-control input" placeholder="Expand by width"></input>
@@ -71,13 +127,18 @@
     </div>
     <!-- Textarea Expandable with Overlay -->
     <div class="form-floating mb-4 textarea-overlay-parent">
+      <div id="textarea-overlay" class="form-control textarea position-absolute" contenteditable="plaintext-only"></div>
+      <span class="placeholder-label">Expand by height with overlay</span>
+      <span class="multiline-symbol" data-bs-toggle="tooltip" data-bs-title="Has line breaks">&#x21b5;</span>
+    </div>
+    <!-- <div class="form-floating mb-4 textarea-overlay-parent">
       <textarea id="textarea-overlay" rows="1" class="form-control textarea position-absolute" placeholder="Expand by height with overlay"></textarea>
       <label for="textarea">Expand by height with overlay</label>
-    </div>
+    </div> -->
     <!-- Input -->
     <div class="form-floating mb-4">
-      <input class="form-control" placeholder="Common field (not expandable)" disabled></input>
-      <label for="input">Common field (inactive)</label>
+      <input class="form-control" placeholder="Input field (not expandable)" disabled></input>
+      <label for="input">Input field (disabled)</label>
     </div>
   </main>
   <footer class="container px-5 py-4 text-secondary text-center mt-auto">
@@ -100,16 +161,48 @@
     const textareaOverlayEle = document.getElementById('textarea-overlay');
     textareaOverlayEle.addEventListener('input', expand);
     textareaOverlayEle.addEventListener('focus', expand);
+    textareaOverlayEle.addEventListener('keyup', clearField);
     textareaOverlayEle.addEventListener('focusout', collapse);
   
     function expand() {
+      textareaOverlayEle.classList.remove('has-multiline');
       textareaOverlayEle.classList.remove('collapsed');
       textareaOverlayEle.style.height = 'auto';
       textareaOverlayEle.style.height = `${textareaOverlayEle.scrollHeight}px`;
     }
+    
+    function clearField() {
+      // Remove line breaks from start and end of string if has no characters
+      if (textareaOverlayEle.textContent.length <= 2 && textareaOverlayEle.textContent.startsWith('\n')) {
+        textareaOverlayEle.textContent = textareaOverlayEle.textContent.replace(/^\s+|\s+$/g, '');
+      }
+    }
   
     function collapse() {
       textareaOverlayEle.classList.add('collapsed');
+
+      // Remove whitespace from the beginning
+      if (textareaOverlayEle.textContent.startsWith(' ')) {
+        textareaOverlayEle.textContent = textareaOverlayEle.textContent.replace(/^\s+/g, '');
+      }
+      // Show/hide placeholder label
+      if (textareaOverlayEle.innerHTML.length > 0) {
+        textareaOverlayEle.classList.add('has-text');
+      }
+      else {
+        textareaOverlayEle.classList.remove('has-text');
+      }
+      // Check for line breaks
+      if (textareaOverlayEle.innerHTML.match('\n')) {
+        textareaOverlayEle.classList.add('has-multiline');
+      }
+      else {
+        textareaOverlayEle.classList.remove('has-multiline');
+      }
+      // Remove line break from the beginning
+      if (textareaOverlayEle.innerHTML.indexOf('\n') == 0) {
+        textareaOverlayEle.textContent = textareaOverlayEle.textContent.replace(/^\s+|\s+$/g, '');
+      }
     }
   
     // Input Expand with Text
@@ -117,14 +210,15 @@
     inputEle.addEventListener('input', () => {
         inputEle.style.width = 'auto';
         inputEle.style.width = `${inputEle.scrollWidth}px`;
+        inputEle.value = inputEle.value.replace(/^\s/g,'');
     });
   });
 </script>
 
 <script>
-  // Bootstrap enable a single tooltip
-  const tooltipTrigger = document.querySelector('[data-bs-toggle="tooltip"]');
-  const tooltip = new bootstrap.Tooltip(tooltipTrigger);
+  // Bootstrap enable tooltips
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
   // Copy long text to clipboard
   const longText = document.querySelector('.long-text');
@@ -138,7 +232,7 @@
       tooltip.setContent({ '.tooltip-inner': 'Copied!' });
       // Reset default
       longText.addEventListener('mouseout', function() {
-        tooltip.setContent({ '.tooltip-inner': 'Copy long text to clipboard' });
+        tooltip.setContent({ '.tooltip-inner': 'Copy long text' });
       });
     } catch (error) {
       // Optional: Display an error message to the user
