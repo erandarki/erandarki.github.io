@@ -146,43 +146,50 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Input Expand with Text
+    const inputEle = document.getElementById('input');
+    inputEle.addEventListener('input', () => {
+      inputEle.value = inputEle.value.replace(/^\s/g,'');
+      inputEle.style.width = 'auto';
+      inputEle.style.width = `${inputEle.scrollWidth}px`;
+    });
+    
     // Textarea Expand with Text
     const textareaEle = document.getElementById('textarea');
     textareaEle.addEventListener('input', () => {
-        textareaEle.style.height = 'auto';
-        textareaEle.style.height = `${textareaEle.scrollHeight}px`;
+      textareaEle.value = textareaEle.value.replace(/^\s/g,'');
+      textareaEle.style.height = 'auto';
+      textareaEle.style.height = `${textareaEle.scrollHeight}px`;
     });
     
     // Textarea Overlay Collapse/Expand
     const textareaOverlayEle = document.getElementById('textarea-overlay');
     textareaOverlayEle.addEventListener('input', expand);
     textareaOverlayEle.addEventListener('focus', expand);
-    textareaOverlayEle.addEventListener('keyup', clearField);
     textareaOverlayEle.addEventListener('focusout', collapse);
   
     function expand() {
       textareaOverlayEle.classList.remove('has-multiline');
       textareaOverlayEle.classList.remove('collapsed');
-      textareaOverlayEle.style.height = 'auto';
-      textareaOverlayEle.style.height = `${textareaOverlayEle.scrollHeight}px`;
-    }
-    
-    function clearField() {
       // Remove line breaks from start and end of string if has no characters
       if (textareaOverlayEle.textContent.length <= 2 && textareaOverlayEle.textContent.startsWith('\n')) {
         textareaOverlayEle.textContent = textareaOverlayEle.textContent.replace(/^\s+|\s+$/g, '');
-        textareaOverlayEle.style.height = 'auto';
-        textareaOverlayEle.style.height = `${textareaOverlayEle.scrollHeight}px`;
       }
-    }
-  
-    function collapse() {
-      textareaOverlayEle.classList.add('collapsed');
-
+      // Remove line break from the beginning
+      if (textareaOverlayEle.innerHTML.indexOf('\n') == 0) {
+        textareaOverlayEle.textContent = textareaOverlayEle.textContent.replace(/^\s+|\s+$/g, '');
+      }
       // Remove whitespace from the beginning
       if (textareaOverlayEle.textContent.startsWith(' ')) {
         textareaOverlayEle.textContent = textareaOverlayEle.textContent.replace(/^\s+/g, '');
       }
+      // Adjust height
+      textareaOverlayEle.style.height = 'auto';
+      textareaOverlayEle.style.height = `${textareaOverlayEle.scrollHeight}px`;
+    }
+  
+    function collapse() {
+      textareaOverlayEle.classList.add('collapsed');
       // Show/hide placeholder label
       if (textareaOverlayEle.innerHTML.length > 0) {
         textareaOverlayEle.classList.add('has-text');
@@ -197,19 +204,7 @@
       else {
         textareaOverlayEle.classList.remove('has-multiline');
       }
-      // Remove line break from the beginning
-      if (textareaOverlayEle.innerHTML.indexOf('\n') == 0) {
-        textareaOverlayEle.textContent = textareaOverlayEle.textContent.replace(/^\s+|\s+$/g, '');
-      }
     }
-  
-    // Input Expand with Text
-    const inputEle = document.getElementById('input');
-    inputEle.addEventListener('input', () => {
-        inputEle.style.width = 'auto';
-        inputEle.style.width = `${inputEle.scrollWidth}px`;
-        inputEle.value = inputEle.value.replace(/^\s/g,'');
-    });
   });
 </script>
 
