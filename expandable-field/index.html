@@ -171,6 +171,8 @@
       // Remove line breaks from start and end of string if has no characters
       if (textareaOverlayEle.textContent.length <= 2 && textareaOverlayEle.textContent.startsWith('\n')) {
         textareaOverlayEle.textContent = textareaOverlayEle.textContent.replace(/^\s+|\s+$/g, '');
+        textareaOverlayEle.style.height = 'auto';
+        textareaOverlayEle.style.height = `${textareaOverlayEle.scrollHeight}px`;
       }
     }
   
