@@ -21,6 +21,22 @@
       max-width: 450px;
       min-width: 200px;
     }
+    .input {
+      width: 200px;
+      min-width: 200px;
+      max-width: 100%;
+      text-overflow: ellipsis;
+    }
+    .long-text:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    input[disabled]{
+      cursor: not-allowed;
+    }
+    input:not([disabled]):hover, .textarea:hover {
+      border-color: #86b7fe;
+    }
     .textarea {
       resize: none;
       overflow: hidden;
@@ -51,24 +67,6 @@
     }
     .has-multiline~.multiline-symbol{
       visibility: visible;
-    }
-    .input {
-      width: 200px;
-      min-width: 200px;
-      max-width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .long-text:hover {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    input[disabled]{
-      cursor: not-allowed;
-    }
-    input:not([disabled]):hover, .textarea:hover {
-      border-color: #86b7fe;
     }
     .placeholder-label {
       display: inline-block;
@@ -151,7 +149,7 @@
     inputEle.addEventListener('input', () => {
       inputEle.value = inputEle.value.replace(/^\s/g,'');
       inputEle.style.width = 'auto';
-      inputEle.style.width = `${inputEle.scrollWidth}px`;
+      inputEle.style.width = `${inputEle.scrollWidth + 3}px`;
     });
     
     // Textarea Expand with Text
