@@ -55,6 +55,9 @@
       text-decoration: underline;
       text-underline-offset: 2px;
     }
+    .tooltip.custom-tooltip {
+      --bs-tooltip-max-width: 220px;
+    }
     .tooltip-inner {
       text-align: left;
     }
@@ -68,7 +71,7 @@
     <div class="card mb-3">
       <div class="card-header d-flex">
         Preview
-        <a href="./Social-Media-Images.zip" download class="align-text-bottom ms-auto" data-bs-toggle="tooltip" data-bs-title="Download social media images">
+        <a href="./Social-Media-Images.zip" download class="align-text-bottom ms-auto" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-title="Download social media images">
           <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="18" viewBox="0 0 18.5 15" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M6.44,3.12C7.75.73,10.85-.2,13.34,1.07c2.01,1.01,3.07,3.18,2.62,5.32,2.13,1.36,2.68,4.11,1.27,6.14-.86,1.22-2.3,1.97-3.84,1.97H4.14c-2.01,0-3.64-1.57-3.64-3.5,0-1.19.63-2.3,1.69-2.95-.72-1.93.34-4.08,2.36-4.77.6-.2,1.26-.27,1.89-.17"/><line x1="9.25" y1="4.88" x2="9.25" y2="11.69"/><line x1="6.49" y1="8.94" x2="9.25" y2="11.69"/><line x1="12" y1="8.94" x2="9.25" y2="11.69"/></svg>
         </a>
         <span class="text-primary d-flex align-items-center mx-3" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<b>——— TIPS & TRICKS ———</b> <br> <b>Outlook:</b> If underline appears after pasting, select all and press <u>U</u> button twice to cancel it. <br> <b>Gmail:</b> If a message says “The signature is too long“, download all images and insert them from a URL or your Drive instead, and relink them.">
