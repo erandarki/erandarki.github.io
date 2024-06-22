@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An email signature template designed to be mobile-friendly and fully customizable.">
+  <meta name="keywords" content="Email Signature Template, Email Signature, Professional Clickable Email Signature Template, Email Signature Generator, Gmail Signature, Outlook Signature, Apple Mail
+  Signature, Digital Signature, Email Marketing">
+  <meta name="author" content="Eran Darki">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📧</text></svg>">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Email Signature Template</title>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    html, body {
+      height: 100%;
+      cursor: default;
+    }
+    .container {
+      max-width: 960px;
+    }
+    table > * {
+      line-height: normal;
+    }
+    #copySignature, input[type="checkbox"] {
+      cursor: pointer;
+    }
+    input:disabled {
+      color: var(--bs-secondary);
+      cursor: not-allowed;
+    }
+    /* #uploadImg {
+      display: none;
+    } */
+    input {
+      text-overflow: ellipsis;
+    }
+    a {
+      text-decoration: none;
+    }
+    footer a {
+      color: var(--bs-body-color);
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #0d6efd;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .tooltip-inner {
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body class="bg-body-tertiary d-flex flex-column">
+  <main class="container">
+    <h1 class="text-center mt-5">Email Signature Template</h1>
+    <p class="text-center mb-5">Set up your info, then copy and paste it into your email</p>
+    <div class="card mb-3">
+      <div class="card-header d-flex">
+        Preview
+        <a href="./Social-Media-Images.zip" download class="align-text-bottom ms-auto" data-bs-toggle="tooltip" data-bs-title="Download social media images">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="18" viewBox="0 0 18.5 15" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M6.44,3.12C7.75.73,10.85-.2,13.34,1.07c2.01,1.01,3.07,3.18,2.62,5.32,2.13,1.36,2.68,4.11,1.27,6.14-.86,1.22-2.3,1.97-3.84,1.97H4.14c-2.01,0-3.64-1.57-3.64-3.5,0-1.19.63-2.3,1.69-2.95-.72-1.93.34-4.08,2.36-4.77.6-.2,1.26-.27,1.89-.17"/><line x1="9.25" y1="4.88" x2="9.25" y2="11.69"/><line x1="6.49" y1="8.94" x2="9.25" y2="11.69"/><line x1="12" y1="8.94" x2="9.25" y2="11.69"/></svg>
+        </a>
+        <span class="text-primary d-flex align-items-center mx-3" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<b>——— TIPS & TRICKS ———</b> <br> <b>Outlook:</b> If underline appears after pasting, select all and press <u>U</u> button twice to cancel it. <br> <b>Gmail:</b> If a message says “The signature is too long“, download all images and insert them from a URL or your Drive instead, and relink them.">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14.39 18.22" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M9.75,15.17c.27-1.79,1.16-2.62,2.1-3.51.27-.26.56-.53.83-.81.86-1.01,1.22-2.14,1.22-3.78,0-2.46-1.38-4.6-3.43-5.73-.97-.53-2.08-.84-3.27-.84C3.5.5.5,3.44.5,7.06c0,1.51.41,2.79,1.21,3.77.28.3.57.57.84.83.93.88,1.82,1.73,2.09,3.5"/><path d="M7.2,2.91c-2.48,0-4.5,1.98-4.5,4.41"/><path d="M7.2,17.72c1.41,0,2.55-1.14,2.55-2.55h-5.1c0,1.41,1.14,2.55,2.55,2.55Z"/></svg>
+        </span>
+        <span id="copySignature" class="text-primary d-flex align-items-center" data-bs-toggle="tooltip" data-bs-title="Copy signature">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14.33 17.67" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5,2.17h1.67c.92,0,1.67.75,1.67,1.67v11.67c0,.92-.75,1.67-1.67,1.67H2.17c-.92,0-1.67-.75-1.67-1.67V3.83c0-.92.75-1.67,1.67-1.67h1.67"/><rect x="3.83" y=".5" width="6.67" height="3.33" rx=".83" ry=".83"/></svg>
+        </span>
+      </div>
+      <div class="card-body">
+        <table id="signatureOutput">
+          <tbody>
+            <tr>
+              <!-- IMAGE SECTION -->
+              <td id="signatureImgSection" style="padding-right:10px;vertical-align:top;border:0;">
+                <!-- REPLACE image.gif WITH ANY SQUARE IMAGE 100X100 PIXELS (PNG/JPG/GIF) -->
+                <img id="mainImg" src="./img/animation.gif" width="100" height="100" style="object-fit:cover;">
+              </td>
+              <!-- INFO SECTION -->
+              <td style="font-family:Arial,Helvetica,sans-serif;cursor:default;font-size:15px;vertical-align:top;border:0;">
+                <!-- FULL NAME -->
+                <p id="fullnameSignature" style="font-size:18px;font-weight:600;color:#1f68e4;margin-bottom:0;">John Smith</p>
+                <!-- JOB TITLE -->
+                <span id="jobTitleSignature">Product Marketing Manager</span>
+                <!-- MOBILE PHONE NUMBER -->
+                <p style="margin-top:5px;margin-bottom:10px;"><span id="mobilePhoneSignature" style="display:inline-block;">📱 <a href="tel:#" style="color:#1f68e4;">(919) 555-1234</a> &nbsp;</span>
+                <!-- TELEPHONE -->
+                <span id="telephoneSignature" style="display:inline-block;">📞 <a href="tel:#" style="text-decoration:none;color:#1f68e4;text-decoration:none;">(919) 555-5678</a> &nbsp;</span>
+                <!-- WEBSITE ADDRESS -->
+                <span id="websiteSignature">🌐 <a href="#" target="_blank" style="text-decoration:none;color:#1f68e4;">www.website.com</a></span></p>
+                <!-- FACEBOOK -->
+                <span id="facebookSignature" style="display:inline-block;"><a href="#" target="_blank"><img width="22" height="22" src="./img/facebook.png"></a>&nbsp;</span>
+                <!-- LINKEDIN -->
+                <span id="linkedinSignature" style="display:inline-block;"><a href="#" target="_blank"><img width="22" height="22" src="./img/linkedin.png"></a>&nbsp;</span>
+                <!-- TWITTER -->
+                <span id="twitterSignature" style="display:inline-block;"><a href="#" target="_blank"><img width="22" height="22" src="./img/twitter.png"></a>&nbsp;</span>
+                <!-- YOUTUBE -->
+                <span id="youtubeSignature" style="display:inline-block;"><a href="#" target="_blank"><img width="22" height="22" src="./img/youtube.png"></a>&nbsp;</span>
+                <!-- INSTAGRAM -->
+                <span id="instagramSignature" style="display:inline-block;"><a href="#" target="_blank"><img width="22" height="22" src="./img/instagram.png"></a>&nbsp;</span>
+                <!-- PINTEREST -->
+                <span id="pinterestSignature" style="display:inline-block;"><a href="#" target="_blank"><img width="22" height="22" src="./img/pinterest.png"></a></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header d-flex align-items-center">Settings</div>
+      <div class="card-body">
+        <div class="row">
+          <!-- Main Image -->
+          <div class="col-md">
+            <label class="form-label fw-semibold">
+              Main Image
+              <span class="text-secondary align-baseline ms-1" data-bs-toggle="tooltip" data-bs-title="End result: 100x100 px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15.5" height="15.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.75" cy="7.75" r="7"/><line x1="7.75" y1="10.55" x2="7.75" y2="7.75"/><line x1="7.75" y1="4.95" x2="7.76" y2="4.95"/></svg>
+              </span>
+            </label>
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="mainImgCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <!-- <label class="input-group-text" for="uploadImg">Upload</label> -->
+              <input type="file" class="form-control" id="uploadImg" accept=".png, .jpeg, .jpg, .gif">
+            </div>
+          </div>
+          <!-- Full Name -->
+          <div class="col-md">
+            <label class="form-label fw-semibold">Full Name</label>
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="fullnameCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="fullNameInput" type="search" class="form-control" placeholder="Full Name" aria-label="Text input with checkbox" value="John Smith">
+            </div>
+          </div>
+          <!-- Job Title -->
+          <div class="col-md">
+            <label class="form-label fw-semibold">Job Title</label>
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="jobTitleCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="jobTitleInput" type="search" class="form-control" placeholder="Job Title" aria-label="Text input with checkbox" value="Product Marketing Manager">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <!-- Mobile Phone -->
+          <div class="col-md">
+            <label class="form-label fw-semibold">Mobile Phone</label>
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="mobilePhoneCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="mobileInput" type="search" class="form-control" placeholder="Mobile Phone" aria-label="Text input with checkbox" value="(919) 555-1234">
+            </div>
+          </div>
+          <!-- Telephone -->
+          <div class="col-md">
+            <label class="form-label fw-semibold">Telephone</label>
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="telephoneCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="telephoneInput" type="search" class="form-control" placeholder="Telephone" aria-label="Text input with checkbox" value="(919) 555-5678">
+            </div>
+          </div>
+          <!-- Website Address -->
+          <div class="col-md">
+            <label class="form-label fw-semibold">Website Address</label>
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="websiteCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="websiteInput" type="search" class="form-control" placeholder="Website Address" aria-label="Text input with checkbox" value="www.website.com">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="form-label fw-semibold">Social Media</label>
+          <!-- Facebook Account -->
+          <div class="col-md">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="facebookCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="facebookInput" type="search" class="form-control" placeholder="Facebook Account" aria-label="Text input with checkbox" value="https://www.facebook.com/pages/category/my-account">
+              <div class="input-group-text">
+                <img src="./img/facebook.png" width="22" alt="">
+              </div>
+            </div>
+          </div>
+          <!-- Linkedin Account -->
+          <div class="col-md">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="linkedinCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="linkedinInput" type="search" class="form-control" placeholder="Linkedin Account" aria-label="Text input with checkbox" value="https://www.linkedin.com/pages/category/my-account">
+              <div class="input-group-text">
+                <img src="./img/linkedin.png" width="22" alt="">
+              </div>
+            </div>
+          </div>
+          <!-- Twitter Account -->
+          <div class="col-md">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="twitterCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="twitterInput" type="search" class="form-control" placeholder="Twitter Account" aria-label="Text input with checkbox" value="https://www.twitter.com/pages/category/my-account">
+              <div class="input-group-text">
+                <img src="./img/twitter.png" width="22" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- YouTube Account -->
+          <div class="col-md">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="youtubeCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="youtubeInput" type="search" class="form-control" placeholder="YouTube Account" aria-label="Text input with checkbox" value="https://www.youtube.com/pages/category/my-account">
+              <div class="input-group-text">
+                <img src="./img/youtube.png" width="22" alt="">
+              </div>
+            </div>
+          </div>
+          <!-- Instagram Account -->
+          <div class="col-md">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="instagramCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="instagramInput" type="search" class="form-control" placeholder="Instagram Account" aria-label="Text input with checkbox" value="https://www.instagram.com/pages/category/my-account">
+              <div class="input-group-text">
+                <img src="./img/instagram.png" width="22" alt="">
+              </div>
+            </div>
+          </div>
+          <!-- Pinterest Account -->
+          <div class="col-md">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input id="pinterestCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
+              </div>
+              <input id="pinterestInput" type="search" class="form-control" placeholder="Pinterest Account" aria-label="Text input with checkbox" value="https://www.pinterest.com/pages/category/my-account">
+              <div class="input-group-text">
+                <img src="./img/pinterest.png" width="22" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="container px-5 py-4 text-secondary text-center mt-auto">
+    <small>&copy; Email Signature Template by <a href="/" target="_blank">Eran Darki</a></small>
+  </footer>
+</body>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+  // Settings fields behaviors
+  const uploadImg = document.getElementById('uploadImg');
+  const signatureImgSection = document.getElementById('signatureImgSection');
+  // Checkbox elements
+  const mainImgCheckbox = document.getElementById('mainImgCheckbox');
+  const fullnameCheckbox = document.getElementById('fullnameCheckbox');
+  const jobTitleCheckbox = document.getElementById('jobTitleCheckbox');
+  const mobilePhoneCheckbox = document.getElementById('mobilePhoneCheckbox');
+  const telephoneCheckbox = document.getElementById('telephoneCheckbox');
+  const websiteCheckbox = document.getElementById('websiteCheckbox');
+  const facebookCheckbox = document.getElementById('facebookCheckbox');
+  const linkedinCheckbox = document.getElementById('linkedinCheckbox');
+  const twitterCheckbox = document.getElementById('twitterCheckbox');
+  const youtubeCheckbox = document.getElementById('youtubeCheckbox');
+  const instagramCheckbox = document.getElementById('instagramCheckbox');
+  const pinterestCheckbox = document.getElementById('pinterestCheckbox');
+  // Signature elements
+  const fullnameSignature = document.getElementById('fullnameSignature');
+  const jobTitleSignature = document.getElementById('jobTitleSignature');
+  const mobilePhoneSignature = document.getElementById('mobilePhoneSignature');
+  const telephoneSignature = document.getElementById('telephoneSignature');
+  const websiteSignature = document.getElementById('websiteSignature');
+  const facebookSignature = document.getElementById('facebookSignature');
+  const linkedinSignature = document.getElementById('linkedinSignature');
+  const twitterSignature = document.getElementById('twitterSignature');
+  const youtubeSignature = document.getElementById('youtubeSignature');
+  const instagramSignature = document.getElementById('instagramSignature');
+  const pinterestSignature = document.getElementById('pinterestSignature');
+  // Input fields
+  const fullNameInput = document.getElementById('fullNameInput');
+  const jobTitleInput = document.getElementById('jobTitleInput');
+  const mobileInput = document.getElementById('mobileInput');
+  const telephoneInput = document.getElementById('telephoneInput');
+  const websiteInput = document.getElementById('websiteInput');
+  const facebookInput = document.getElementById('facebookInput');
+  const linkedinInput = document.getElementById('linkedinInput');
+  const twitterInput = document.getElementById('twitterInput');
+  const youtubeInput = document.getElementById('youtubeInput');
+  const instagramInput = document.getElementById('instagramInput');
+  const pinterestInput = document.getElementById('pinterestInput');
+
+  // Upload main image
+  window.addEventListener('load', function() {
+    uploadImg.addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+        let img = document.getElementById('mainImg');
+        img.onload = () => {
+            URL.revokeObjectURL(img.src);  // no longer needed, free memory
+        }
+
+        img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+      }
+    });
+  });
+
+  // Toggle active/inactive input field
+  function disableInput(checkbox) {
+    return checkbox.parentElement.nextElementSibling.toggleAttribute('disabled');
+  }
+
+  // Show/hide main image
+  mainImgCheckbox.addEventListener('click', () => {
+    signatureImgSection.classList.toggle('d-none');
+    disableInput(mainImgCheckbox);
+  });
+
+  // Show/hide name
+  fullnameCheckbox.addEventListener('click', () => {
+    fullnameSignature.classList.toggle('d-none');
+    disableInput(fullnameCheckbox);
+  });
+  
+  // Show/hide job title
+  jobTitleCheckbox.addEventListener('click', () => {
+    jobTitleSignature.classList.toggle('d-none');
+    disableInput(jobTitleCheckbox);
+  });
+
+  // Show/hide mobile phone
+  mobilePhoneCheckbox.addEventListener('click', () => {
+    mobilePhoneSignature.classList.toggle('d-none');
+    disableInput(mobilePhoneCheckbox);
+  });
+
+  // Show/hide telephone
+  telephoneCheckbox.addEventListener('click', () => {
+    telephoneSignature.classList.toggle('d-none');
+    disableInput(telephoneCheckbox);
+  });
+
+  // Show/hide website
+  websiteCheckbox.addEventListener('click', () => {
+    websiteSignature.classList.toggle('d-none');
+    disableInput(websiteCheckbox);
+  });
+
+  // Show/hide facebook
+  facebookCheckbox.addEventListener('click', () => {
+    facebookSignature.classList.toggle('d-none');
+    disableInput(facebookCheckbox);
+  });
+
+  // Show/hide linkedin
+  linkedinCheckbox.addEventListener('click', () => {
+    linkedinSignature.classList.toggle('d-none');
+    disableInput(linkedinCheckbox);
+  });
+
+  // Show/hide twitter
+  twitterCheckbox.addEventListener('click', () => {
+    twitterSignature.classList.toggle('d-none');
+    disableInput(twitterCheckbox);
+  });
+
+  // Show/hide youtube
+  youtubeCheckbox.addEventListener('click', () => {
+    youtubeSignature.classList.toggle('d-none');
+    disableInput(youtubeCheckbox);
+  });
+
+  // Show/hide youtube
+  instagramCheckbox.addEventListener('click', () => {
+    instagramSignature.classList.toggle('d-none');
+    disableInput(instagramCheckbox);
+  });
+
+  // Show/hide pinterest
+  pinterestCheckbox.addEventListener('click', () => {
+    pinterestSignature.classList.toggle('d-none');
+    disableInput(pinterestCheckbox);
+  });
+
+  // Edit name
+  fullNameInput.addEventListener('input', () => {
+    fullnameSignature.innerHTML = fullNameInput.value;
+  });
+
+  // Edit job title
+  jobTitleInput.addEventListener('input', () => {
+    jobTitleSignature.innerHTML = jobTitleInput.value;
+  });
+
+  // Edit mobile
+  mobileInput.addEventListener('input', () => {
+    mobileInput.value = mobileInput.value.replace(/[^ 0-9()\+-]/g, '');
+    mobilePhoneSignature.firstElementChild.innerHTML = mobileInput.value;
+    mobilePhoneSignature.firstElementChild.href = `tel:${mobileInput.value}`;
+  });
+
+  // Edit telephone
+  telephoneInput.addEventListener('input', () => {
+    telephoneInput.value = telephoneInput.value.replace(/[^ 0-9()\+-]/g, '');
+    telephoneSignature.firstElementChild.innerHTML = telephoneInput.value;
+    telephoneSignature.firstElementChild.href = `tel:${telephoneInput.value}`;
+  });
+
+  // Edit website
+  websiteInput.addEventListener('input', () => {
+    websiteSignature.firstElementChild.innerHTML = websiteInput.value;
+    websiteSignature.firstElementChild.href = websiteInput.value;
+  });
+  
+  // Edit facebook
+  facebookInput.addEventListener('input', () => {
+    facebookSignature.firstElementChild.href = facebookInput.value;
+  });
+
+  // Edit linkedin
+  linkedinInput.addEventListener('input', () => {
+    linkedinSignature.firstElementChild.href = linkedinInput.value;
+  });
+
+  // Edit twitter
+  twitterInput.addEventListener('input', () => {
+    twitterSignature.firstElementChild.href = twitterInput.value;
+  });
+
+  // Edit youtube
+  youtubeInput.addEventListener('input', () => {
+    youtubeSignature.firstElementChild.href = youtubeInput.value;
+  });
+
+  // Edit instagram
+  instagramInput.addEventListener('input', () => {
+    instagramSignature.firstElementChild.href = instagramInput.value;
+  });
+
+  // Edit pinterest
+  pinterestInput.addEventListener('input', () => {
+    pinterestSignature.firstElementChild.href = pinterestInput.value;
+  });
+</script>
+
+<script>
+  const copySignature = document.getElementById('copySignature');
+
+  // Select signature and copy to clipboard
+  function selectText(node) {
+    node = document.getElementById(node);
+
+    if (document.body.createTextRange) {
+        const range = document.body.createTextRange();
+        range.moveToElementText(node);
+        range.select();
+    } else if (window.getSelection) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    } else {
+        console.warn("Could not select text in node: Unsupported browser.");
+    }
+  }
+
+  // Bootstrap enable tooltips
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+  async function signatureTooltip() {
+    try {
+      // Returns a Bootstrap tooltip instance
+      const tooltip = bootstrap.Tooltip.getOrCreateInstance(copySignature);
+      // Change tooltip text
+      tooltip.setContent({ '.tooltip-inner': 'Copied!' });
+      // Reset default
+      copySignature.addEventListener('mouseout', function() {
+        tooltip.setContent({ '.tooltip-inner': 'Copy signature' });
+      });
+    } catch (error) {
+      // Optional: Display an error message to the user
+      console.error('Failed to copy to clipboard:', error);
+    }
+  }
+  
+  copySignature.addEventListener('click', () => {
+    selectText('signatureOutput');
+    document.execCommand("copy");
+    signatureTooltip();
+  });
+</script>
+</html>
