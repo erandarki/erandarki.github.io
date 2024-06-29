@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
 <head>
   <meta charset="UTF-8">
   <meta name="robots" content="index, follow">
@@ -9,8 +9,10 @@
   <meta name="keywords" content="Email Signature Template, Email Signature, Professional Clickable Email Signature Template, Email Signature Generator, Gmail Signature, Outlook Signature, Apple Mail
   Signature, Digital Signature, Email Marketing">
   <meta name="author" content="Eran Darki">
+  <!-- Theme Color Mode -->
+  <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📧</text></svg>">
-  <!-- Bootstrap -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>Email Signature Template</title>
   <style>
@@ -43,6 +45,10 @@
     input {
       text-overflow: ellipsis;
     }
+    .form-control-color {
+      width: 22px;
+      height: 22px;
+    }
     a {
       text-decoration: none;
     }
@@ -55,6 +61,10 @@
       text-decoration: underline;
       text-underline-offset: 2px;
     }
+    .bi {
+      vertical-align: -0.125em;
+      fill: currentColor;
+    }
     .custom-tooltip {
       --bs-tooltip-max-width: 220px;
     }
@@ -65,13 +75,66 @@
 </head>
 
 <body class="bg-body-tertiary d-flex flex-column">
+  <!-- Theme color mode icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+      <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+    </symbol>
+  </svg>
+  <!-- Theme color mode toggle button -->
+  <div class="dropdown d-flex mt-3 me-3 bd-mode-toggle">
+    <button class="btn btn-primary ms-auto py-2 dropdown-toggle d-flex align-items-center"
+            id="bd-theme"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+            aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
   <main class="container">
-    <h1 class="text-center mt-5">Email Signature Template</h1>
-    <p class="text-center mb-5">Set up your info, then copy and paste it into your email</p>
+    <h1 class="text-center mt-3">Email Signature Template</h1>
+    <p class="text-center mb-5">Set up your info, then copy and paste the signature into your email</p>
+    <!-- Preview -->
     <div class="card mb-3">
       <div class="card-header d-flex">
         Preview
-        <a href="./Social-Media-Images.zip" download class="align-text-bottom ms-auto" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-title="Download social media images">
+        <a id="downloadSocialMediaImages" href="./Social-Media-Images.zip" download class="text-primary align-text-bottom ms-auto" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip" data-bs-title="Download social media images">
           <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="18" viewBox="0 0 18.5 15" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M6.44,3.12C7.75.73,10.85-.2,13.34,1.07c2.01,1.01,3.07,3.18,2.62,5.32,2.13,1.36,2.68,4.11,1.27,6.14-.86,1.22-2.3,1.97-3.84,1.97H4.14c-2.01,0-3.64-1.57-3.64-3.5,0-1.19.63-2.3,1.69-2.95-.72-1.93.34-4.08,2.36-4.77.6-.2,1.26-.27,1.89-.17"/><line x1="9.25" y1="4.88" x2="9.25" y2="11.69"/><line x1="6.49" y1="8.94" x2="9.25" y2="11.69"/><line x1="12" y1="8.94" x2="9.25" y2="11.69"/></svg>
         </a>
         <span class="text-primary d-flex align-items-center mx-3" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<b>——— TIPS & TRICKS ———</b> <br> <b>Outlook:</b> If underline appears after pasting, select all and press <u>U</u> button twice to cancel it. <br> <b>Gmail:</b> If a message says “The signature is too long“, download all images and insert them from a URL or your Drive instead, and relink them.">
@@ -93,15 +156,15 @@
               <!-- INFO SECTION -->
               <td style="font-family:Arial,Helvetica,sans-serif;cursor:default;font-size:15px;vertical-align:top;border:0;">
                 <!-- FULL NAME -->
-                <p id="fullnameSignature" style="font-size:18px;font-weight:600;color:#1f68e4;margin-bottom:0;">John Smith</p>
+                <p id="fullnameSignature" style="font-size:18px;font-weight:600;color:#0d6efd;margin-bottom:0;">John Smith</p>
                 <!-- JOB TITLE -->
-                <span id="jobTitleSignature">Product Marketing Manager</span>
+                <span id="jobTitleSignature" style="color:#666666">Product Marketing Manager</span>
                 <!-- MOBILE PHONE NUMBER -->
-                <p style="margin-top:5px;margin-bottom:10px;"><span id="mobilePhoneSignature" style="display:inline-block;">📱 <a href="tel:#" style="color:#1f68e4;">(919) 555-1234</a> &nbsp;</span>
+                <p style="margin-top:5px;margin-bottom:10px;"><span id="mobilePhoneSignature" style="display:inline-block;">📱 <a href="tel:#" style="color:#0d6efd;">(919) 555-1234</a> &nbsp;</span>
                 <!-- TELEPHONE -->
-                <span id="telephoneSignature" style="display:inline-block;">📞 <a href="tel:#" style="text-decoration:none;color:#1f68e4;text-decoration:none;">(919) 555-5678</a> &nbsp;</span>
+                <span id="telephoneSignature" style="display:inline-block;">📞 <a href="tel:#" style="text-decoration:none;color:#0d6efd;text-decoration:none;">(919) 555-5678</a> &nbsp;</span>
                 <!-- WEBSITE ADDRESS -->
-                <span id="websiteSignature">🌐 <a href="#" target="_blank" style="text-decoration:none;color:#1f68e4;">www.website.com</a></span></p>
+                <span id="websiteSignature">🌐 <a href="#" target="_blank" style="text-decoration:none;color:#0d6efd;">www.website.com</a></span></p>
                 <!-- FACEBOOK -->
                 <span id="facebookSignature" style="display:inline-block;"><a href="#" target="_blank"><img width="22" height="22" src="./img/facebook.png"></a>&nbsp;</span>
                 <!-- LINKEDIN -->
@@ -120,7 +183,7 @@
         </table>
       </div>
     </div>
-
+    <!-- Settings -->
     <div class="card">
       <div class="card-header d-flex align-items-center">Settings</div>
       <div class="card-body">
@@ -149,6 +212,9 @@
                 <input id="fullnameCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
               <input id="fullNameInput" type="search" class="form-control" placeholder="Full Name" aria-label="Text input with checkbox" value="John Smith">
+              <div class="input-group-text">
+                <input id="nameColorInput" type="color" class="form-control form-control-color border-0 p-0" value="#0d6efd" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-title="Choose Color">
+              </div>
             </div>
           </div>
           <!-- Job Title -->
@@ -159,6 +225,9 @@
                 <input id="jobTitleCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
               <input id="jobTitleInput" type="search" class="form-control" placeholder="Job Title" aria-label="Text input with checkbox" value="Product Marketing Manager">
+              <div class="input-group-text">
+                <input id="jobTitleColorInput" type="color" class="form-control form-control-color border-0 p-0" value="#666666" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-title="Choose Color">
+              </div>
             </div>
           </div>
         </div>
@@ -195,7 +264,7 @@
             </div>
           </div>
         </div>
-
+        <!-- Social Media -->
         <div class="row">
           <label class="form-label fw-semibold">Social Media</label>
           <!-- Facebook Account -->
@@ -325,6 +394,18 @@
   const youtubeInput = document.getElementById('youtubeInput');
   const instagramInput = document.getElementById('instagramInput');
   const pinterestInput = document.getElementById('pinterestInput');
+  // Input color
+  const nameColorInput = document.getElementById('nameColorInput');
+  const jobTitleColorInput = document.getElementById('jobTitleColorInput');
+
+  // Sync input color with signature text color
+  // function syncColor() {
+  //   // Return HEX color
+  //   const rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`;
+  //   // Set HEX color to input color value
+  //   nameColorInput.value = rgb2hex(fullnameSignature.style.color);
+  //   jobTitleColorInput.value = getComputedStyle(jobTitleSignature).getPropertyValue('--bs-body-color');
+  // }
 
   // Upload main image
   window.addEventListener('load', function() {
@@ -422,9 +503,19 @@
     fullnameSignature.innerHTML = fullNameInput.value;
   });
 
+  // Edit name color
+  nameColorInput.addEventListener('input', () => {
+    fullnameSignature.style.color = nameColorInput.value;
+  });
+
   // Edit job title
   jobTitleInput.addEventListener('input', () => {
     jobTitleSignature.innerHTML = jobTitleInput.value;
+  });
+
+  // Edit job title color
+  jobTitleColorInput.addEventListener('input', () => {
+    jobTitleSignature.style.color = jobTitleColorInput.value;
   });
 
   // Edit mobile
@@ -524,6 +615,24 @@
     selectText('signatureOutput');
     document.execCommand("copy");
     signatureTooltip();
+  });
+
+  const downloadSocialMediaImages = document.getElementById('downloadSocialMediaImages');
+
+  downloadSocialMediaImages.addEventListener('click', async function() {
+    try {
+      // Returns a Bootstrap tooltip instance
+      const tooltip = bootstrap.Tooltip.getOrCreateInstance(downloadSocialMediaImages);
+      // Change tooltip text
+      tooltip.setContent({ '.tooltip-inner': 'Downloading...' });
+      // Reset default
+      downloadSocialMediaImages.addEventListener('mouseout', function() {
+        tooltip.setContent({ '.tooltip-inner': 'Download social media images' });
+      });
+    } catch (error) {
+      // Optional: Display an error message to the user
+      console.error('Failed to download:', error);
+    }
   });
 </script>
 </html>
