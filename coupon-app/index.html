@@ -336,29 +336,35 @@
           
           // Click approve button
           document.querySelector('.approved-btn').addEventListener('click', function() {
-            btnstate[clickedButton.id] = true;
-            clickedButton.classList.add('disabled');
+          btnstate[clickedButton.id] = true;
+          clickedButton.classList.add('disabled');
 
-            // Success Toast Message
-            toastMessage.classList.remove('d-none');
-            toastMessage.classList.add('slideInUp');
-            setTimeout(function () {
-              toastMessage.classList.add('slideOutDown');
-            }, 4000);
-            // Reset Toast Message
-            setTimeout(function () {
-              toastMessage.classList.add('d-none');
-              toastMessage.classList.remove('slideInUp');
-              toastMessage.classList.remove('slideOutDown');
-            }, 5000);
+          // Animate out (remove) the coupon and move to the next one
+          clickedButton.parentElement.parentElement.classList.add('bounceOut');
+          setTimeout(function () {
+            swiper.slideNext();
+          }, 900);
 
-            // Open Closure Prompt
-            setTimeout(function () {
-              allBtnsClicked();
-            }, 1000);
-            
-            // Persist state
-            localStorage.BTNstate = JSON.stringify(btnstate);
+          // Success Toast Message
+          toastMessage.classList.remove('d-none');
+          toastMessage.classList.add('slideInUp');
+          setTimeout(function () {
+            toastMessage.classList.add('slideOutDown');
+          }, 4000);
+          // Reset Toast Message
+          setTimeout(function () {
+            toastMessage.classList.add('d-none');
+            toastMessage.classList.remove('slideInUp');
+            toastMessage.classList.remove('slideOutDown');
+          }, 5000);
+
+          // Open Closure Prompt
+          setTimeout(function () {
+            allBtnsClicked();
+          }, 1000);
+          
+          // Persist state
+          localStorage.BTNstate = JSON.stringify(btnstate);
           });
         });
       }
