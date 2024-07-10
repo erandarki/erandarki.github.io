@@ -5,6 +5,23 @@
     var data = { "audio_source": "audio.mp3" };
     /* ]]> */
 
+    // Pause audio when page is hidden (not focused)
+    window.addEventListener('load', function() {
+        if (document.hidden) {
+            audio.pause();
+        }
+    });
+
+    // Pause audio when page is hidden (switching tabs)
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            audio.pause();
+        }
+        if (document.hidden == false && playing == true) {
+            audio.play();
+        }
+    });
+
     function randomBetween(range) {
         var min = range[0],
             max = range[1];
