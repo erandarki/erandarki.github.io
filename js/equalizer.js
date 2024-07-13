@@ -9,8 +9,6 @@
     window.addEventListener('load', function() {
         if (document.hidden) {
             audio.pause();
-        } else {
-            audio.play();
         }
     });
 
