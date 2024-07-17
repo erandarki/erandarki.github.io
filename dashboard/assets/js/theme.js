@@ -10427,7 +10427,7 @@ var weeklySalesInit = function weeklySalesInit() {
 /* -------------------------------------------------------------------------- */
 
 
-docReady(detectorInit);
+// docReady(detectorInit);
 docReady(handleNavbarVerticalCollapsed);
 docReady(totalOrderInit);
 docReady(weeklySalesInit);
@@ -10435,7 +10435,7 @@ docReady(marketShareInit);
 docReady(totalSalesInit);
 docReady(topProductsInit);
 docReady(navbarTopDropShadow);
-docReady(tooltipInit);
+// docReady(tooltipInit);
 docReady(popoverInit);
 docReady(toastInit);
 docReady(progressAnimationToggle);
@@ -10479,7 +10479,7 @@ docReady(salesByPosLocationInit);
 docReady(returningCustomerRateInit);
 docReady(candleChartInit);
 docReady(grossRevenueChartInit);
-docReady(scrollbarInit);
+// docReady(scrollbarInit);
 docReady(iconCopiedInit);
 docReady(reportForThisWeekInit);
 docReady(basicEchartsInit);
@@ -10489,7 +10489,7 @@ docReady(chartPie);
 docReady(chartPolar);
 docReady(chartRadar);
 docReady(chartCombo);
-docReady(dropdownMenuInit);
+// docReady(dropdownMenuInit);
 docReady(audienceChartInit);
 docReady(sessionByBrowserChartInit);
 docReady(sessionByCountryChartInit);
@@ -10508,4 +10508,3 @@ docReady(realTimeUsersChartInit);
 docReady(linePaymentChartInit);
 docReady(chartBubble);
 docReady(chartLine);
-//# sourceMappingURL=theme.js.map
