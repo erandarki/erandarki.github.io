@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>window.addEventListener('DOMContentLoaded', (event) => {window.scrollTo(0, 0)});</script>
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <title>Node Map</title>
+</head>
+<body>
+  <!-- Navigation Tabs -->
+  <header class="navbar-wrapper fixed-top pb-3">
+    <div class="d-inline-flex bg-body-secondary rounded p-1 mt-3 ms-3">
+      <ul class="nav position-relative" role="tablist">
+        <span class="active-tab-bg position-absolute top-0 bottom-0 my-auto bg-white rounded shadow-sm"></span>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active text-body position-relative" id="topology-tab" data-bs-toggle="tab" data-bs-target="#topology" type="button" role="tab" aria-controls="topology" aria-selected="false">Topology</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-body position-relative" id="hierarchy-tab" data-bs-toggle="tab" data-bs-target="#hierarchy" type="button" role="tab" aria-controls="hierarchy" aria-selected="true">Hierarchy</button>
+        </li>
+      </ul>
+    </div>
+    <div class="total-nodes position-absolute end-0 d-inline-flex align-items-center mt-3 me-3 bg-body-secondary rounded">
+      <small class="fw-semibold me-1">Total</small>
+      <span class="badge rounded-pill fw-semibold ms-1" style="background-color: #084298;" data-bs-toggle="tooltip" data-bs-title="Global Cloud">1</span>
+      <span class="badge rounded-pill fw-semibold text-bg-info text-white ms-1" data-bs-toggle="tooltip" data-bs-title="Private Gateways">3</span>
+      <span class="badge rounded-pill fw-semibold text-bg-primary ms-1" data-bs-toggle="tooltip" data-bs-title="Sites">16</span>
+      <span class="badge rounded-pill fw-semibold text-bg-success ms-1" data-bs-toggle="tooltip" data-bs-title="IDACs">52</span>
+    </div>
+  </header>
+  <main class="container-fluid p-3">
+    <!-- Tabs Content -->
+    <div class="tab-content">
+      <!-- Topology -->
+      <div class="tab-pane fade show active position-relative" id="topology" role="tabpanel" aria-labelledby="topology-tab" tabindex="0">
+        <div class="draggable">
+          <img class="topology-image" src="./img/topology.svg" alt="">
+          <!-- <div class="offline-idac idac error"></div> -->
+        </div>
+      </div>
+      <!-- Hierarchy -->
+      <div class="tab-pane fade mt-5" id="hierarchy" role="tabpanel" aria-labelledby="hierarchy-tab" tabindex="0">
+        <div class="node-data d-none position-absolute card shadow">
+          <div class="card-header fw-semibold">IDAC</div>
+          <div class="card-body d-none idac-info">
+            <div class="row">
+              <div class="col">
+                <div>Status</div>
+                <div>ID</div>
+                <div>Version</div>
+                <div>Certificate expiration date</div>
+                <div>Storage</div>
+                <div>CPU</div>
+                <div>RAM</div>
+                <div>Site</div>
+                <div>Upstream</div>
+                <div>Hostname</div>
+                <div>Host address</div>
+              </div>
+              <div class="col text-secondary">
+                <div>
+                  <span class="badge fw-semibold text-bg-success">ONLINE</span>
+                  <span class="badge fw-semibold text-bg-danger d-none">OFFLINE</span>
+                </div>
+                <div>80b1e8fd</div>
+                <div>v6.4.1</div>
+                <div>Nov 4, 2024, 7:19 AM</div>
+                <div>104GB Total / 62G Free</div>
+                <div>2</div>
+                <div>4G Total / 3G Free</div>
+                <div>Default</div>
+                <div>tcp.domain.com</div>
+                <div>IP 172.31.169.154</div>
+                <div>100.100.100.2</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body d-none site-info">
+            <div class="row">
+              <div class="col">
+                <div>Gateway</div>
+                <div>Regional gateway</div>
+                <div>DNS domains</div>
+                <div>CIDR</div>
+                <div>IDACs</div>
+                <div>Latency</div>
+              </div>
+              <div class="col text-secondary">
+                <div>Global Cloud</div>
+                <div>tcp.domain.com</div>
+                <div>domain.com</div>
+                <div>255.0.0.0</div>
+                <div>12</div>
+                <div>25ms</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body d-none gateway-info">
+            <div class="row">
+              <div class="col">
+                <div>Gateway address</div>
+                <div>Port</div>
+              </div>
+              <div class="col text-secondary">
+                <div>172.16.0.0</div>
+                <div>443</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body d-none cloud-info">
+            <div class="row">
+              <div class="col">
+                <div>Domain address</div>
+              </div>
+              <div class="col text-secondary">
+                <div>tcp.domain.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row cols-wrapper">
+          <div class="col flex-grow-0">
+            <div class="summary d-flex justify-content-end mt-4 mb-3">
+              <span class="badge rounded-pill fw-semibold ms-1" style="background-color: #084298;" data-bs-toggle="tooltip" data-bs-title="Global Cloud">1</span>
+              <span class="badge rounded-pill fw-semibold text-bg-info text-white ms-1" data-bs-toggle="tooltip" data-bs-title="Private Gateways">2</span>
+              <span class="badge rounded-pill fw-semibold text-bg-primary ms-1" data-bs-toggle="tooltip" data-bs-title="Sites">6</span>
+              <span class="badge rounded-pill fw-semibold text-bg-success ms-1" data-bs-toggle="tooltip" data-bs-title="IDACs">17</span>
+            </div>
+            <ul class="tree">
+              <li>
+                <input type="checkbox" id="" checked>
+                <label for="" class="cloud border border-primary-700 text-primary-700 rounded">
+                  <span class="text-body">Global Cloud</span>
+                  <span class="badge all-descendant-nodes fw-semibold bg-secondary-light ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct and indirect nodes"></span>
+                  <span class="badge direct-nodes fw-semibold bg-secondary ms-2 rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                </label>
+                <ul>
+                  <li>
+                      <input type="checkbox" id="" checked>
+                      <label for="" class="gateway border border-info text-info rounded">
+                        <span class="text-body">Private Gateway</span>
+                        <span class="badge parent-nodes fw-semibold bg-secondary-light ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct and indirect nodes"></span>
+                        <span class="badge direct-nodes fw-semibold bg-secondary ms-2 rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                      </label>
+                    <ul>
+                      <li>
+                        <input type="checkbox"  id="" checked>
+                        <label for="" class="site border border-primary text-primary rounded">
+                          <span class="text-body">Site</span>
+                          <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                        </label>
+                        <ul>
+                            <li>
+                              <label class="idac border border-success text-success rounded">
+                                <span class="text-body">IDAC</span>
+                              </label>
+                            </li>
+                            <li>
+                              <label class="idac border border-success text-success rounded">
+                                <span class="text-body">IDAC</span>
+                              </label>
+                            </li>
+                            <li>
+                              <label class="idac border border-success text-success rounded">
+                                <span class="text-body">IDAC</span>
+                              </label>
+                            </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                      <input type="checkbox" id="" checked>
+                      <label for="" class="gateway border border-info text-info rounded">
+                        <span class="text-body">Private Gateway</span>
+                        <span class="badge parent-nodes fw-semibold bg-secondary-light ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct and indirect nodes"></span>
+                        <span class="badge direct-nodes fw-semibold bg-secondary ms-2 rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                      </label>
+                    <ul>
+                      <li>
+                        <input type="checkbox"  id="" checked>
+                        <label for="" class="site border border-primary text-primary rounded">
+                          <span class="text-body">Site</span>
+                          <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                        </label>
+                        <ul>
+                            <li>
+                              <label class="idac border border-success text-success rounded">
+                                <span class="text-body">IDAC</span>
+                              </label>
+                            </li>
+                            <li>
+                              <label class="idac border border-success text-success rounded">
+                                <span class="text-body">IDAC</span>
+                              </label>
+                            </li>
+                            <li>
+                              <label class="idac border border-success text-success rounded">
+                                <span class="text-body">IDAC</span>
+                              </label>
+                            </li>
+                            <li>
+                              <label class="idac border border-success text-success rounded">
+                                <span class="text-body">IDAC</span>
+                              </label>
+                            </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col flex-grow-0">
+            <div class="summary d-flex justify-content-end mt-4 mb-3">
+              <span class="badge rounded-pill fw-semibold text-bg-info text-white ms-1" data-bs-toggle="tooltip" data-bs-title="Private Gateways">1</span>
+              <span class="badge rounded-pill fw-semibold text-bg-primary ms-1" data-bs-toggle="tooltip" data-bs-title="Sites">6</span>
+              <span class="badge rounded-pill fw-semibold text-bg-success ms-1" data-bs-toggle="tooltip" data-bs-title="IDACs">17</span>
+            </div>
+            <ul class="tree">
+              <li>
+                  <input type="checkbox" id="" checked>
+                  <label for="" class="gateway border border-info text-info rounded">
+                    <span class="text-body">Private Gateway</span>
+                    <span class="badge all-descendant-nodes fw-semibold bg-secondary-light ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct and indirect nodes"></span>
+                    <span class="badge direct-nodes fw-semibold bg-secondary ms-2 rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                  </label>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                      <li>
+                        <label class="idac error border border-danger text-danger rounded">
+                          <span class="text-body">IDAC</span>
+                          <span class="badge fw-semibold text-bg-danger">OFFLINE</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="idac border border-success text-success rounded">
+                          <span class="text-body">IDAC</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="idac border border-success text-success rounded">
+                          <span class="text-body">IDAC</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox"  id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox"  id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox"  id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox"  id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox"  id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col flex-grow-0">
+            <div class="summary d-flex justify-content-end mt-4 mb-3">
+              <span class="badge rounded-pill fw-semibold text-bg-info text-white ms-1" data-bs-toggle="tooltip" data-bs-title="Private Gateways">1</span>
+              <span class="badge rounded-pill fw-semibold text-bg-primary ms-1" data-bs-toggle="tooltip" data-bs-title="Sites">4</span>
+              <span class="badge rounded-pill fw-semibold text-bg-success ms-1" data-bs-toggle="tooltip" data-bs-title="IDACs">18</span>
+            </div>
+            <ul class="tree">
+              <li>
+                  <input type="checkbox" id="" checked>
+                  <label for="" class="gateway border border-info text-info rounded">
+                    <span class="text-body">Private Gateway</span>
+                    <span class="badge all-descendant-nodes fw-semibold bg-secondary-light ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct and indirect nodes"></span>
+                    <span class="badge direct-nodes fw-semibold bg-secondary ms-2 rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                  </label>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="" checked>
+                    <label for="" class="site border border-primary text-primary rounded">
+                      <span class="text-body">Site</span>
+                      <span class="badge direct-nodes fw-semibold bg-secondary ms-auto rounded-pill" data-bs-toggle="tooltip" data-bs-title="Direct nodes"></span>
+                    </label>
+                    <ul>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="idac border border-success text-success rounded">
+                            <span class="text-body">IDAC</span>
+                          </label>
+                        </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/script.js"></script>
+</html>
