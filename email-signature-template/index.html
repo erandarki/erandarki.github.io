@@ -10,10 +10,12 @@
   Signature, Digital Signature, Email Marketing">
   <meta name="author" content="Eran Darki">
   <!-- Theme Color Mode -->
-  <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
+  <script src="./js/theme-color-modes.js"></script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📧</text></svg>">
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <!-- International Telephone Input CSS -->
+  <link rel="stylesheet" href="./css/intlTelInput.min.css">
   <title>Email Signature Template</title>
   <style>
     html {
@@ -27,7 +29,7 @@
       cursor: default;
     }
     .container {
-      max-width: 960px;
+      max-width: 960px !important;
     }
     table > * {
       line-height: normal;
@@ -44,6 +46,10 @@
     } */
     input {
       text-overflow: ellipsis;
+    }
+    #mobileInput {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
     .form-control-color {
       width: 22px;
@@ -73,7 +79,6 @@
     }
   </style>
 </head>
-
 <body class="bg-body-tertiary d-flex flex-column">
   <!-- Theme color mode icons -->
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -134,7 +139,7 @@
     <div class="card mb-3">
       <div class="card-header d-flex align-items-center">
         Preview
-        <a id="downloadSocialMediaImages" href="./Social-Media-Images.zip" download class="text-primary d-flex ms-auto" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip" data-bs-title="Download social media images">
+        <a id="downloadSocialMediaImages" href="./img/Social-Media-Images.zip" download class="text-primary d-flex ms-auto" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip" data-bs-title="Download social media images">
           <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="18" viewBox="0 0 18.5 15" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M6.44,3.12C7.75.73,10.85-.2,13.34,1.07c2.01,1.01,3.07,3.18,2.62,5.32,2.13,1.36,2.68,4.11,1.27,6.14-.86,1.22-2.3,1.97-3.84,1.97H4.14c-2.01,0-3.64-1.57-3.64-3.5,0-1.19.63-2.3,1.69-2.95-.72-1.93.34-4.08,2.36-4.77.6-.2,1.26-.27,1.89-.17"/><line x1="9.25" y1="4.88" x2="9.25" y2="11.69"/><line x1="6.49" y1="8.94" x2="9.25" y2="11.69"/><line x1="12" y1="8.94" x2="9.25" y2="11.69"/></svg>
         </a>
         <span class="text-primary d-flex mx-3" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<b>——— TIPS & TRICKS ———</b> <br> <b>Outlook:</b> If underline appears after pasting, select all and press <u>U</u> button twice to cancel it. <br> <b>Gmail:</b> If a message says “The signature is too long“, download all images and insert them from a URL or your Drive instead, and relink them.">
@@ -156,9 +161,9 @@
               <!-- INFO SECTION -->
               <td style="font-family:Arial,Helvetica,sans-serif;cursor:default;font-size:15px;vertical-align:top;border:0;">
                 <!-- FULL NAME -->
-                <p id="fullnameSignature" style="font-size:18px;font-weight:600;color:#0d6efd;margin-bottom:0;">John Smith</p>
+                <p id="fullnameSignature" style="font-size:18px;font-weight:600;color:#0477b5;margin-bottom:0;">John Smith</p>
                 <!-- JOB TITLE -->
-                <span id="jobTitleSignature" style="color:#666666">Product Marketing Manager</span>
+                <span id="jobTitleSignature" style="color:#6c757d">Product Marketing Manager</span>
                 <!-- MOBILE PHONE NUMBER -->
                 <p style="margin-top:5px;margin-bottom:10px;"><span id="mobilePhoneSignature" style="display:inline-block;">📱 <a href="tel:#" style="color:#0d6efd;">(919) 555-1234</a> &nbsp;</span>
                 <!-- TELEPHONE -->
@@ -211,9 +216,9 @@
               <div class="input-group-text">
                 <input id="fullnameCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="fullNameInput" type="search" class="form-control" placeholder="Full Name" aria-label="Text input with checkbox" value="John Smith">
+              <input id="fullNameInput" type="search" class="form-control" placeholder="John Smith" aria-label="Text input with checkbox" value="">
               <div class="input-group-text">
-                <input id="nameColorInput" type="color" class="form-control form-control-color border-0 p-0" value="#0d6efd" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-title="Choose Color">
+                <input id="nameColorInput" type="color" class="form-control form-control-color border-0 p-0" value="#0477b5" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-title="Choose Color">
               </div>
             </div>
           </div>
@@ -224,9 +229,9 @@
               <div class="input-group-text">
                 <input id="jobTitleCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="jobTitleInput" type="search" class="form-control" placeholder="Job Title" aria-label="Text input with checkbox" value="Product Marketing Manager">
+              <input id="jobTitleInput" type="search" class="form-control" placeholder="Product Marketing Manager" aria-label="Text input with checkbox" value="">
               <div class="input-group-text">
-                <input id="jobTitleColorInput" type="color" class="form-control form-control-color border-0 p-0" value="#666666" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-title="Choose Color">
+                <input id="jobTitleColorInput" type="color" class="form-control form-control-color border-0 p-0" value="#6c757d" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-title="Choose Color">
               </div>
             </div>
           </div>
@@ -235,12 +240,17 @@
         <div class="row">
           <!-- Mobile Phone -->
           <div class="col-md">
-            <label class="form-label fw-semibold">Mobile Phone</label>
+            <label class="form-label fw-semibold">
+              Mobile Phone
+              <span class="text-secondary align-baseline ms-1" data-bs-toggle="tooltip" data-bs-title="Supports national and international formatting, e.g. +1 201-555-0123 or &nbsp; &nbsp; &nbsp; (201) 555-0123">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15.5" height="15.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.75" cy="7.75" r="7"/><line x1="7.75" y1="10.55" x2="7.75" y2="7.75"/><line x1="7.75" y1="4.95" x2="7.76" y2="4.95"/></svg>
+              </span>
+            </label>
             <div class="input-group mb-3">
               <div class="input-group-text">
                 <input id="mobilePhoneCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="mobileInput" type="search" class="form-control" placeholder="Mobile Phone" aria-label="Text input with checkbox" value="(919) 555-1234">
+              <input id="mobileInput" type="search" class="form-control" aria-label="Text input with checkbox" value="">
             </div>
           </div>
           <!-- Telephone -->
@@ -250,7 +260,7 @@
               <div class="input-group-text">
                 <input id="telephoneCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="telephoneInput" type="search" class="form-control" placeholder="Telephone" aria-label="Text input with checkbox" value="(919) 555-5678">
+              <input id="telephoneInput" type="search" class="form-control" placeholder="(919) 555-5678" aria-label="Text input with checkbox" value="">
             </div>
           </div>
           <!-- Website Address -->
@@ -260,20 +270,20 @@
               <div class="input-group-text">
                 <input id="websiteCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="websiteInput" type="search" class="form-control" placeholder="Website Address" aria-label="Text input with checkbox" value="www.website.com">
+              <input id="websiteInput" type="search" class="form-control" placeholder="www.website.com" aria-label="Text input with checkbox" value="">
             </div>
           </div>
         </div>
         <!-- Social Media -->
         <div class="row">
-          <label class="form-label fw-semibold">Social Media</label>
+          <label class="form-label fw-semibold">Social Media Links</label>
           <!-- Facebook Account -->
           <div class="col-md">
             <div class="input-group mb-3">
               <div class="input-group-text">
                 <input id="facebookCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="facebookInput" type="search" class="form-control" placeholder="Facebook Account" aria-label="Text input with checkbox" value="https://www.facebook.com/pages/category/my-account">
+              <input id="facebookInput" type="search" class="form-control" placeholder="https://www.facebook..." aria-label="Text input with checkbox" value="">
               <div class="input-group-text">
                 <img src="./img/facebook.png" width="22" alt="">
               </div>
@@ -285,7 +295,7 @@
               <div class="input-group-text">
                 <input id="linkedinCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="linkedinInput" type="search" class="form-control" placeholder="Linkedin Account" aria-label="Text input with checkbox" value="https://www.linkedin.com/pages/category/my-account">
+              <input id="linkedinInput" type="search" class="form-control" placeholder="https://www.linkedin..." aria-label="Text input with checkbox" value="">
               <div class="input-group-text">
                 <img src="./img/linkedin.png" width="22" alt="">
               </div>
@@ -297,7 +307,7 @@
               <div class="input-group-text">
                 <input id="twitterCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="twitterInput" type="search" class="form-control" placeholder="Twitter Account" aria-label="Text input with checkbox" value="https://www.twitter.com/pages/category/my-account">
+              <input id="twitterInput" type="search" class="form-control" placeholder="https://www.twitter..." aria-label="Text input with checkbox" value="">
               <div class="input-group-text">
                 <img src="./img/twitter.png" width="22" alt="">
               </div>
@@ -312,7 +322,7 @@
               <div class="input-group-text">
                 <input id="youtubeCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="youtubeInput" type="search" class="form-control" placeholder="YouTube Account" aria-label="Text input with checkbox" value="https://www.youtube.com/pages/category/my-account">
+              <input id="youtubeInput" type="search" class="form-control" placeholder="https://www.youtube..." aria-label="Text input with checkbox" value="">
               <div class="input-group-text">
                 <img src="./img/youtube.png" width="22" alt="">
               </div>
@@ -324,7 +334,7 @@
               <div class="input-group-text">
                 <input id="instagramCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="instagramInput" type="search" class="form-control" placeholder="Instagram Account" aria-label="Text input with checkbox" value="https://www.instagram.com/pages/category/my-account">
+              <input id="instagramInput" type="search" class="form-control" placeholder="https://www.instagram..." aria-label="Text input with checkbox" value="">
               <div class="input-group-text">
                 <img src="./img/instagram.png" width="22" alt="">
               </div>
@@ -336,7 +346,7 @@
               <div class="input-group-text">
                 <input id="pinterestCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="pinterestInput" type="search" class="form-control" placeholder="Pinterest Account" aria-label="Text input with checkbox" value="https://www.pinterest.com/pages/category/my-account">
+              <input id="pinterestInput" type="search" class="form-control" placeholder="https://www.pinterest..." aria-label="Text input with checkbox" value="">
               <div class="input-group-text">
                 <img src="./img/pinterest.png" width="22" alt="">
               </div>
@@ -352,7 +362,26 @@
 </body>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+<!-- International Telephone Input JS -->
+<script src="./js/intlTelInput.min.js"></script>
+<script>
+  // International Telephone Input initialization
+  const input = document.querySelector("#mobileInput");
+  
+  window.intlTelInput(input, {
+    loadUtilsOnInit: "./utils.js",
+    nationalMode: false, // National vs international formatting for numbers e.g. placeholders and displaying existing numbers (e.g. +1).
+    // fixDropdownWidth: false, // Fix the dropdown width to the input width (rather than being as wide as the longest country name).
+    initialCountry: "auto", // Determine the user's country based on their IP address (along with the geoIpLookup option below).
+    geoIpLookup: callback => {
+      fetch("https://ipapi.co/json")
+        .then(res => res.json())
+        .then(data => callback(data.country_code))
+        .catch(() => callback("us"));
+    }
+  });
+</script>
+<!-- Custom JS -->
 <script>
   // Settings fields behaviors
   const uploadImg = document.getElementById('uploadImg');
