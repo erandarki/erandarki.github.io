@@ -47,7 +47,7 @@
     input {
       text-overflow: ellipsis;
     }
-    #mobileInput {
+    #mobileInput, #telephoneInput {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
@@ -260,7 +260,7 @@
               <div class="input-group-text">
                 <input id="telephoneCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <input id="telephoneInput" type="search" class="form-control" placeholder="(919) 555-5678" aria-label="Text input with checkbox" value="">
+              <input id="telephoneInput" type="search" class="form-control" placeholder="" aria-label="Text input with checkbox" value="">
             </div>
           </div>
           <!-- Website Address -->
@@ -366,13 +366,27 @@
 <script src="./js/intlTelInput.min.js"></script>
 <script>
   // International Telephone Input initialization
-  const input = document.querySelector("#mobileInput");
+  const inputMobile = document.querySelector("#mobileInput");
+  const inputTelephone = document.querySelector("#telephoneInput");
   
-  window.intlTelInput(input, {
+  window.intlTelInput(inputMobile, {
     loadUtilsOnInit: "./utils.js",
     nationalMode: false, // National vs international formatting for numbers e.g. placeholders and displaying existing numbers (e.g. +1).
     // fixDropdownWidth: false, // Fix the dropdown width to the input width (rather than being as wide as the longest country name).
     initialCountry: "auto", // Determine the user's country based on their IP address (along with the geoIpLookup option below).
+    geoIpLookup: callback => {
+      fetch("https://ipapi.co/json")
+        .then(res => res.json())
+        .then(data => callback(data.country_code))
+        .catch(() => callback("us"));
+    }
+  });
+
+  window.intlTelInput(inputTelephone, {
+    loadUtilsOnInit: "./utils.js",
+    placeholderNumberType: 'FIXED_LINE',
+    nationalMode: false,
+    initialCountry: "auto",
     geoIpLookup: callback => {
       fetch("https://ipapi.co/json")
         .then(res => res.json())
