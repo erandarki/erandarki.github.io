@@ -41,9 +41,10 @@
       color: var(--bs-secondary);
       cursor: not-allowed;
     }
-    /* #uploadImg {
-      display: none;
-    } */
+    .iti.disabled .iti__selected-country-primary, .input-group-text:has(input:disabled) {
+      background-color: var(--bs-secondary-bg);
+      cursor: not-allowed;
+    }
     input {
       text-overflow: ellipsis;
     }
@@ -205,7 +206,6 @@
               <div class="input-group-text">
                 <input id="mainImgCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
               </div>
-              <!-- <label class="input-group-text" for="uploadImg">Upload</label> -->
               <input type="file" class="form-control" id="uploadImg" accept=".png, .jpeg, .jpg, .gif">
             </div>
           </div>
