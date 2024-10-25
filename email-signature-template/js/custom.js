@@ -70,7 +70,15 @@
 
   // Toggle active/inactive input field
   function disableInput(checkbox) {
-    return checkbox.parentElement.nextElementSibling.toggleAttribute('disabled');
+    // Disable all non-checkbox inputs
+    const allInputSiblings = checkbox.parentElement.parentElement.querySelectorAll('input:not([type=checkbox])');
+    allInputSiblings.forEach(inputSibling => {
+      inputSibling.toggleAttribute('disabled');
+    });
+    // Disable international telephone dropdown button
+    if (checkbox.parentElement.nextElementSibling.classList.contains('iti')) {
+      checkbox.parentElement.nextElementSibling.classList.toggle('disabled');
+    }
   }
 
   // Show/hide main image
