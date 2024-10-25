@@ -45,26 +45,16 @@
   const nameColorInput = document.getElementById('nameColorInput');
   const jobTitleColorInput = document.getElementById('jobTitleColorInput');
 
-  // Sync input color with signature text color
-  // function syncColor() {
-  //   // Return HEX color
-  //   const rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`;
-  //   // Set HEX color to input color value
-  //   nameColorInput.value = rgb2hex(fullnameSignature.style.color);
-  //   jobTitleColorInput.value = getComputedStyle(jobTitleSignature).getPropertyValue('--bs-body-color');
-  // }
-
   // Upload main image
-  window.addEventListener('load', function() {
-    uploadImg.addEventListener('change', function() {
-      if (this.files && this.files[0]) {
-        let img = document.getElementById('mainImg');
-        img.onload = () => {
-            URL.revokeObjectURL(img.src);  // no longer needed, free memory
-        }
+  const reader1 = new FileReader();
 
-        img.src = URL.createObjectURL(this.files[0]); // set src to blob url
-      }
+  reader1.addEventListener('load', e => {
+    document.querySelector('#mainImg').src = e.target.result;
+  });
+
+  document.addEventListener('DOMContentLoaded', e => {
+    uploadImg.addEventListener('change', e => {
+      reader1.readAsDataURL(e.target.files[0]);
     });
   });
 
