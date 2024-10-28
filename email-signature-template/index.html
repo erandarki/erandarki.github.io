@@ -451,15 +451,6 @@
     signatureTooltip();
   });
 
-  copySignature.addEventListener('paste', function(e) {
-    // console.log("The Past is Happens");
-    // console.log(e.clipboardData.types);
-    ['text/plain','text/html'].forEach( format =>{
-      console.log(`Format: ${format}`);
-      console.log(e.clipboardData.getData(format));
-    });
-  });
-
   // Download all social media icons
   const downloadSocialIcons = document.getElementById('downloadSocialIcons');
 
