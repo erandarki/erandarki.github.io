@@ -25617,7 +25617,7 @@ html[dir=rtl] .img-dropdown {
     min-width: 40.625rem;
   }
 }
-.theme-control-toggle .theme-control-toggle-label {
+.nav-item label {
   height: 30px;
   width: 30px;
   display: -webkit-box;
@@ -25629,24 +25629,26 @@ html[dir=rtl] .img-dropdown {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: var(--cyolo-300);
-  color: var(--cyolo-primary);
+  /* background-color: var(--cyolo-300); */
+  /* color: var(--cyolo-primary); */
   border-radius: 50%;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.theme-control-toggle .theme-control-toggle-label:hover {
-  background-color: var(--cyolo-400);
+.nav-item label:hover {
+  /* background-color: var(--cyolo-400); */
+  color: var(--cyolo-primary);
+  background-color: var(--cyolo-300);
 }
-.theme-control-toggle .theme-control-toggle-input {
+.theme-control-toggle .theme-control-toggle-input, .container-control-toggle .container-control-toggle-input {
   display: none;
 }
-.theme-control-toggle .theme-control-toggle-input:checked ~ .theme-control-toggle-dark {
+.theme-control-toggle .theme-control-toggle-input:checked ~ .theme-control-toggle-dark, .container-control-toggle .container-control-toggle-input:checked ~ .container-control-toggle-dark {
   display: none;
 }
-.theme-control-toggle .theme-control-toggle-input:not(:checked) ~ .theme-control-toggle-light {
+.theme-control-toggle .theme-control-toggle-input:not(:checked) ~ .theme-control-toggle-light, .container-control-toggle .container-control-toggle-input:not(:checked) ~ .container-control-toggle-light {
   display: none;
 }
 
