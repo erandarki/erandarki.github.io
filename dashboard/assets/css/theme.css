@@ -6220,14 +6220,17 @@ fieldset:disabled .tox .tox-dialog__footer .tox-button--secondary,
   padding-top: -0.046rem;
   padding-bottom: -0.046rem;
   margin-right: 1rem;
-  font-size: calc(1.2978rem + 0.5736vw);
+  /* font-size: calc(1.2978rem + 0.5736vw); */
+  font-size: 1.4rem;
+  letter-spacing: 1px;
   white-space: nowrap;
+  text-transform: uppercase;
 }
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .navbar-brand {
-    font-size: 1.728rem;
+    font-size: 1.4rem;
   }
-}
+} */
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
 }
