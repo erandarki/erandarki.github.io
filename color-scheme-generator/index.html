@@ -38,7 +38,7 @@
     }
     h1 {
       font-size: 50px;
-      font-weight: 900;
+      font-weight: 800;
       line-height: 1.1em;
     }
     .scheme > div{
@@ -59,8 +59,6 @@
     .mix-white-60{background-color:#9ec5fe;}
     .mix-black-80{background-color:#031633;}
     .mix-white-80{background-color:#cfe2ff;}
-    /* .mix-black-100{background-color:#000}
-    .mix-white-100{background-color:#fff} */
     .invalid-feedback {
       height: 0px;
       transform: translateY(4px);
@@ -92,6 +90,31 @@
       color: #0d6efd;
       text-decoration: underline;
       text-underline-offset: 2px;
+    }
+    /* Slider thumb */
+    .form-range:hover::-webkit-slider-thumb {
+      box-shadow:0 0 0 1px #fff,0 0 0 .25rem rgba(13,110,253,.25)
+    }
+    .form-range:hover::-moz-range-thumb {
+      box-shadow:0 0 0 1px #fff,0 0 0 .25rem rgba(13,110,253,.25)
+    }
+    /* .form-range:focus::-webkit-slider-thumb {
+      box-shadow: none;
+    }
+    .form-range:focus::-moz-range-thumb {
+      box-shadow: none;
+    } */
+    .form-range:active::-webkit-slider-thumb {
+      background-color: var(--bs-primary);
+    }
+    .form-range:active::-moz-range-thumb {
+      background-color: var(--bs-primary);
+    }
+    .custom-tooltip {
+      --bs-tooltip-max-width: 230px;
+    }
+    .tooltip-inner {
+      text-align: left;
     }
   </style>
 </head>
@@ -167,12 +190,10 @@
 
       <div class="col-md-4 ms-auto">
         <div class="mb-4 position-relative">
-          <input type="search" placeholder="Enter HEX color (e.g. 0d6efd)" class="form-control py-2" id="colorInput" autofocus>
+          <input type="search" placeholder="Enter HEX color (ex: 0d6efd)" class="form-control py-2" id="colorInput" autofocus>
           <span class="invalid-feedback m-0">Enter a valid HEX color.</span>
         </div>
-        <!-- <input type="color" name="" id="colorPicker"> -->
         <div class="scheme text-white pt-2">
-          <!-- <div class="mix-white-100"></div> -->
           <div class="mix-white-80 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#cfe2ff</span>100</div>
           <div class="mix-white-60 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#9ec5fe</span>200</div>
           <div class="mix-white-40 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#6ea8fe</span>300</div>
@@ -182,13 +203,21 @@
           <div class="mix-black-40 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#084298</span>700</div>
           <div class="mix-black-60 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#052c65</span>800</div>
           <div class="mix-black-80 d-flex"><span class="hex me-auto" data-bs-toggle="tooltip" data-bs-title="Copy to clipboard">#031633</span>900</div>
-          <!-- <div class="mix-black-100"></div> -->
-          <div class="text-secondary"><small>Ratio of 0.2 (20%)</small></div>
+        </div>
+        <div class="mt-3">
+          <small class="text-secondary d-block mb-1">
+            Ratio
+            <span data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-title="Blends black/white opacity in multiples of the selected percentage* (ex: 20, 40, 60, 80).
+            *20% is highly recommended.">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13.45" height="13.45" viewBox="0 0 13.45 13.45" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.73" cy="6.73" r="6"/><line x1="6.73" y1="9.13" x2="6.73" y2="6.73"/><line x1="6.73" y1="4.33" x2="6.74" y2="4.33"/></svg>
+            </span>
+          </small>
+          <input type="range" class="form-range" min="0" max="100" value="20">
+          <div style="margin-top:-3px;"><small class="range-label text-body position-relative"></small></div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Container -->
 
   <footer class="container px-5 py-4 text-secondary mt-auto">
     <small>&copy; Color Scheme Generator by <a href="/" target="_blank">Eran Darki</a></small>
@@ -227,103 +256,5 @@
 
   });
 </script>
-
-<script>
-  // blend two hex colors together by an amount (like sass mix() or css color-mix())
-  function blendColors(colorA, colorB, amount) {
-    const [rA, gA, bA] = colorA.match(/\w\w/g).map((c) => parseInt(c, 16));
-    const [rB, gB, bB] = colorB.match(/\w\w/g).map((c) => parseInt(c, 16));
-    const r = Math.round(rA + (rB - rA) * amount).toString(16).padStart(2, '0');
-    const g = Math.round(gA + (gB - gA) * amount).toString(16).padStart(2, '0');
-    const b = Math.round(bA + (bB - bA) * amount).toString(16).padStart(2, '0');
-    return '#' + r + g + b;
-}
-// console.log(blendColors('#0d6efd', '#ffffff', 0.2)); // return #3d8bfd
-</script>
-
-<script>
-  // Convert RGB to HEX
-  function rgbToHex(rgbString) {
-    let parts = rgbString.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-    // parts now should be e.g. ["rgb(0, 70, 255", "0", "70", "255"]
-
-    delete (parts[0]);
-    for (let i = 1; i <= 3; ++i) {
-        parts[i] = parseInt(parts[i]).toString(16);
-        if (parts[i].length == 1) parts[i] = '0' + parts[i];
-    } 
-    let hexString = '#' + parts.join(''); // "#0070ff"
-    // let hexString ='#'+parts.join('').toUpperCase(); // "#0070FF" (adding # and uppercase)
-    return hexString;
-  }
-</script>
-
-<script>
-  // Allow only numbers and letters (validation)
-  function allowAlphaNumericSpace(thisInput) {
-    thisInput.value = thisInput.value.replace(/[^#a-fA-F0-9]/g,'');
-  }
-</script>
-
-<script>
-  // Color scheme generator
-  const inputColor = document.getElementById('colorInput');
-  const hexText = document.querySelector('.hex');
-  const mainColor = document.querySelector('.main-color');
-  const invalidFeedback = document.querySelector('.invalid-feedback');
-
-  inputColor.addEventListener('keyup', function(event) {
-    allowAlphaNumericSpace(this);
-
-    if (event.key === 'Enter') {
-      event.preventDefault();
-
-      // Remove hash character (#) from input field
-      if (colorInput.value.includes('#')) {
-        colorInput.value = colorInput.value.split('#').map(function (hash) {
-          return hash;
-        }).join('');
-      }
-
-      // Validation (Invalid: empty state, less than 3, less than 6, more than 6)
-      if ((colorInput.value == null || colorInput.value == "" || colorInput.value.length <= 2 || colorInput.value.length > 3 && colorInput.value.length < 6 || colorInput.value.length > 6)) {
-        invalidFeedback.style.display = 'block';
-        return false;
-      }
-
-      // Convert a three-digit hexcolor into a six-digit
-      if (colorInput.value.length === 3) {
-        colorInput.value = colorInput.value.split('').map(function (hex) {
-          return hex + hex;
-        }).join('');
-      }
-
-      // Remove validation error
-      invalidFeedback.style.display = 'none';
-      
-      mainColor.style.backgroundColor = '#' + colorInput.value;
-      mainColor.querySelector('.hex').innerHTML = '#' + colorInput.value.toLowerCase();
-
-      // Run these numbers as precentage for BG color opacity (0.2 or 20% ratio)
-      const mixNumbers = [20, 40, 60, 80];
-
-      mixNumbers.forEach((number) => {
-        // let percentage = number + '%';
-        let percentage = number / 100;
-        let blackClass = document.querySelector('.mix-black-' + number);
-        let whiteClass = document.querySelector('.mix-white-' + number);
-        // blackClass.style.backgroundColor = `color-mix(in srgb, #${inputColor.value}, black ${percentage})`;
-        // whiteClass.style.backgroundColor = `color-mix(in srgb, #${inputColor.value}, white ${percentage})`;
-        
-        // Blend colors
-        blackClass.style.backgroundColor = blendColors(inputColor.value, '#000000', percentage);
-        whiteClass.style.backgroundColor = blendColors(inputColor.value, '#ffffff', percentage);
-        
-        // Display HEX colors
-        blackClass.querySelector('.hex').innerHTML = rgbToHex(blackClass.style.backgroundColor);
-        whiteClass.querySelector('.hex').innerHTML = rgbToHex(whiteClass.style.backgroundColor);
-      });
-    }
-  });
-</script>
+<script src="./script.js"></script>
 </html>
