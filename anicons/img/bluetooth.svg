@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+  <style>
+    @keyframes trail { from { stroke-dashoffset: 0px; } to { stroke-dashoffset: 153px; } }
+    @keyframes tail { from { stroke-dashoffset: 7px; } to { stroke-dashoffset: 161px; } }
+  </style>
+  <path d="M22.33,21.66l25.34,25.34-12,12V11l12,12-25.34,25.34" stroke="#000850" fill="none" stroke-linecap="round" stroke-width="3" stroke-linejoin="round" stroke-dasharray="142 11" stroke-miterlimit="1" stroke-dashoffset="0" style="animation: trail 2s linear infinite both;"/>
+  <path d="M22.33,21.66l25.34,25.34-12,12V11l12,12-25.34,25.34" stroke="#000850" fill="none" stroke-linecap="round" stroke-width="3" stroke-linejoin="round" stroke-dasharray="1 153" stroke-miterlimit="1" stroke-dashoffset="7" style="animation: tail 2s linear infinite both;"/>
+</svg>
