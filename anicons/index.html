@@ -22,7 +22,7 @@
     <p class="text-center mb-4">Having fun with SVG animations</p>
     <div class="row mb-2">
       <div class="d-flex flex-row-reverse p-0">
-        <a id="downloadAllBtn" href="./img/Anicons_by_Eran_Darki.zip" download data-bs-toggle="tooltip" data-bs-title="Download all">
+        <a id="downloadAllBtn" href="./img/Anicons_by_Eran_Darki.zip" download data-bs-toggle="tooltip" data-bs-title="Download all anicons">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="17.5" viewBox="0 0 21.5 17.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.54,3.74C9.04,1.01,12.58-.05,15.42,1.4c2.3,1.16,3.51,3.64,2.99,6.08,2.43,1.56,3.06,4.7,1.45,7.02-.98,1.4-2.63,2.25-4.39,2.25H4.91c-2.3,0-4.16-1.79-4.16-4,0-1.36.72-2.63,1.93-3.37-.82-2.21.39-4.66,2.7-5.45.69-.23,1.44-.31,2.16-.2"/><line x1="10.75" y1="5.76" x2="10.75" y2="13.54"/><line x1="7.6" y1="10.4" x2="10.75" y2="13.54"/><line x1="13.89" y1="10.4" x2="10.75" y2="13.54"/></svg>
         </a>
       </div>
@@ -123,8 +123,14 @@
   <div class="toast-container position-fixed top-0 end-0 p-3">
     <div id="couponToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="d-flex">
-        <div class="toast-body d-flex fs-6 px-3">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" class="me-2"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" fill="currentColor"/></svg>
+        <div class="toast-body d-flex align-items-center fs-6 px-3">
+            <svg width="20" height="20" class="me-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="8 8 54 54" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" project-id="8c69c30380aa4cffa23452a980f6014b" export-id="38ea325bf91644488f3d8c4ab0709dc7" cached="false">
+              <path id="check-v" d="M53.26,17.92c-.13.15-22.11,24.85-22.11,24.85L25,34.91" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="147" stroke-dasharray="49"/>
+              <animate xlink:href="#check-v" attributeName="stroke-dashoffset" from="147" to="85" dur="0.8s" keyTimes="0;0.6;1" values="147;147;85" fill="freeze"/>
+              <path id="check-circle" d="M53.26,17.93C57.44,22.4,60,28.4,60,35c0,13.81-11.19,25-25,25s-25-11.19-25-25s11.19-25,25-25c7.21,0,13.7,3.05,18.26,7.93" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dashoffset="157.11" stroke-dasharray="157.11"/>
+              <animate xlink:href="#check-circle" attributeName="stroke-dashoffset" from="157.11" to="0" dur="0.5s" fill="freeze" restart="always"/>
+            </svg>
+            
           <span id="toast-icon-name" class="me-1"></span> downloaded successfully.
         </div>
         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -153,7 +159,7 @@
       tooltip.setContent({ '.tooltip-inner': 'Downloading...' });
       // Reset default
       downloadAllBtn.addEventListener('mouseout', function() {
-        tooltip.setContent({ '.tooltip-inner': 'Download all icons' });
+        tooltip.setContent({ '.tooltip-inner': 'Download all anicons' });
       });
     } catch (error) {
       // Optional: Display an error message to the user
@@ -166,20 +172,25 @@
   // Trigger toast messege
   const toastMessage = document.getElementById('couponToast');
   const toastIconName = document.getElementById('toast-icon-name');
+  const toastImgSrc = document.getElementById('toast-img-src');
   const allToastTriggers = document.querySelectorAll('a');
 
   allToastTriggers.forEach(toastTrigger => {
     toastTrigger.addEventListener('click', ()=> {
-      // Use the icon's name from the alt text on the toast message
+      // Take the icon's name from the alt text
       if (toastTrigger.querySelector('img')) {
-        toastIconName.innerHTML = `${toastTrigger.querySelector('img').alt} icon`;
+        toastIconName.innerHTML = `${toastTrigger.querySelector('img').alt} anicon`;
       } else {
-        toastIconName.innerHTML = 'All icons'
+        toastIconName.innerHTML = 'All anicons'
       }
+      // Restart Check SVG animation
+      document.querySelectorAll('animate').forEach((element) => {
+        element.beginElement();
+      });
+      // Display toast message
       const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastMessage)
       toastBootstrap.show();
     });
   });
-
 </script>
 </html>
