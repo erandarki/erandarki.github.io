@@ -144,8 +144,8 @@
   </footer>
 
   <!-- Toast message -->
-  <div class="toast-container position-fixed top-0 end-0 p-3">
-    <div id="couponToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+    <div id="toast-message" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="d-flex">
         <div class="toast-body d-flex align-items-center fs-6 px-3">
             <svg width="20" height="20" class="me-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="8 8 54 54" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" project-id="8c69c30380aa4cffa23452a980f6014b" export-id="38ea325bf91644488f3d8c4ab0709dc7" cached="false">
@@ -155,7 +155,7 @@
               <animate xlink:href="#check-circle" attributeName="stroke-dashoffset" from="157.11" to="0" dur="0.5s" fill="freeze" restart="always"/>
             </svg>
             
-          <span id="toast-icon-name" class="me-1"></span> downloaded successfully.
+          <span id="toast-icon-name" class="fw-bold me-1"></span> downloaded successfully.
         </div>
         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
@@ -194,7 +194,7 @@
 
 <script>
   // Trigger toast messege
-  const toastMessage = document.getElementById('couponToast');
+  const toastMessage = document.getElementById('toast-message');
   const toastIconName = document.getElementById('toast-icon-name');
   const toastImgSrc = document.getElementById('toast-img-src');
   const allToastTriggers = document.querySelectorAll('a');
@@ -214,6 +214,11 @@
       // Display toast message
       const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastMessage)
       toastBootstrap.show();
+      toastMessage.classList.add('slideIn');
+      // Remove the animation when toast message is done
+      toastBootstrap.addEventListener('animationend', (event) => {
+        toastMessage.classList.remove('slideIn');
+      });
     });
   });
 </script>
