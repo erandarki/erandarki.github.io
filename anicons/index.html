@@ -228,9 +228,9 @@
       toastBootstrap.show();
       toastMessage.classList.add('slideIn');
       // Remove the animation when toast message is done
-      toastBootstrap.addEventListener('animationend', (event) => {
+      toastBootstrap.onanimationend = () => {
         toastMessage.classList.remove('slideIn');
-      });
+      };
     });
   });
 </script>
