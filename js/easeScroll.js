@@ -178,28 +178,29 @@ $.fn.easeScroll = function(options) {
 
         var settings = $.extend({
             // Settings
-            frameRate: 0, // frames per second
+            frameRate: 5, // frames per second
             
             // Scrolling Core
-            animationTime: 2000, // [ms]
-            stepSize: 50, // [px]
+            animationTime: 1500, // [ms]
+            stepSize: 10, // [px]
 
             // Pulse (less tweakable)
             // ratio of "tail" to "acceleration"
             pulseAlgorithm: 1,
-            pulseScale: 10,
+            pulseScale: 8,
             pulseNormalize: 1,
 
             // Acceleration
-            accelerationDelta: 0, // 50
-            accelerationMax: 0, // 3
+            accelerationDelta: 20, // 50
+            accelerationMax: 1, // 3
 
-            // Keyboard Settings
-            keyboardSupport: 1, // option
-            arrowScroll: 500, // [px]
+            // Keyboard
+            keyboardSupport: true, // 1 or !0
+            arrowScroll: 50, // [px]
 
             // Other
-            fixedBackground: 0
+            touchpadSupport: true,
+            fixedBackground: true
         }, options );
 
         var w, g = {
