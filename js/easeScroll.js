@@ -178,11 +178,11 @@ $.fn.easeScroll = function(options) {
 
         var settings = $.extend({
             // Settings
-            frameRate: 5, // frames per second
+            frameRate: 3, // frames per second
             
             // Scrolling Core
             animationTime: 1500, // [ms]
-            stepSize: 10, // [px]
+            stepSize: 6, // [px]
 
             // Pulse (less tweakable)
             // ratio of "tail" to "acceleration"
@@ -191,7 +191,7 @@ $.fn.easeScroll = function(options) {
             pulseNormalize: 1,
 
             // Acceleration
-            accelerationDelta: 20, // 50
+            accelerationDelta: 1, // 50
             accelerationMax: 1, // 3
 
             // Keyboard
