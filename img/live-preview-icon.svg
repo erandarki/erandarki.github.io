@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <g class="nc-icon-wrapper" fill="#000000">
-        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path>
-    </g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="cls-1" d="M19,13.19v3.95c0,1.03-.84,1.87-1.87,1.87H6.87c-1.03,0-1.87-.84-1.87-1.87V6.87c0-1.03.84-1.87,1.87-1.87h3.95"/><polyline class="cls-1" points="14.33 5 19 5 19 9.67"/><line class="cls-1" x1="10.44" y1="13.56" x2="19" y2="5"/></svg>
