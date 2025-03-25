@@ -104,6 +104,7 @@ inputs.forEach((input, index) => {
 
 // Count all labels in each tree
 const trees = document.querySelectorAll('.tree');
+let interval;
 trees.forEach((tree) => {
   treeLabels = tree.querySelectorAll('label');
   treeLabels.forEach((label, index) => {
@@ -123,6 +124,8 @@ trees.forEach((tree) => {
     // Show node data window on hover
     const nodeData = document.querySelector('.node-data');
     label.addEventListener('mouseover', () => {
+      clearInterval(interval);
+      interval = null;
       nodeData.classList.remove('d-none');
       nodeData.style.top = `${label.getBoundingClientRect().top}px`;
       nodeData.style.left = `${label.getBoundingClientRect().right + 10}px`;
@@ -150,7 +153,14 @@ trees.forEach((tree) => {
       showNodeCardInfo();
     });
     label.addEventListener('mouseout', () => {
-      nodeData.classList.add('d-none');
+      // Delay node-data modal before closing
+      if (!interval) {
+        interval = setInterval(() => {
+          if (!nodeData.matches(':hover')) {
+            nodeData.classList.add('d-none');
+          }
+        }, 1000);
+      }
     });
   });
 });
