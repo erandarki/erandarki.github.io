@@ -159,7 +159,7 @@ trees.forEach((tree) => {
           if (!nodeData.matches(':hover')) {
             nodeData.classList.add('d-none');
           }
-        }, 1000);
+        }, 500);
       }
     });
   });
