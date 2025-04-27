@@ -1,21 +1,6 @@
 // Initialize and add the map
 let map;
 
-// function getStoredTheme() {
-//   const theme = document.documentElement.getAttribute('data-bs-theme');
-//   if (theme === 'dark') return toggleDarkMode();
-//   if (theme === 'light') return initMap();
-//   if (theme === 'auto') return ColorScheme.FOLLOW_SYSTEM
-// };
-
-// const observer = new MutationObserver(() => {
-//   getStoredTheme();
-// });
-
-// observer.observe(document.querySelector("html"), {
-//   attributes: true
-// });
-
 async function initMap() {
   // The location of Kansas
   const position = { lat: 39.1137, lng: -98.0000 };
@@ -275,16 +260,6 @@ async function initMap() {
       });
       // Show relevant node-data card-info
       nodeData.querySelector('.card-header').innerHTML = event.target.parentElement.getAttribute('title');
-      // if (event.target.content.querySelector('.text-body').innerHTML == 'IDAC' && event.target.content.querySelector('.badge.text-bg-danger')) {
-      //   nodeData.querySelector('.idac-info').classList.remove('d-none');
-      //   nodeData.querySelector('.badge.text-bg-success').classList.add('d-none');
-      //   nodeData.querySelector('.badge.text-bg-danger').classList.remove('d-none');
-      // }
-      // else if (event.target.content.querySelector('.text-body').innerHTML == 'IDAC') {
-      //   nodeData.querySelector('.idac-info').classList.remove('d-none');
-      //   nodeData.querySelector('.badge.text-bg-success').classList.remove('d-none');
-      //   nodeData.querySelector('.badge.text-bg-danger').classList.add('d-none');
-      // }
       if (event.target.classList.contains('site-marker')) nodeData.querySelector('.site-info').classList.remove('d-none');
       else if (event.target.classList.contains('gateway-marker')) nodeData.querySelector('.gateway-info').classList.remove('d-none');
       else if (event.target.classList.contains('global-cloud-marker')) nodeData.querySelector('.cloud-info').classList.remove('d-none');
