@@ -15,15 +15,6 @@ function setActiveTabBgSize(tab) {
   }
 }
 
-// function showPattern(tab) {
-//   const topologyTab = document.getElementById('topology-tab');
-//   if(topologyTab.classList.contains('active')){
-//     document.querySelector('html').classList.add('h-100', 'overflow-hidden');
-//   } else {
-//     document.querySelector('body').classList.remove('h-100', 'overflow-hidden');
-//   }
-// }
-
 allTabs.forEach(function(tab) {
   setActiveTabBgSize(tab);
   // showPattern(tab);
