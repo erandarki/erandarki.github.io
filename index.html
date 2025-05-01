@@ -9,9 +9,6 @@
   <meta name="author" content="Eran Darki">
   <title>Eran Darki — Product Designer</title>
   <link rel="icon" href="img/favicon.ico" type="image/ico">
-  <!-- Font -->
-  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Abril+Fatface&display=swap" rel="stylesheet"> -->
   <!-- CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.min.css">
@@ -30,18 +27,6 @@
 </head>
 
 <body>
-  <section class="loader d-flex flex-column align-items-center justify-content-center w-100 h-100 fixed-top">
-    <div class="icon-wrapper m-1 overflow-hidden">
-      <div class="icon animated exitLeft"></div>
-    </div>
-    <div class="icon-wrapper m-1 overflow-hidden">
-      <div class="icon animated exitLeft"></div>
-    </div>
-    <div class="icon-wrapper m-1 overflow-hidden">
-      <div class="icon animated exitLeft"></div>
-    </div>
-  </section>
-
   <section class="frame w-100 h-100 fixed-top"></section>
 
   <div class="fixed-top scroll-indicator">
@@ -49,103 +34,69 @@
   </div>
 
   <nav class="fixed-top invisible d-flex justify-content-between align-items-center w-100">
-      <div class="navbar-brand text-uppercase"><strong>Eran Darki.</strong></div>
-      <div class="equalizer">
-        <span class="equalizer-bar"></span>
-        <span class="equalizer-bar"></span>
-        <span class="equalizer-bar"></span>
-        <span class="equalizer-bar"></span>
-      </div>
+    <div class="navbar-brand text-uppercase"><strong>Eran Darki.</strong></div>
+    <div class="equalizer">
+      <span class="equalizer-bar"></span>
+      <span class="equalizer-bar"></span>
+      <span class="equalizer-bar"></span>
+      <span class="equalizer-bar"></span>
+    </div>
   </nav>
-
-  <section class="intro w-100 h-100 position-fixed">
-    <div class="hello-wrapper h-100">
-      <div class="bg-color bg-light w-100 h-100 position-absolute"></div>
-      <div class="hello">
-        <svg xmlns="http://www.w3.org/2000/svg" width="428" height="343" viewBox="0 0 428.83 343.87">
-          <g id="hello_h">
-            <line class="line" x1="21.5" y1="0.01" x2="21.5" y2="152.01"/>
-            <line class="line" x1="21.5" y1="74.01" x2="103.17" y2="74.01"/>
-            <line class="line" x1="103.17" y1="0.01" x2="103.17" y2="152.01"/>
-          </g>
-          <g id="hello_e">
-            <line class="line" x1="168.17" y1="0.01" x2="168.17" y2="152.01"/>
-            <line class="line" x1="168.17" y1="19.5" x2="245.83" y2="19.5"/>
-            <line class="line" x1="168.17" y1="76.01" x2="240.83" y2="76.01"/>
-            <line class="line" x1="168.17" y1="131.5" x2="245.83" y2="131.5"/>
-          </g>
-          <g id="hello_l1">
-            <line class="line" x1="21.5" y1="186.68" x2="21.5" y2="338.68"/>
-            <line class="line" x1="21.5" y1="318.17" x2="94.17" y2="318.17"/>
-          </g>
-          <g id="hello_l2">
-            <line class="line" x1="128.5" y1="186.68" x2="128.5" y2="338.68"/>
-            <line class="line" x1="128.5" y1="318.17" x2="201.17" y2="318.17"/>
-          </g>
-          <g id="hello_o">
-            <circle class="line" cx="283.51" cy="262.69" r="60.68"/>
-          </g>
-          <g id="hello_dot">
-            <circle class="dot" cx="403.17" cy="316.01" r="25.67"/>
-          </g>
-        </svg>
-      </div>
-    </div>
-    <div class="scroll-down invisible">
-      <div class="txt"><strong>Scroll</strong></div>
-      <span></span>
-    </div>
-
-    <div class="profile invisible position-fixed d-flex flex-column align-items-center h-100 w-100">
-      <div class="container profile-content my-auto">
-        <div class="col-md-6 mx-auto mt-n5">
-          <div class="icon mr-1 d-inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="7" viewBox="0 0 73.94 14.19">
-            <polyline points="2.83 2.83 11.36 11.36 19.9 2.83 28.43 11.36 36.97 2.83 45.5 11.36 54.04 2.83 62.58 11.36 71.11 2.83" fill="none" stroke-width="5"/>
-            </svg>
-          </div>
-          <div class="top-line d-inline-block align-middle"><strong>So... What about me?</strong></div>
-          <div class="profile-text text-white mt-4 overflow-hidden">
-            <p class="mb-0 text-white">
-              <strong>
-                Let me introduce myself, I'm Eran, and I combine user experience design principles and technology to develop user-centered digital products. Enjoy my collective skills created to make the web a better place.
-              </strong>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   
-  <header class="d-flex flex-column bg-dark pt-5">
+  <header class="d-flex align-items-center bg-dark pt-5">
     <div class="container py-5">
       <div class="row py-md-5">
         <div class="col-md-4">
           <div class="headline-wrapper">
             <div class="icon mb-4 overflow-hidden">
               <svg xmlns="http://www.w3.org/2000/svg" width="33" height="7" viewBox="0 0 73.94 14.19">
-                <polyline class="wow animated drawLine" points="2.83 2.83 11.36 11.36 19.9 2.83 28.43 11.36 36.97 2.83 45.5 11.36 54.04 2.83 62.58 11.36 71.11 2.83" fill="none" stroke-width="5"/>
+                <polyline class="wow animated drawLine" data-wow-delay="2.2s" points="2.83 2.83 11.36 11.36 19.9 2.83 28.43 11.36 36.97 2.83 45.5 11.36 54.04 2.83 62.58 11.36 71.11 2.83" fill="none" stroke-width="5"/>
               </svg>
             </div>
-            <div class="headline-text overflow-hidden">
-              <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">DIG</div>
-            </div>
-            <div class="headline-text overflow-hidden">
-              <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">ITAL.</div>
+            <div class="headline-text hello-wrapper wow slideLeft" data-wow-delay="2s" data-wow-duration="1s">
+              <svg xmlns="http://www.w3.org/2000/svg" width="350" viewBox="0 0 428.83 343.87">
+                <g id="hello_h">
+                  <line class="line" x1="21.5" y1="0.01" x2="21.5" y2="152.01"/>
+                  <line class="line" x1="21.5" y1="74.01" x2="103.17" y2="74.01"/>
+                  <line class="line" x1="103.17" y1="0.01" x2="103.17" y2="152.01"/>
+                </g>
+                <g id="hello_e">
+                  <line class="line" x1="168.17" y1="0.01" x2="168.17" y2="152.01"/>
+                  <line class="line" x1="168.17" y1="19.5" x2="245.83" y2="19.5"/>
+                  <line class="line" x1="168.17" y1="76.01" x2="240.83" y2="76.01"/>
+                  <line class="line" x1="168.17" y1="131.5" x2="245.83" y2="131.5"/>
+                </g>
+                <g id="hello_l1">
+                  <line class="line" x1="21.5" y1="186.68" x2="21.5" y2="338.68"/>
+                  <line class="line" x1="21.5" y1="318.17" x2="94.17" y2="318.17"/>
+                </g>
+                <g id="hello_l2">
+                  <line class="line" x1="128.5" y1="186.68" x2="128.5" y2="338.68"/>
+                  <line class="line" x1="128.5" y1="318.17" x2="201.17" y2="318.17"/>
+                </g>
+                <g id="hello_o">
+                  <circle class="line" cx="283.51" cy="262.69" r="60.68"/>
+                </g>
+                <g id="hello_dot">
+                  <circle class="dot" cx="403.17" cy="316.01" r="25.67"/>
+                </g>
+              </svg>
             </div>
           </div>
-          <p class="text-white my-5">
-            This is a key component of a business transformation. Smart digital strategy requires special attention. Through regular workshops, brainstorming, and idea sharing, I help grow an initial idea into a cutting-edge digital solution.
+          <p class="text-white my-5 overflow-hidden">
+            <span class="wow enterUp d-block" data-wow-delay="2.2s">
+              I'm Eran, and I blend user experience design principles and technology to craft solutions that drive results. Enjoy my collective projects created to make the web a better place.
+            </span>
           </p>
         </div>
         <div class="col-md-8 text-center">
-          <img src="img/animation.gif" class="img-fluid mt-md-n4 wow fadeInUp" alt="">
+          <img src="img/animation.gif" class="img-fluid mt-md-n4 wow fadeInUp" data-wow-delay="2.2s" alt="">
         </div>
       </div>
     </div>
   </header>
   
-  <section class="stack-cards-section bg-light position-relative py-5">
+  <section class="stack-cards-section bg-dark position-relative py-5">
     <div class="container py-md-5 my-md-5">
       <div class="row py-5">
         <div class="col-md-4 mb-5">
@@ -159,10 +110,10 @@
               <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">WO</div>
             </div>
             <div class="headline-text overflow-hidden">
-              <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">RK.</div>
+              <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">RK<span>.</span></div>
             </div>
             <p class="mt-5">
-              An efficient and immersive user experience is crucial for capturing attention and conveying a clear message. Therefore, usability must be the foundation of design, and all designs should strive for elegance and innovation.
+              These selected cases showcase diverse and challenging projects, each requiring thorough research and collaborative effort with relevant teams to achieve optimal results. Live preview is available for most projects to demonstrate their impact.
             </p>
           </div>
         </div>
@@ -171,7 +122,27 @@
             <div class="stack-cards-item">
               <div class="card">
                 <div class="card-body p-0">
-                  <img data-darkbox src="img/commercial-projects/1.png" class="img-fluid" alt="">
+                  <img src="img/commercial-projects/2.png" class="img-fluid" alt="">
+                  <a href="/topology" target="_blank" class="live-preview-icon"></a>
+                  <div class="case-study text-white">
+                    <div class="content scrollbar">
+                      <div class="headline">Node Mapping</div>
+                      <div class="description my-3">Construct &amp; Interact with Your Network</div>
+                      <div class="badges-wrapper">
+                        <span class="badge">B2B2C</span>
+                        <span class="badge">SaaS</span>
+                        <span class="badge">AI Assist</span>
+                        <span class="badge">Web</span>
+                        <span class="badge">ZTNA</span>
+                        <span class="badge">Cyber Security</span>
+                      </div>
+                      <div class="divider my-4"></div>
+                      <p>Case Study Summary</p>
+                      <p class="small"><span class="text-highlight">Problem</span>Node relationship lists were hard to read, particularly for troubleshooting dysfunctional networks and their errors.</p>
+                      <p class="small"><span class="text-highlight">Solution</span>Its straightforward nature and simple setup make this topology well-suited for network mapping. Additionally, a tree network hierarchy provides an alternative perspective.</p>
+                      <p class="small"><span class="text-highlight">Result</span>Beyond improving readability for current customers, a polished and professional experience also made a strong first impression on prospective clients and decision-makers during POCs.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -179,98 +150,136 @@
             <div class="stack-cards-item">
               <div class="card">
                 <div class="card-body p-0">
-                  <img src="img/commercial-projects/12.png" class="img-fluid" alt="">
+                  <img src="img/commercial-projects/4.png" class="img-fluid" alt="">
+                  <a href="/dashboard" target="_blank" class="live-preview-icon"></a>
+                  <div class="case-study text-white">
+                    <div class="content scrollbar">
+                      <div class="headline">Admin Portal Redesign</div>
+                      <div class="description my-3">Quality Foundations &amp; Flexible Components</div>
+                      <div class="badges-wrapper">
+                        <span class="badge">B2B</span>
+                        <span class="badge">SaaS</span>
+                        <span class="badge">Web</span>
+                        <span class="badge">Dashboard</span>
+                        <span class="badge">Design System</span>
+                      </div>
+                      <div class="divider my-4"></div>
+                      <p>Case Study Summary</p>
+                      <p class="small"><span class="text-highlight">Problem</span>The original in-house design system's building blocks and UI components were buggy, outdated, performed poorly, and lacked cross-platform support.</p>
+                      <p class="small"><span class="text-highlight">Solution</span>Common frameworks like Material Design and Bootstrap offer proven effectiveness in usability, performance, responsive components, and customization, making them ideal for building modern products.</p>
+                      <p class="small"><span class="text-highlight">Result</span>The client experienced a modern, sleek design, a stable and bug-free system, robust cross-platform support, and enhanced usability. Internally, designers and engineers achieved improved collaboration throughout the design process, particularly during design handoff.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             
             <div class="stack-cards-item">
               <div class="card">
-                <a href="/node-map" target="_blank" class="card-body p-0">
-                  <img src="img/commercial-projects/2.png" class="img-fluid" alt="">
-                  <div class="live-preview-icon"></div>
-                </a>
-              </div>
-            </div>
-            
-            <div class="stack-cards-item">
-              <div class="card">
-                <a href="/dashboard" target="_blank" class="card-body p-0">
-                  <img src="img/commercial-projects/4.png" class="img-fluid" alt="">
-                  <div class="live-preview-icon"></div>
-                </a>
-              </div>
-            </div>
-            
-            <div class="stack-cards-item">
-              <div class="card">
-                <a href="/coupon-dashboard" target="_blank" class="card-body p-0">
-                  <img src="img/commercial-projects/3.png" class="img-fluid" alt="">
-                  <div class="live-preview-icon"></div>
-                </a>
+                <div class="card-body p-0">
+                  <img data-darkbox src="img/commercial-projects/1.png" class="img-fluid" alt="">
+                  <div class="case-study text-white">
+                    <div class="content scrollbar">
+                      <div class="headline">Integration Marketplace</div>
+                      <div class="description my-3">Connect Product to Apps &amp; Tools</div>
+                      <div class="badges-wrapper">
+                        <span class="badge">B2B</span>
+                        <span class="badge">Web</span>
+                        <span class="badge">SaaS</span>
+                        <span class="badge">Automation</span>
+                        <span class="badge">Native Integration</span>
+                        <span class="badge">Cyber Security</span>
+                      </div>
+                      <div class="divider my-4"></div>
+                      <p>Case Study Summary</p>
+                      <p class="small"><span class="text-highlight">Problem</span>Custom API integration became overly complex, difficult to manage, and resulted in a poor user experience.</p>
+                      <p class="small"><span class="text-highlight">Solution</span>Native integration was selected based on three key considerations: management, security, and user experience, with a focus on simplifying workflows and boosting productivity.</p>
+                      <p class="small"><span class="text-highlight">Result</span>Successful improvement in client retention and a significant boost in sales.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
+            <div class="stack-cards-item">
+              <div class="card">
+                <div class="card-body p-0">
+                  <img src="img/commercial-projects/5.png" class="img-fluid" alt="">
+                  <a href="/newsfeed" target="_blank" class="live-preview-icon"></a>
+                  <div class="case-study text-white">
+                    <div class="content scrollbar">
+                      <div class="headline">AI-Powered News Feed</div>
+                      <div class="description my-3">A World of Journalism in Your Pocket</div>
+                      <div class="badges-wrapper">
+                        <span class="badge">B2C</span>
+                        <span class="badge">SaaS</span>
+                        <span class="badge">Web &amp; Mobile</span>
+                        <span class="badge">AI Content</span>
+                        <span class="badge">Monetization</span>
+                      </div>
+                      <div class="divider my-4"></div>
+                      <p>Case Study Summary</p>
+                      <p class="small"><span class="text-highlight">Problem</span>The news market is highly competitive, making it difficult to compete with major outlets that attract the largest audiences.</p>
+                      <p class="small"><span class="text-highlight">Solution</span>An AI-powered news feed that learns their interests and offers customizable news channels and categories.</p>
+                      <p class="small"><span class="text-highlight">Result</span>Significant increase in impressions, conversions, and downloads.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="stack-cards-item">
+              <div class="card">
+                <div class="card-body p-0">
+                  <img src="img/commercial-projects/3.png" class="img-fluid" alt="">
+                  <a href="/coupon-dashboard" target="_blank" class="live-preview-icon"></a>
+                  <div class="case-study text-white">
+                    <div class="content scrollbar">
+                      <div class="headline">Coupon Management System</div>
+                      <div class="description my-3">Any Business Any Gift</div>
+                      <div class="badges-wrapper">
+                        <span class="badge">B2B</span>
+                        <span class="badge">SaaS</span>
+                        <span class="badge">Web</span>
+                        <span class="badge">CMS</span>
+                        <span class="badge">Admin Portal</span>
+                        <span class="badge">System Integration</span>
+                      </div>
+                      <div class="divider my-4"></div>
+                      <p>Case Study Summary</p>
+                      <p class="small"><span class="text-highlight">Problem</span>The limited acceptance of vouchers and the absence of tracking pose significant issues.</p>
+                      <p class="small"><span class="text-highlight">Solution</span>A system that offers integrated expense system functionality, including selective budget management and employee-specific gift history tracking.</p>
+                      <p class="small"><span class="text-highlight">Result</span>Coupon creation is simplified, offering easy budget control and selective utilization of predetermined funds.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <div class="stack-cards-item">
               <div class="card">
                 <div class="card-body p-0">
                   <img src="img/commercial-projects/6.png" class="img-fluid" alt="">
+                  <a href="/coupon-app" target="_blank" class="live-preview-icon"></a>
+                  <div class="case-study text-white">
+                    <div class="content scrollbar">
+                      <div class="headline">Coupon App</div>
+                      <div class="description my-3">Any Coupon for Any Shop</div>
+                      <div class="badges-wrapper">
+                        <span class="badge">B2C</span>
+                        <span class="badge">SaaS</span>
+                        <span class="badge">Mobile</span>
+                      </div>
+                      <div class="divider my-4"></div>
+                      <p>Case Study Summary</p>
+                      <p class="small"><span class="text-highlight">Problem</span>The reluctance of small businesses to accept coupons from major vendors complicates HR's ability to provide small gestures to employees for routine employee events (ex: new employee, newborn baby, friend referral, etc).</p>
+                      <p class="small"><span class="text-highlight">Solution</span>A branded app pre-loaded by HR with a set value, usable at any business with ready-made templates for various events.</p>
+                      <p class="small"><span class="text-highlight">Result</span>Employee morale was boosted by the branded app, and motivation rose with the expectation of small gifts. In addition, users could spend their coupon credit as they wished.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="stack-cards-item">
-              <div class="card">
-                <a href="/newsfeed" target="_blank" class="card-body p-0">
-                  <img src="img/commercial-projects/7.png" class="img-fluid" alt="">
-                  <div class="live-preview-icon"></div>
-                </a>
-              </div>
-            </div>
-
-            <div class="stack-cards-item">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img src="img/commercial-projects/11.png" class="img-fluid" alt="">
-                </div>
-              </div>
-            </div>
-            
-            <div class="stack-cards-item">
-              <div class="card">
-                <a href="/installer" target="_blank" class="card-body p-0">
-                  <img src="img/commercial-projects/5.png" class="img-fluid" alt="">
-                  <div class="live-preview-icon"></div>
-                </a>
-              </div>
-            </div>
-
-            <div class="stack-cards-item">
-              <div class="card">
-                <a href="/color-scheme-generator" target="_blank" class="card-body p-0">
-                  <img src="img/commercial-projects/8.png" class="img-fluid" alt="">
-                  <div class="live-preview-icon"></div>
-                </a>
-              </div>
-            </div>
-            
-            <div class="stack-cards-item">
-              <div class="card">
-                <a href="/coupon-app" target="_blank" class="card-body p-0">
-                  <img src="img/commercial-projects/9.png" class="img-fluid" alt="">
-                  <div class="live-preview-icon"></div>
-                </a>
-              </div>
-            </div>
-
-            <div class="stack-cards-item">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img src="img/commercial-projects/10.png" class="img-fluid" alt="">
-                </div>
-              </div>
-            </div>
-      
           </div>
         </div>
       </div>
@@ -291,7 +300,7 @@
               <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">CREA</div>
             </div>
             <div class="headline-text overflow-hidden">
-              <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">TIVE.</div>
+              <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">TIVE<span>.</span></div>
             </div>
           </div>
         </div>
@@ -310,9 +319,11 @@
     <div class="carousel flickity-items-fade py-5 mb-5" data-flickity="{ &quot;imagesLoaded&quot;: true, &quot;wrapAround&quot;: true }">
       <div class="carousel-cell">
         <img src="img/non-commercial-projects/1.jpg" class="img-fluid" alt="">
+        <a href="/anicons" target="_blank" class="live-preview-icon"></a>
       </div>
       <div class="carousel-cell">
         <img src="img/non-commercial-projects/2.jpg" class="img-fluid" alt="">
+        <a href="/email-signature-template" target="_blank" class="live-preview-icon"></a>
       </div>
       <div class="carousel-cell">
         <img src="img/non-commercial-projects/3.jpg" class="img-fluid" alt="">
@@ -322,6 +333,7 @@
       </div>
       <div class="carousel-cell">
         <img src="img/non-commercial-projects/5.jpg" class="img-fluid" alt="">
+        <a href="/installer" target="_blank" class="live-preview-icon"></a>
       </div>
       <div class="carousel-cell">
         <img src="img/non-commercial-projects/6.jpg" class="img-fluid" alt="">
@@ -340,12 +352,7 @@
       </div>
       <div class="carousel-cell">
         <img src="img/non-commercial-projects/11.jpg" class="img-fluid" alt="">
-      </div>
-      <div class="carousel-cell">
-        <img src="img/non-commercial-projects/12.jpg" class="img-fluid" alt="">
-      </div>
-      <div class="carousel-cell">
-        <img src="img/non-commercial-projects/13.jpg" class="img-fluid" alt="">
+        <a href="/color-scheme-generator" target="_blank" class="live-preview-icon"></a>
       </div>
     </div>
   </section>
@@ -364,7 +371,7 @@
               <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">SKI</div>
             </div>
             <div class="headline-text overflow-hidden">
-              <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">LLS.</div>
+              <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">LLS<span>.</span></div>
             </div>
           </div>
         </div>
@@ -414,7 +421,7 @@
               <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">RES</div>
             </div>
             <div class="headline-text overflow-hidden">
-              <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">UME.</div>
+              <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">UME<span>.</span></div>
             </div>
           </div>
         </div>
@@ -422,65 +429,42 @@
           <div class="accordion list-group list-group-flush text-white" id="accordion">
             <div class="list-group-item bg-transparent px-0">
               <div class="list-header d-flex justify-content-between align-items-center" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Background and skills
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#ffc509;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
+                Experience
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#3ce789;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
               </div>
           
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <p class="list-body text-white-80 mt-2">
-                  I started my first project as a freelancer back in 2008, as a student of Graphic and Interactive Design. I was involved in a creative writing book production as the designer, illustrator, and also one of the writers. I moved forward to news design, branding, and later to web and product design, where I knew I found my true love and passion.
-                </p>
-              </div>
-            </div>
-
-            <div class="list-group-item bg-transparent px-0">
-              <div class="list-header d-flex justify-content-between align-items-center" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Projects I was involved in
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#ffc509;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
-              </div>
-          
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <p class="list-body text-white-80 mt-2">
-                  Pretty much all kinds, web and print: Branding, website, extension, installer, app, search engine, dashboard, topology, CMS, landing page, news feed, minisite, newsletter, banner, logo, icon, mascot, illustration, book, newspaper, convention booth.
-                </p>
-              </div>
-            </div>
-
-            <div class="list-group-item bg-transparent px-0">
-              <div class="list-header d-flex justify-content-between align-items-center" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Work opportunities
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#ffc509;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
-              </div>
-          
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <p class="list-body text-white-80 mt-2">
-                  I've been working for small and large companies. From small agencies and startups to high tech. All have certainly different approaches when it comes to starting a campaign, teamwork, and project management.
+                  With over 12 years of professional experience, I transitioned from freelancing to full-time Product Design, contributing to startups and established products in E-Commerce, Edtech, Social Discovery, and Cyber Security. My career journey has taken me through dynamic environments where adaptability and curiosity have been my greatest assets.
                 </p>
               </div>
             </div>
 
             <div class="list-group-item bg-transparent px-0">
               <div class="list-header d-flex justify-content-between align-items-center" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Computer applications
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#ffc509;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
+                Applications & Programming
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#3ce789;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
               </div>
           
               <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                 <p class="list-body text-white-80 mt-2">
-                  Figma, Photoshop, Illustrator, XD, InDesign, After Effects, Visual Studio Code.
+                  Figma, XD, Photoshop, Illustrator, After Effects, InDesign.
+                </p>
+                <p class="list-body text-white-80 mt-2">
+                  JavaScript, SCSS, CSS, HTML, jQuery, Bootstrap, React.
                 </p>
               </div>
             </div>
 
             <div class="list-group-item bg-transparent px-0">
               <div class="list-header d-flex justify-content-between align-items-center" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                Computer programming
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#ffc509;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
+                Contact
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#3ce789;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
               </div>
           
               <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                 <p class="list-body text-white-80 mt-2">
-                  JavaScript, SCSS, CSS, HTML, jQuery, Bootstrap, React, Redux.
+                  erandarki@yahoo.com
                 </p>
               </div>
             </div>
