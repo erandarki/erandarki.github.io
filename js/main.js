@@ -1,6 +1,10 @@
 $(document).ready(function () {
   // Intro
   setTimeout(function () {
+    $('.invisible').removeClass('invisible');
+  }, 200);
+
+  setTimeout(function () {
     $('.frame').addClass('show-frame');
     $('nav').addClass('nav-show');
   }, 2000);
