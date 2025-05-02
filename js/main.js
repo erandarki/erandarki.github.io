@@ -1,12 +1,9 @@
 $(document).ready(function () {
   // Intro
   setTimeout(function () {
-    $('.loader').addClass('exit');
     $('.frame').addClass('show-frame');
-    $('nav').removeClass('invisible').addClass('nav-show');
-    $('.scroll-down').removeClass('invisible');
-    $('.profile').removeClass('invisible');
-  }, 400);
+    $('nav').addClass('nav-show');
+  }, 2000);
 
   // On page scroll execute scrollIndicator
   window.onscroll = function() {scrollIndicator()};
@@ -29,7 +26,7 @@ $(document).ready(function () {
   tlHello.staggerFrom($("#hello_l2 > *"), 0.6, { drawSVG: "0%", ease: Power3.easeOut }, 0.4, "-=1");
   tlHello.staggerFrom($("#hello_o > *"), 1.2, { drawSVG: "0%", ease: Power3.easeOut }, 0.2, "-=1.2");
   tlHello.staggerFrom($("#hello_dot > *"), 0.6, { scale: 0, transformOrigin: "50% 50%", ease: Power3.easeOut }, 0.2, "-=0.8");
-  tlHello.staggerFrom($(".scroll-down"), 1.2, { bottom: -70, ease: Power3.easeOut }, 0.2, "-=0.8");
+  tlHello.staggerFrom($(".scroll-down"), 1.2, { bottom: -70, ease: Power3.easeOut }, 1.2, 2.2);
 
   tlHello.play().timeScale(1);
 
