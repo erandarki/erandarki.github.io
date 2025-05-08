@@ -6222,7 +6222,7 @@ fieldset:disabled .tox .tox-dialog__footer .tox-button--secondary,
   margin-right: 1rem;
   /* font-size: calc(1.2978rem + 0.5736vw); */
   font-size: 1.4rem;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   white-space: nowrap;
   text-transform: uppercase;
 }
@@ -24653,9 +24653,9 @@ h5, .h5 {
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl + .content {
     margin-left: 3.125rem;
   }
-  .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl + .content .navbar-top {
+  /* .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl + .content .navbar-top {
     padding-left: 13.5rem;
-  }
+  } */
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl.navbar-inverted {
     width: 4.125rem;
   }
