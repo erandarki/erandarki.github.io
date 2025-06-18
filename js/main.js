@@ -54,6 +54,29 @@ $(document).ready(function () {
   tlPreambule.from(".profile .profile-content .top-line", 1, { x: "-20%", opacity: 0, ease: Power3.easeOut }, "-=0.60");
   tlPreambule.from(".profile .profile-content .profile-text p", 1, { y: "100%", ease: Power3.easeOut }, "-=0.60");
 
+  // CV button
+  $('.cv-btn').click(function() {
+    $('.cv').removeClass('fadeOut d-none');
+    $('.cv').addClass('fadeIn').on('animationend webkitAnimationEnd oAnimationEnd', function() {
+      $('.cv').removeClass('d-none');
+    });;
+  });
+  
+  // Close CV section
+  $('.close-cv').click(function() {
+    $('.cv').removeClass('fadeIn');
+    $('.cv').addClass('fadeOut').on('animationend webkitAnimationEnd oAnimationEnd', function() {
+      $('.cv').addClass('d-none');
+    });
+  });
+
+  // Triggers a click event on the element with class 'close-cv'
+  $(document).on('keydown', function(event) {
+    if (event.key === "Escape" || event.keyCode === 27) {
+      $('.close-cv').click();
+    }
+  });
+  
 });
 
 // wow animation effect
