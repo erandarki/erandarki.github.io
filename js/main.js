@@ -59,7 +59,8 @@ $(document).ready(function () {
     $('.cv').removeClass('fadeOut d-none');
     $('.cv').addClass('fadeIn').on('animationend webkitAnimationEnd oAnimationEnd', function() {
       $('.cv').removeClass('d-none');
-    });;
+    });
+    $('.cv').scrollTop(0);
   });
   
   // Close CV section
