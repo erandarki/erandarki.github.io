@@ -20,7 +20,8 @@ function rgbToHex(rgbString) {
       parts[i] = parseInt(parts[i]).toString(16);
       if (parts[i].length == 1) parts[i] = '0' + parts[i];
   } 
-  let hexString = '#' + parts.join(''); // "#0070ff"
+  // let hexString = '#' + parts.join(''); // "#0070ff" (including hash #)
+  let hexString = parts.join(''); // "0070ff"
   // let hexString ='#'+parts.join('').toUpperCase(); // "#0070FF" (adding # and uppercase)
   return hexString;
 }
@@ -128,7 +129,8 @@ inputColor.addEventListener('keyup', function(event) {
     invalidFeedback.style.display = 'none';
     
     mainColor.style.backgroundColor = '#' + inputColor.value;
-    mainColor.querySelector('.hex').innerHTML = '#' + inputColor.value.toLowerCase();
+    // mainColor.querySelector('.hex').innerHTML = '#' + inputColor.value.toLowerCase(); // "#0070ff" (including hash #)
+    mainColor.querySelector('.hex').innerHTML = inputColor.value.toLowerCase(); // "0070ff"
 
     updateColorScheme();
   }
