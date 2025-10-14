@@ -1641,6 +1641,10 @@ progress {
   color: #748194;
 }
 
+.container-fluid {
+  max-width: 100% !important;
+}
+
 .container,
 .container-fluid,
 .container-xxl,
@@ -1653,6 +1657,7 @@ progress {
   padding-left: var(--cyolo-gutter-x, 1rem);
   margin-right: auto;
   margin-left: auto;
+  transition: max-width 0.3s linear;
 }
 
 @media (min-width: 576px) {
