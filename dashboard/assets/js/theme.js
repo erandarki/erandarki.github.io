@@ -3992,28 +3992,49 @@ var swiperInit = function swiperInit() {
 
 
 var initialDomSetup = function initialDomSetup(element) {
-  if (!element) return;
-  var dataUrlDom = element.querySelector('[data-theme-control = "navbarPosition"]');
-  var hasDataUrl = dataUrlDom ? getData(dataUrlDom, 'page-url') : null;
-  element.querySelectorAll('[data-theme-control]').forEach(function (el) {
-    var inputDataAttributeValue = getData(el, 'theme-control');
-    var localStorageValue = getItemFromStore(inputDataAttributeValue);
+  // if (!element) return;
+  // var dataUrlDom = element.querySelector('[data-theme-control = "navbarPosition"]');
+  // var hasDataUrl = dataUrlDom ? getData(dataUrlDom, 'page-url') : null;
+  // element.querySelectorAll('[data-theme-control]').forEach(function (el) {
+  //   var inputDataAttributeValue = getData(el, 'theme-control');
+  //   var localStorageValue = getItemFromStore(inputDataAttributeValue);
 
-    if (inputDataAttributeValue === 'navbarStyle' && !hasDataUrl && getItemFromStore('navbarPosition') === 'top') {
-      el.setAttribute('disabled', true);
-    }
+  //   if (inputDataAttributeValue === 'navbarStyle' && !hasDataUrl && getItemFromStore('navbarPosition') === 'top') {
+  //     el.setAttribute('disabled', true);
+  //   }
 
-    if (el.type === 'checkbox') {
-      if (inputDataAttributeValue === 'theme') {
-        localStorageValue === 'dark' && el.setAttribute('checked', true);
-      } else {
-        localStorageValue && el.setAttribute('checked', true);
-      }
+  //   if (el.type === 'checkbox') {
+  //     if (inputDataAttributeValue === 'theme') {
+  //       localStorageValue === 'dark' && el.setAttribute('checked', true);
+  //     } else {
+  //       localStorageValue && el.setAttribute('checked', true);
+  //     }
+  //   } else {
+  //     var isChecked = localStorageValue === el.value;
+  //     isChecked && el.setAttribute('checked', true);
+  //   }
+  // });
+
+  // Function to apply the theme based on system preference
+  function applySystemTheme() {
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const htmlElement = document.documentElement;
+    const themeControlToggle = document.getElementById('themeControlToggle');
+
+    if (prefersDarkMode) {
+      htmlElement.classList.add('dark');
+      themeControlToggle.checked = true;
     } else {
-      var isChecked = localStorageValue === el.value;
-      isChecked && el.setAttribute('checked', true);
+      htmlElement.classList.remove('dark');
+      themeControlToggle.checked = false;
     }
-  });
+  }
+
+  // Apply the theme on page load
+  applySystemTheme();
+
+  // Listen for changes in system preference
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applySystemTheme);
 };
 
 var changeTheme = function changeTheme(element) {
