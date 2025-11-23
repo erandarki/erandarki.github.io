@@ -1659,7 +1659,7 @@ progress {
   padding-left: var(--cyolo-gutter-x, 1rem);
   margin-right: auto;
   margin-left: auto;
-  transition: max-width 0.3s linear;
+  /* transition: max-width 0.3s linear; */
 }
 
 @media (min-width: 576px) {
@@ -24492,9 +24492,9 @@ h5, .h5 {
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl + .content {
     margin-left: 3.125rem;
   }
-  .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl + .content .navbar-top {
+  /* .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl + .content .navbar-top {
     padding-left: 13.5rem;
-  }
+  } */
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl.navbar-inverted {
     width: 4.125rem;
   }
@@ -24660,9 +24660,9 @@ h5, .h5 {
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl + .content {
     margin-left: 3.125rem;
   }
-  .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl + .content .navbar-top {
+  /* .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl + .content .navbar-top {
     padding-left: 13.5rem;
-  }
+  } */
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl.navbar-inverted {
     width: 4.125rem;
   }
@@ -24828,9 +24828,9 @@ h5, .h5 {
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg + .content {
     margin-left: 3.125rem;
   }
-  .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg + .content .navbar-top {
+  /* .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg + .content .navbar-top {
     padding-left: 13.5rem;
-  }
+  } */
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg.navbar-inverted {
     width: 4.125rem;
   }
@@ -24996,9 +24996,9 @@ h5, .h5 {
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md + .content {
     margin-left: 3.125rem;
   }
-  .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md + .content .navbar-top {
+  /* .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md + .content .navbar-top {
     padding-left: 13.5rem;
-  }
+  } */
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md.navbar-inverted {
     width: 4.125rem;
   }
@@ -25164,9 +25164,9 @@ h5, .h5 {
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm + .content {
     margin-left: 3.125rem;
   }
-  .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm + .content .navbar-top {
+  /* .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm + .content .navbar-top {
     padding-left: 13.5rem;
-  }
+  } */
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm.navbar-inverted {
     width: 4.125rem;
   }
@@ -25331,9 +25331,9 @@ h5, .h5 {
 .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs + .content {
   margin-left: 3.125rem;
 }
-.navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs + .content .navbar-top {
+/* .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs + .content .navbar-top {
   padding-left: 13.5rem;
-}
+} */
 .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs.navbar-inverted {
   width: 4.125rem;
 }
@@ -25667,7 +25667,7 @@ html[dir=rtl] .img-dropdown {
 -----------------------------------------------*/
 .search-box {
   position: relative;
-  width: 21rem;
+  /* width: 21rem; */
   font-size: 0.8333333333rem;
 }
 .search-box .search-box-icon {
