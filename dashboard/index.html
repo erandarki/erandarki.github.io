@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<html lang="en-US" dir="ltr" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" class="navbar-vertical-collapsed">
 
   <head>
     <meta charset="utf-8">
@@ -71,15 +71,6 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <div class="container" data-layout="container">
-        <!-- <script>
-          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
-          if (isFluid) {
-            var container = document.querySelector('[data-layout]');
-            container.classList.remove('container');
-            container.classList.add('container-fluid');
-          }
-        </script> -->
-
         <nav class="navbar navbar-light navbar-vertical navbar-expand-xl">
           <script>
             var navbarStyle = localStorage.getItem("navbarStyle");
@@ -283,13 +274,13 @@
           <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand">
 
             <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-            <a class="navbar-brand" href="#">
+            <!-- <a class="navbar-brand" href="#">
               <div class="d-flex align-items-center py-3">
                 Dashboard
-                <!-- <img class="me-2" src="assets/img/logo.svg" alt="" height="30" /> -->
+                <img class="me-2" src="assets/img/logo.svg" alt="" height="30" />
               </div>
-            </a>
-            <ul class="navbar-nav align-items-center d-none d-lg-block">
+            </a> -->
+            <ul class="navbar-nav align-items-center d-lg-block">
               <li class="nav-item">
                 <div class="search-box" data-list='{"valueNames":["title"]}'>
                   <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
@@ -383,7 +374,7 @@
             <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
               <li class="nav-item">
                 <div class="theme-control-toggle fa-icon-wait px-1">
-                  <input class="form-check-input ms-0 theme-control-toggle-input" id="themeControlToggle" type="checkbox" data-theme-control="theme" value="dark" />
+                  <input class="form-check-input ms-0 theme-control-toggle-input" id="themeControlToggle" type="checkbox" data-theme-control="theme" value="dark"/>
                   <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to light theme"><span class="fas fa-sun fs-0"></span></label>
                   <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to dark theme"><span class="fas fa-moon fs-0"></span></label>
                 </div>
@@ -491,6 +482,144 @@
               </li>
             </ul>
           </nav>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6 col-xxl-8">
+              <div class="card overflow-hidden">
+                <div class="card-header audience-chart-header p-0 bg-light scrollbar-overlay">
+                  <ul class="nav nav-tabs border-0 chart-tab flex-nowrap" id="audience-chart-tab" role="tablist">
+                    <li class="nav-item" role="presentation"><a class="nav-link mb-0 active" id="users-tab" data-bs-toggle="tab" href="#users" role="tab" aria-controls="users" aria-selected="true">
+                        <div class="audience-tab-item p-2 pe-2">
+                          <h6 class="text-800 fs--2 text-nowrap">Users</h6>
+                          <h5 class="text-800">3.9K</h5>
+                          <div class="d-flex align-items-center"><span class="fas fa-caret-up text-success"></span>
+                            <h6 class="fs--2 mb-0 ms-2 text-success">62.0%</h6>
+                          </div>
+                        </div>
+                      </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link mb-0" id="sessions-tab" data-bs-toggle="tab" href="#sessions" role="tab" aria-controls="sessions" aria-selected="false">
+                        <div class="audience-tab-item p-2 pe-2">
+                          <h6 class="text-800 fs--2 text-nowrap">Sessions</h6>
+                          <h5 class="text-800">6.3K</h5>
+                          <div class="d-flex align-items-center"><span class="fas fa-caret-up text-success"></span>
+                            <h6 class="fs--2 mb-0 ms-2 text-success">46.2%</h6>
+                          </div>
+                        </div>
+                      </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link mb-0" id="rate-tab" data-bs-toggle="tab" href="#rate" role="tab" aria-controls="rate" aria-selected="false">
+                        <div class="audience-tab-item p-2 pe-2">
+                          <h6 class="text-800 fs--2 text-nowrap">Bounce Rate</h6>
+                          <h5 class="text-800">9.49%</h5>
+                          <div class="d-flex align-items-center"><span class="fas fa-caret-down text-warning"></span>
+                            <h6 class="fs--2 mb-0 ms-2 text-warning">56.1%</h6>
+                          </div>
+                        </div>
+                      </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link mb-0" id="duration-tab" data-bs-toggle="tab" href="#duration" role="tab" aria-controls="duration" aria-selected="false">
+                        <div class="audience-tab-item p-2 pe-2">
+                          <h6 class="text-800 fs--2 text-nowrap">Session Duration</h6>
+                          <h5 class="text-800">4m 03s</h5>
+                          <div class="d-flex align-items-center"><span class="fas fa-caret-down text-warning"></span>
+                            <h6 class="fs--2 mb-0 ms-2 text-warning">32.2%</h6>
+                          </div>
+                        </div>
+                      </a></li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="users" role="tabpanel" aria-labelledby="users-tab">
+                      <div class="echart-audience" data-echart-responsive="true" style="height:320px;"></div>
+                    </div>
+                    <div class="tab-pane" id="sessions" role="tabpanel" aria-labelledby="sessions-tab">
+                      <div class="echart-audience" data-echart-responsive="true" style="height:320px;"></div>
+                    </div>
+                    <div class="tab-pane" id="rate" role="tabpanel" aria-labelledby="rate-tab">
+                      <div class="echart-audience" data-echart-responsive="true" style="height:320px;"></div>
+                    </div>
+                    <div class="tab-pane" id="duration" role="tabpanel" aria-labelledby="duration-tab">
+                      <div class="echart-audience" data-echart-responsive="true" style="height:320px;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xxl-4">
+              <div class="card echart-session-by-browser-card h-100">
+                <div class="card-header d-flex flex-between-center bg-light py-2">
+                  <h6 class="mb-0">Session By Browser</h6>
+                  <div class="dropdown font-sans-serif btn-reveal-trigger">
+                    <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="dropdown-session-by-browser" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--2"></span></button>
+                    <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown-session-by-browser"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                      <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body d-flex flex-column justify-content-between py-0">
+                  <div class="my-auto py-5 py-md-0">
+                    <div class="echart-session-by-browser h-100" data-echart-responsive="true"></div>
+                  </div>
+                  <div class="border-top">
+                    <table class="table table-sm mb-0">
+                      <tbody>
+                        <tr>
+                          <td class="py-3">
+                            <div class="d-flex align-items-center"><img src="assets/img/chrome-logo.png" alt="" width="16" />
+                              <h6 class="text-600 mb-0 ms-2">Chrome</h6>
+                            </div>
+                          </td>
+                          <td class="py-3">
+                            <div class="d-flex align-items-center"><span class="fas fa-circle fs--2 me-2 text-primary"></span>
+                              <h6 class="fw-normal text-700 mb-0">50.3%</h6>
+                            </div>
+                          </td>
+                          <td class="py-3">
+                            <div class="d-flex align-items-center justify-content-end"><span class="fas fa-caret-down text-danger"></span>
+                              <h6 class="fs--2 mb-0 ms-2 text-700">2.9%</h6>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="py-3">
+                            <div class="d-flex align-items-center"><img src="assets/img/safari-logo.png" alt="" width="16" />
+                              <h6 class="text-600 mb-0 ms-2">Safari</h6>
+                            </div>
+                          </td>
+                          <td class="py-3">
+                            <div class="d-flex align-items-center"><span class="fas fa-circle fs--2 me-2 text-success"></span>
+                              <h6 class="fw-normal text-700 mb-0">30.1%</h6>
+                            </div>
+                          </td>
+                          <td class="py-3">
+                            <div class="d-flex align-items-center justify-content-end"><span class="fas fa-caret-up text-success"></span>
+                              <h6 class="fs--2 mb-0 ms-2 text-700">29.4%</h6>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="py-3">
+                            <div class="d-flex align-items-center"><img src="assets/img/firefox-logo.png" alt="" width="16" />
+                              <h6 class="text-600 mb-0 ms-2">Mozilla</h6>
+                            </div>
+                          </td>
+                          <td class="py-3">
+                            <div class="d-flex align-items-center"><span class="fas fa-circle fs--2 me-2 text-info"></span>
+                              <h6 class="fw-normal text-700 mb-0">20.6%</h6>
+                            </div>
+                          </td>
+                          <td class="py-3">
+                            <div class="d-flex align-items-center justify-content-end"><span class="fas fa-caret-up text-success"></span>
+                              <h6 class="fs--2 mb-0 ms-2 text-700">220.7%</h6>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="row g-3 mb-3">
             <div class="col-md-6 col-xxl-3">
@@ -1121,11 +1250,11 @@
             </div>
           </div>
           
-          <footer class="footer">
-            <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
+          <footer class="footer my-4">
+            <div class="row g-0 justify-content-between fs--1">
               <div class="col-12 col-sm-auto text-center">
                 <!-- <p class="mb-0 text-600">Powered by <a href="#">Dashboard</a> <span class="d-none d-sm-inline-block">| </span><br class="d-sm-none" /> Your secure remote work environment</p> -->
-                <p class="mb-0 text-600">Secure remote work environment</p>
+                <p class="mb-0 text-600">Your secure remote work environment</p>
               </div>
               <div class="col-12 col-sm-auto text-center">
                 <p class="mb-0 text-600">v2.10.2</p>
@@ -1193,22 +1322,11 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-     <script>
-      // Switch container layout
-      const modeFluidInput = document.getElementById('mode-fluid');
-      const container = document.querySelector('.container');
-
-      modeFluidInput.addEventListener('click', ()=> {
-        if (container.classList == 'container') {
-          container.classList.add('container-fluid');
-        } else {
-          container.classList.remove('container-fluid');
-        }
-      });
-     </script>
     <script src="vendors/popper.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.min.js"></script>
     <script src="vendors/anchor.min.js"></script>
+    <script src="vendors/echarts.min.js"></script>
+    <script src="vendors/dayjs.min.js"></script>
     <script src="vendors/fontawesome.min.js"></script>
     <script src="vendors/lodash.min.js"></script>
     <script src="assets/js/theme.js"></script>
