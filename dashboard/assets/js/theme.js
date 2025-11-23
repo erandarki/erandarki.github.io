@@ -6625,6 +6625,15 @@ echartTabs && echartTabs.forEach(function (tab) {
     chart && window.echarts.init(chart).resize();
   });
 });
+
+// Switch container layout
+const modeFluidInput = document.getElementById('mode-fluid');
+const container = document.querySelector('.container');
+
+modeFluidInput.addEventListener('click', ()=> {
+  container.classList.toggle('container-fluid');
+  return resizeEcharts();
+});
 /* -------------------------------------------------------------------------- */
 
 /*                             Echarts Gross Revenue                          */
