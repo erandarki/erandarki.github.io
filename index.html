@@ -16,12 +16,16 @@
   <script src="js/jquery-3.5.1.slim.min.js" defer></script>
   <script src="js/bootstrap.bundle.min.js" defer></script>
   <script src="js/cards-stack.js" defer></script>
+  <script src="js/flickity.pkgd.min.js" defer></script>
   <script src="js/TweenMax.min.js" defer></script>
   <script src="js/DrawSVGPlugin.min.js" defer></script>
   <script src="js/wow.min.js" defer></script>
   <script src="js/easeScroll.js" defer></script>
   <script src="js/parallax.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/loadPage.js" defer></script>
+  <script src="js/sliderImgCompare.js" defer></script>
+  <script src="js/countUp.js" defer></script>
 </head>
 
 <body class="bg-dark">
@@ -33,151 +37,21 @@
 
   <nav class="invisible fixed-top d-flex justify-content-between align-items-center w-100">
     <div class="navbar-brand text-uppercase"><strong>Eran Darki.</strong></div>
-    <div class="cv-btn"><strong>CV</strong></div>
+    <div class="cv-btn" onclick="loadSnippet('cv');"><strong>CV</strong></div>
   </nav>
 
-  <section class="d-none cv fixed-top bg-dark h-100 py-5 overflow-auto wow" data-wow-duration=".5s">
-    <div class="close-cv">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+  <!-- Load HTML snippet -->
+  <section class="d-none html-snippet fixed-top bg-dark h-100 pb-5 overflow-auto wow" data-wow-duration=".5s">
+    <div class="container nav-html-snippet bg-dark py-5">
+      <div class="projects-nav">
+        <button class="flickity-button flickity-prev-next-button previous-project" type="button" aria-label="Previous" data-toggle="tooltip" data-trigger="hover" title="Previous Project"><svg class="flickity-button-icon" viewBox="0 0 24 24"><path d="M14.71 15.88 10.83 12l3.88-3.88c.39-.39.39-1.02 0-1.41a.996.996 0 0 0-1.41 0L8.71 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .38-.39.39-1.03 0-1.42" class="arrow"></path></svg></button>
+        <button class="flickity-button flickity-prev-next-button next-project" type="button" aria-label="Next" data-toggle="tooltip" data-trigger="hover" title="Next Project"><svg class="flickity-button-icon" viewBox="0 0 24 24"><path d="M14.71 15.88 10.83 12l3.88-3.88c.39-.39.39-1.02 0-1.41a.996.996 0 0 0-1.41 0L8.71 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .38-.39.39-1.03 0-1.42" class="arrow" transform="translate(24, 24) rotate(180) "></path></svg></button>
+      </div>
+      <div class="close-html-snippet" data-toggle="tooltip" data-trigger="hover" title="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </div>
     </div>
-    <div class="container">
-      <h4 class="text-uppercase text-white ml-4 mb-5 pl-2" style="letter-spacing:1px;">Eran Darki</h4>
-      <ul class="cv-timeline">
-        <li class="timeline-item mb-5">
-          <h5 class="text-uppercase">Professional Summary</h5>
-          <p>
-            As a Product Designer with over 12 years of experience, I've shaped products for B2B startups and tech companies across E-Commerce, EdTech, and Cybersecurity.
-          </p>
-        </li>
-
-        <li class="timeline-item mb-5">
-          <h5 class="text-uppercase">Skills</h5>
-          <div class="row">
-            <div class="col-md-4">
-              <ul class="mb-0">
-                <li>UX-UI for complex systems</li>
-                <li>Storyboards and mock-ups</li>
-                <li>Wireframes and prototypes</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <ul class="mb-0">
-                <li>User research</li>
-                <li>User flow diagrams</li>
-                <li>Usability testing</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <ul class="mb-0">
-                <li>Design system foundation</li>
-                <li>SVG animations</li>
-                <li>Programming</li>
-              </ul>
-            </div>
-          </div>
-        </li>
-
-        <li class="timeline-item mb-5">
-          <h5 class="text-uppercase">Work Experience</h5>
-          <!-- Company -->
-          <div class="d-flex justify-content-between align-items-start">
-            <p class="mr-5">
-              <strong>Cyolo</strong> | Cybersecurity solution that provides safe and secure remote access
-            </p>
-            <p class="text-secondary mb-2 fw-bold flex-shrink-0 font-italic">2021 &mdash; Present</p>
-          </div>
-          <ul>
-            <li>
-              <strong>Responsibilities:</strong> SaaS platform designs for both admin and end-user environments, including dashboard interactive graphs & charts, network topology, design system components, and mobile app. Each requires thorough research and collaborative effort with relevant teams to achieve optimal results.
-            </li>
-            <li>
-              Collaborating with PMs, CS, R&amp;D, and technical writers to analyze the customer journey and identify areas for improvement.
-            </li>
-          </ul>
-          <!-- Company -->
-          <div class="d-flex justify-content-between align-items-start">
-            <p class="mr-5">
-              <strong>Somoto</strong> | Software distribution and monetization
-            </p>
-            <p class="text-secondary mb-2 fw-bold flex-shrink-0 font-italic">2014 &mdash; 2021</p>
-          </div>
-          <ul>
-            <li>
-              <strong>Responsibilities:</strong> Software and mobile designs, including CMS, extensions, and installers. A/B testing for multiple projects to analyze performance based on a specific goal.
-            </li>
-            <li>
-              Collaborating with PMs, R&amp;D, and marketing teams to identify the most effective user experience approach.
-            </li>
-          </ul>
-          <!-- Company -->
-          <div class="d-flex justify-content-between align-items-start">
-            <p class="mr-5">
-              <strong>Entagy</strong> | Software and web applications for streamlining business operations
-            </p>
-            <p class="text-secondary mb-2 fw-bold flex-shrink-0 font-italic">2013 &mdash; 2014</p>
-          </div>
-          <ul>
-            <li>
-              <strong>Responsibilities:</strong> Software and web applications designs, including business process management (BPM), and web-based systems. Collecting and evaluating feature requests to ensure that new features align with user needs and business goals.
-            </li>
-            <li>
-              Collaborating with PMs and R&D teams to analyze customers' activities and business operations.
-            </li>
-          </ul>
-        </li>
-
-        <li class="timeline-item mb-5">
-          <h5 class="text-uppercase">Education</h5>
-          <div class="d-flex justify-content-between align-items-start">
-            <p class="mr-5">
-              UX Architect course for complex systems, IITC college
-            </p>
-            <p class="text-secondary mb-2 fw-bold flex-shrink-0 font-italic">2023</p>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-start">
-            <p class="mr-5">
-              Full Stack Developers course, iNT college (formerly Ness)
-            </p>
-            <p class="text-secondary mb-2 fw-bold flex-shrink-0 font-italic">2018 &mdash; 2019</p>
-          </div>
-          
-          <div class="d-flex justify-content-between align-items-start">
-            <p class="mr-5">
-              User Experience Fundamentals course, John Bryce college
-            </p>
-            <p class="text-secondary mb-2 fw-bold flex-shrink-0 font-italic">2017</p>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-start">
-            <p class="mr-5">
-              Graphic and Interaction Design degree, The Open University
-            </p>
-            <p class="text-secondary mb-2 fw-bold flex-shrink-0 font-italic">2008 &mdash; 2011</p>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-start">
-            <p class="mr-5">
-              Military service; commanding officer, company sergeant major (CSM)
-            </p>
-            <p class="text-secondary mb-2 fw-bold flex-shrink-0 font-italic">2002 &mdash; 2005</p>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-start">
-            <p class="mr-5">
-              Core curriculum: Industrial design, Einstein high school, matriculation certificate
-            </p>
-            <p class="text-secondary mb-2 fw-bold flex-shrink-0 font-italic">1999 &mdash; 2002</p>
-          </div>
-        </li>
-
-        <li class="timeline-item mb-5">
-          <h5 class="text-uppercase">Applications And Programmaing</h5>
-          <p>Figma, XD, Photoshop, Illustrator, After Effects, InDesign.</p>
-          <p>HTML, CSS, SCSS, JavaScript, jQuery, React, Bootstrap, Material Design.</p>
-        </li>
-      </ul>
-    </div>
+    <div class="container target"></div>
   </section>
   
   <header class="invisible d-flex align-items-center pt-5">
@@ -227,7 +101,7 @@
           </p>
         </div>
         <div class="col-md-8 text-center">
-          <img src="img/animation.gif" class="wow fadeInUp img-fluid mt-md-n4" data-wow-delay="1.4s" alt="">
+          <img src="img/animation.gif" class="wow fadeInUp img-fluid" data-wow-delay="1.4s" alt="" style="border-radius:100%">
         </div>
       </div>
       <div class="scroll-down">
@@ -236,11 +110,11 @@
       </div>
     </div>
   </header>
-  
-  <section class="stack-cards-section bg-dark position-relative py-5">
-    <div class="container py-md-5 my-md-5">
+
+  <section class="carousel-section position-relative bg-dark py-5">
+    <div class="container py-md-5">
       <div class="row py-5">
-        <div class="col-md-4 mb-5">
+        <div class="col-md-4">
           <div class="headline-wrapper">
             <div class="icon mb-4 overflow-hidden">
               <svg xmlns="http://www.w3.org/2000/svg" width="33" height="7" viewBox="0 0 73.94 14.19">
@@ -253,198 +127,78 @@
             <div class="headline-text overflow-hidden">
               <div class="wow enterUp" data-wow-delay=".4s" data-wow-duration=".8s">RK<span>.</span></div>
             </div>
-            <p class="mt-5">
-              These selected cases showcase diverse and challenging projects, each requiring thorough research and collaborative effort with relevant teams to achieve optimal results. Hover over each project to view the case study summary and live preview that demonstrates its impact.
-            </p>
           </div>
         </div>
-        <div class="col-md-8">
-          <div class="stack-cards">
+        <div class="col-md-4 mt-5">
+          <p class="text-white">
+            These selected cases showcase diverse and challenging projects, each requiring thorough research and collaborative effort with relevant teams to achieve optimal results.
+          </p>
+        </div>
+        <div class="col-md-4 mt-md-5">
+          <p class="text-white">
+            Explore each project to see its case study and a live preview that demonstrates its impact.
+          </p>
+        </div>
+      </div>
+    </div>
 
-            <div class="stack-cards-item">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img src="img/commercial-projects/2.png" class="img-fluid" alt="">
-                  <a href="/topology" target="_blank" class="live-preview-icon"></a>
-                  <div class="case-study text-white">
-                    <div class="content scrollbar">
-                      <div class="headline">Node Mapping</div>
-                      <div class="description my-3">Analyze &amp; Interact with Your Network</div>
-                      <div class="badges-wrapper">
-                        <span class="badge">B2B</span>
-                        <span class="badge">SaaS</span>
-                        <span class="badge">AI Assist</span>
-                        <span class="badge">IT &amp; OT</span>
-                        <span class="badge">ZTNA</span>
-                        <span class="badge">Cyber Security</span>
-                      </div>
-                      <div class="divider my-4"></div>
-                      <p>Case Study Summary</p>
-                      <p class="small"><span class="text-highlight">Problem</span>Node relationship lists were hard to read, particularly for troubleshooting dysfunctional networks and their errors.</p>
-                      <p class="small"><span class="text-highlight">Solution</span>Its straightforward nature and simple setup make this topology well-suited for network mapping. Additionally, a tree network hierarchy provides an alternative perspective.</p>
-                      <p class="small"><span class="text-highlight">Result</span>Beyond improving readability for current customers, a polished and professional experience also made a strong first impression on prospective clients and decision-makers during POCs.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <div class="carousel flickity-items-fade pb-5 mb-5">
+      <div class="carousel-cell" data-name="topology">
+        <img src="img/projects/topology/topology-1.png" class="img-fluid" alt="">
+        <div class="carousel-cell-content container">
+          <div class="row align-items-end">
+            <div class="col-lg-9">
+              <div class="headline">Node Mapping</div>
+              <div class="description">Analyze and Interact with Your Endpoint</div>
             </div>
+            <div class="col-lg-3">
+              <div class="btn">View Case Study</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="stack-cards-item">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img src="img/commercial-projects/8.png" class="img-fluid" alt="">
-                  <div class="case-study text-white">
-                    <div class="content scrollbar">
-                      <div class="headline">Analytics Dashboard</div>
-                      <div class="description my-3">Analyze &amp; Manage User Device Data</div>
-                      <div class="badges-wrapper">
-                        <span class="badge">B2B</span>
-                        <span class="badge">SaaS</span>
-                        <span class="badge">IT &amp; OT</span>
-                        <span class="badge">ZTNA</span>
-                        <span class="badge">Cyber Security</span>
-                      </div>
-                      <div class="divider my-4"></div>
-                      <p>Case Study Summary</p>
-                      <p class="small"><span class="text-highlight">Problem</span>Administrators configuring end-user applications found it hard to analyze and manage user devices and overall device data based only on log activities.</p>
-                      <p class="small"><span class="text-highlight">Solution</span>A dashboard divided into categories such as devices, applications, users, policies, etc., provided complete, organized control and easy analysis.</p>
-                      <p class="small"><span class="text-highlight">Result</span>Its ease of use and analysis have raised additional feature requests for customization.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div class="carousel-cell" data-name="quick-app">
+        <img src="img/projects/quick-app/qa-1.png" class="img-fluid" alt="">
+        <div class="carousel-cell-content container">
+          <div class="row align-items-end">
+            <div class="col-lg-9">
+              <div class="headline">Quick App Setup</div>
+              <div class="description">Application Configuration Made Easy</div>
             </div>
+            <div class="col-lg-3">
+              <div class="btn">View Case Study</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="stack-cards-item">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img data-darkbox src="img/commercial-projects/1.png" class="img-fluid" alt="">
-                  <div class="case-study text-white">
-                    <div class="content scrollbar">
-                      <div class="headline">Integration Marketplace</div>
-                      <div class="description my-3">Connect Product to Apps &amp; Tools</div>
-                      <div class="badges-wrapper">
-                        <span class="badge">B2B</span>
-                        <span class="badge">SaaS</span>
-                        <span class="badge">Automation</span>
-                        <span class="badge">Native Integration</span>
-                      </div>
-                      <div class="divider my-4"></div>
-                      <p>Case Study Summary</p>
-                      <p class="small"><span class="text-highlight">Problem</span>User management became overly complex and difficult due to the use of various external apps and tools, leading to a poor user experience.</p>
-                      <p class="small"><span class="text-highlight">Solution</span>Native integration with apps and tools was selected based on three key considerations: management, security, and user experience, with a focus on simplifying workflows and boosting productivity.</p>
-                      <p class="small"><span class="text-highlight">Result</span>Successful improvement in client retention and a significant boost in sales.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div class="carousel-cell" data-name="integration">
+        <img src="img/projects/integration/integration-1.png" class="img-fluid" alt="">
+        <div class="carousel-cell-content container">
+          <div class="row align-items-end">
+            <div class="col-lg-9">
+              <div class="headline">Integration Marketplace</div>
+              <div class="description">Connect Product to Apps and Tools</div>
             </div>
+            <div class="col-lg-3">
+              <div class="btn">View Case Study</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="stack-cards-item">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img src="img/commercial-projects/6.png" class="img-fluid" alt="">
-                  <div class="case-study text-white">
-                    <div class="content scrollbar">
-                      <div class="headline">Domain Management System</div>
-                      <div class="description my-3">Monitor and Control Domains Worldwide</div>
-                      <div class="badges-wrapper">
-                        <span class="badge">MSP</span>
-                        <span class="badge">SaaS</span>
-                        <span class="badge">IT</span>
-                        <span class="badge">ZTNA</span>
-                        <span class="badge">Cyber Security</span>
-                      </div>
-                      <div class="divider my-4"></div>
-                      <p>Case Study Summary</p>
-                      <p class="small"><span class="text-highlight">Problem</span>Third-party companies could not remotely analayze their customer IT infrastructure and end-user systems.</p>
-                      <p class="small"><span class="text-highlight">Solution</span>A comprehensive dashboard for domain performance was provided, enabling users to monitor, analyze, and control all systems as needed.</p>
-                      <p class="small"><span class="text-highlight">Result</span>Clients report improved production in their IT infrastructure's off-site support, including better connectivity, network monitoring, and security.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div class="carousel-cell" data-name="design-system">
+        <img src="img/projects/design-system/ds-1.png" class="img-fluid" alt="">
+        <div class="carousel-cell-content container">
+          <div class="row align-items-end">
+            <div class="col-lg-9">
+              <div class="headline">System Redesign</div>
+              <div class="description">Quality Foundations and Flexible Components</div>
             </div>
-
-            <div class="stack-cards-item">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img src="img/commercial-projects/5.png" class="img-fluid" alt="">
-                  <div class="case-study text-white">
-                    <div class="content scrollbar">
-                      <div class="headline">Quick App Setup</div>
-                      <div class="description my-3">App Configuration Made Easy</div>
-                      <div class="badges-wrapper">
-                        <span class="badge">B2B</span>
-                        <span class="badge">SaaS</span>
-                        <span class="badge">IT &amp; OT</span>
-                        <span class="badge">ZTNA</span>
-                        <span class="badge">Cyber Security</span>
-                      </div>
-                      <div class="divider my-4"></div>
-                      <p>Case Study Summary</p>
-                      <p class="small"><span class="text-highlight">Problem</span>Configuring an app flow was a lengthy process &mdash; up to seven steps &mdash; which led to it being time-consuming and prone to skipped steps during app creation.</p>
-                      <p class="small"><span class="text-highlight">Solution</span>Based on feedback from the CS and presale teams, only mandatory fields are now displayed in a single one-click modal. Users can also switch to an advanced mode for more fields.</p>
-                      <p class="small"><span class="text-highlight">Result</span>This streamlined approach made a strong first impression on prospective clients and decision-makers during POCs, and offered a quick and easy resolution for the company's existing clients.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="col-lg-3">
+              <div class="btn">View Case Study</div>
             </div>
-
-            <div class="stack-cards-item">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img src="img/commercial-projects/4.png" class="img-fluid" alt="">
-                  <a href="/dashboard" target="_blank" class="live-preview-icon"></a>
-                  <div class="case-study text-white">
-                    <div class="content scrollbar">
-                      <div class="headline">Admin Portal Redesign</div>
-                      <div class="description my-3">Quality Foundations &amp; Flexible Components</div>
-                      <div class="badges-wrapper">
-                        <span class="badge">B2B</span>
-                        <span class="badge">SaaS</span>
-                        <span class="badge">Dashboard</span>
-                        <span class="badge">Design System</span>
-                      </div>
-                      <div class="divider my-4"></div>
-                      <p>Case Study Summary</p>
-                      <p class="small"><span class="text-highlight">Problem</span>The original in-house design system's building blocks and UI components were buggy, outdated, performed poorly, and lacked cross-platform support.</p>
-                      <p class="small"><span class="text-highlight">Solution</span>Common frameworks like Material Design and Bootstrap offer proven effectiveness in usability, performance, responsive components, and customization, making them ideal for building modern products.</p>
-                      <p class="small"><span class="text-highlight">Result</span>The client experienced a modern, sleek design, a stable and bug-free system, robust cross-platform support, and enhanced usability. Internally, designers and engineers achieved improved collaboration throughout the design process, particularly during design handoff.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="stack-cards-item">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img src="img/commercial-projects/7.png" class="img-fluid" alt="">
-                  <div class="case-study text-white">
-                    <div class="content scrollbar">
-                      <div class="headline">Remote Connect App</div>
-                      <div class="description my-3">Secure Remote Work Environment</div>
-                      <div class="badges-wrapper">
-                        <span class="badge">B2C</span>
-                        <span class="badge">SaaS</span>
-                        <span class="badge">Mobile</span>
-                        <span class="badge">ZTNA</span>
-                        <span class="badge">IT &amp; OT</span>
-                        <span class="badge">Cyber Security</span>
-                      </div>
-                      <div class="divider my-4"></div>
-                      <p>Case Study Summary</p>
-                      <p class="small"><span class="text-highlight">Problem</span>Company employees working remotely in the field and using mobile devices needed to access their company network resources.</p>
-                      <p class="small"><span class="text-highlight">Solution</span>ZTNA Agent app that allows users to gain access to network-based resources. This app utilizes a VPN service to offer a secure connection while ensuring no user data is shared with third parties.</p>
-                      <p class="small"><span class="text-highlight">Result</span>Users enjoy a simplified and supervised app that allows them to connect to their environment with a single button after entering their account domain name and the credentials received from their Administrator.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
           </div>
         </div>
       </div>
@@ -492,7 +246,7 @@
         </div>
         <div class="col-md-4 px-5 text-center wow fadeInUp">
           <img src="img/icon-3.png" width="60" alt="">
-          <h2 class="my-3">Marketing</h2>
+          <h2 class="my-3">Strategy</h2>
           <p class="text-white-80">
             My goal is to merge the business objective with creative solutions that move beyond just aesthetics.
           </p>
@@ -524,7 +278,7 @@
             <div class="list-group-item bg-transparent px-0">
               <div class="list-header d-flex justify-content-between align-items-center" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Overview
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#3ce789;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#3de689;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
               </div>
           
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
@@ -532,7 +286,7 @@
                   My career journey has taken me through dynamic environments where adaptability and curiosity have been my greatest assets.
                 </p>
                 <p class="list-body text-white-80">
-                  For a comprehensive timeline of my professional journey, please refer to my <span class="contact-cta cv-btn">CV</span>.
+                  For a comprehensive timeline of my professional journey, please refer to my <span class="contact-cta" onclick="loadSnippet('cv');">CV</span>.
                 </p>
               </div>
             </div>
@@ -540,7 +294,7 @@
             <div class="list-group-item bg-transparent px-0">
               <div class="list-header d-flex justify-content-between align-items-center" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 UI Features
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#3ce789;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#3de689;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
               </div>
           
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -555,6 +309,11 @@
                   </a>
                 </p>
                 <p class="list-body text-white-80">
+                  <a href="/expandable-field" target="_blank">Expandable Field
+                    <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="9.5" height="9.5" viewBox="0 0 9.5 9.5"><defs><style>.external-link-icon{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><polyline class="external-link-icon" points="3.04 .75 8.75 .75 8.75 6.46"/><line class="external-link-icon" x1=".75" y1="8.75" x2="8.75" y2=".75"/></svg>
+                  </a>
+                </p>
+                <p class="list-body text-white-80">
                   <a href="/anicons" target="_blank">SVG Animations
                     <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="9.5" height="9.5" viewBox="0 0 9.5 9.5"><defs><style>.external-link-icon{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><polyline class="external-link-icon" points="3.04 .75 8.75 .75 8.75 6.46"/><line class="external-link-icon" x1=".75" y1="8.75" x2="8.75" y2=".75"/></svg>
                   </a>
@@ -565,7 +324,7 @@
             <div class="list-group-item bg-transparent px-0">
               <div class="list-header d-flex justify-content-between align-items-center" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 Contact
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#3ce789;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><defs><style>.stroke{fill:none;stroke:#3de689;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="stroke" x1="8.5" y1="1.5" x2="8.5" y2="15.5"/><line class="stroke" x1="15.5" y1="8.5" x2="1.5" y2="8.5"/></svg>
               </div>
           
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">

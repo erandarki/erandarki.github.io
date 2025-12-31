@@ -17,7 +17,6 @@ $(document).ready(function () {
   }
 
   let tlHello;
-  let tlPreambule;
 
   // Hello animation
   tlHello = new TimelineLite({ paused: true });
@@ -31,52 +30,25 @@ $(document).ready(function () {
 
   tlHello.play().timeScale(1);
 
-  TweenLite.ticker.addEventListener("tick", onScroll);
+  // Parallax effect on header
+  const parallaxElement = document.querySelector('header .row');
+  const speed = 0.5;
 
-  function onScroll() {
-    scrollAmount = $(window).scrollTop();
+  function handleParallax() {
+    // Get the current vertical scroll position
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Hello animation toggle
-    if (scrollAmount > 10 && $('.hello-wrapper').hasClass('show-hello')) {
-      $('.hello-wrapper').removeClass('show-hello');
-      $('.navbar-brand').addClass('mobile-view');
-      tlPreambule.play().timeScale(1);
-    } else if (scrollAmount <= 10 && !$('.hello-wrapper').hasClass('show-hello')) {
-      $('.hello-wrapper').addClass('show-hello');
-      $('.navbar-brand').removeClass('mobile-view');
-      tlPreambule.reverse().timeScale(2);
-    }
+    // Calculate the new vertical translation (move it in the opposite direction of the scroll)
+    // Multiplying by a negative speed creates the upward motion as you scroll down
+    const yPos = scrollTop * -speed;
+
+    TweenMax.to(parallaxElement, 0.4, { // 0.4 seconds duration for a smoother feel
+      y: yPos,
+      ease: Power1.easeOut
+    });
   }
 
-  // Profile section
-  tlPreambule = new TimelineLite({ paused: true });
-  tlPreambule.from(".profile .profile-content svg > *", 0.8, { drawSVG: "0%", ease: Power3.easeOut }, 0.5);
-  tlPreambule.from(".profile .profile-content .top-line", 1, { x: "-20%", opacity: 0, ease: Power3.easeOut }, "-=0.60");
-  tlPreambule.from(".profile .profile-content .profile-text p", 1, { y: "100%", ease: Power3.easeOut }, "-=0.60");
-
-  // CV button
-  $('.cv-btn').click(function() {
-    $('.cv').removeClass('fadeOut d-none');
-    $('.cv').addClass('fadeIn').on('animationend webkitAnimationEnd oAnimationEnd', function() {
-      $('.cv').removeClass('d-none');
-    });
-    $('.cv').scrollTop(0);
-  });
-  
-  // Close CV section
-  $('.close-cv').click(function() {
-    $('.cv').removeClass('fadeIn');
-    $('.cv').addClass('fadeOut').on('animationend webkitAnimationEnd oAnimationEnd', function() {
-      $('.cv').addClass('d-none');
-    });
-  });
-
-  // Triggers a click event on the element with class 'close-cv'
-  $(document).on('keydown', function(event) {
-    if (event.key === "Escape" || event.keyCode === 27) {
-      $('.close-cv').click();
-    }
-  });
+  window.addEventListener('scroll', handleParallax);
   
 });
 
@@ -86,7 +58,12 @@ new WOW().init();
 // Ease scrolling effect
 $('html').easeScroll();
 
-// Scroll top on page refresh
+// Scroll to top on page refresh
 $(window).on('beforeunload', function () {
   $(window).scrollTop(0);
 });
+
+// Enable Bootstrap tooltips
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
