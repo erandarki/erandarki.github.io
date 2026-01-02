@@ -55,8 +55,10 @@ $(document).ready(function () {
 // wow animation effect
 new WOW().init();
 
-// Ease scrolling effect
-$('html').easeScroll();
+// Initialize Lenis (smooth scrolling)
+const lenis = new Lenis({
+  autoRaf: true,
+});
 
 // Scroll to top on page refresh
 $(window).on('beforeunload', function () {
