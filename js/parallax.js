@@ -10,8 +10,14 @@ $(document).ready(function () {
     var initY = $(this).offset().top
     var height = $(this).height()
     var diff = scrolled - initY
-    var ratio = Math.round((diff / height) * 100)
-    $(this).css('background-position', 'center ' + parseInt(-(ratio * 1.5)) + 'px')
+    // Rounded number (integer)
+    // var ratio = Math.round((diff / height) * 100)
+    // $(this).css('background-position', 'center ' + parseInt(-(ratio * 1.5)) + 'px')
+    
+    // Float number (decimal) for smoother effect
+    var ratio = (diff / height) * 100
+    var positionValue = (-(ratio * 1.5)).toFixed(2)
+    $(this).css('background-position', 'center ' + positionValue + 'px')
   })
 
   // Attach scroll event to window. Calculate the scroll ratio of each element
@@ -28,8 +34,14 @@ $(document).ready(function () {
       var visible = isInViewport(this)
       if (visible) {
         var diff = scrolled - initY
-        var ratio = Math.round((diff / height) * 100)
-        $(this).css('background-position', 'center ' + parseInt(-(ratio * 1.5)) + 'px')
+        // Rounded number (integer)
+        // var ratio = Math.round((diff / height) * 100)
+        // $(this).css('background-position', 'center ' + parseInt(-(ratio * 1.5)) + 'px')
+        
+        // Float number (decimal) for smoother effect
+        var ratio = (diff / height) * 100
+        var positionValue = (-(ratio * 1.5)).toFixed(2)
+        $(this).css('background-position', 'center ' + positionValue + 'px')
       }
     })
   })
