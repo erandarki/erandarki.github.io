@@ -55,10 +55,8 @@ $(document).ready(function () {
 // wow animation effect
 new WOW().init();
 
-// Initialize Lenis (smooth scrolling)
-const lenis = new Lenis({
-  autoRaf: true,
-});
+// Ease scrolling effect
+$('html').easeScroll();
 
 // Scroll to top on page refresh
 $(window).on('beforeunload', function () {
@@ -68,4 +66,4 @@ $(window).on('beforeunload', function () {
 // Enable Bootstrap tooltips
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
-})
+});
