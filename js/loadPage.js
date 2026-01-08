@@ -1,5 +1,6 @@
 // Show html snippet section
 function showSnippetSection(name) {
+  mainLenis.stop(); // Stop the main background page from scrolling
   if (name === 'cv') {
     $('.projects-nav').addClass('d-none');
   }
@@ -29,6 +30,7 @@ $('.close-html-snippet').click(function() {
   $('.html-snippet').addClass('fadeOut').on('animationend webkitAnimationEnd oAnimationEnd', function() {
     $('.html-snippet').addClass('d-none');
   });
+  mainLenis.start(); // Restart the main page scroll
 });
 
 // Esc key triggers a click event

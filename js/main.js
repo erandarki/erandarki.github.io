@@ -55,8 +55,24 @@ $(document).ready(function () {
 // wow animation effect
 new WOW().init();
 
-// Ease scrolling effect
-$('html').easeScroll();
+// Lenis smooth scrolling settings
+const lenisOptions = {
+  duration: 1.6,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: 'vertical', // vertical, horizontal
+  gestureDirection: 'vertical', // vertical, horizontal, both
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+  anchors: true, // Scroll to anchor links when clicked
+  allowNestedScroll: true, // Allow nested scrollable elements to scroll
+  autoRaf: true, // Automatically handles the requestAnimationFrame loop
+};
+
+// Initialize Lenis smooth scrolling
+const mainLenis = new Lenis(lenisOptions);
 
 // Scroll to top on page refresh
 $(window).on('beforeunload', function () {
