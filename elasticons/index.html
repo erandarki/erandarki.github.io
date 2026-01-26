@@ -8,7 +8,7 @@
   <meta name="keywords" content="SVG line animation, SVG stroke animation, animated SVG lines, animated SVG strokes, SVG line drawing animation, SVG stroke drawing animation, SVG path animation, SVG line animation tutorial, SVG stroke animation tutorial, CSS SVG line animation, CSS SVG stroke animation, SMIL SVG line animation, SMIL SVG stroke animation, responsive animated SVG icons, SVG icons">
   <meta name="author" content="Eran Darki">
   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
-  <title>Anicons</title>
+  <title>elasticons</title>
    <!-- CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.min.css">
@@ -18,11 +18,11 @@
 
 <body class="bg-body-tertiary d-flex flex-column">
   <main class="container px-5">
-    <h1 class="text-center mt-5" data-splitting>Anicons</h1>
+    <h1 class="text-center mt-5" data-splitting>elasticons</h1>
     <p class="text-center mb-4">Having fun with SVG animations</p>
     <div class="row mb-2">
       <div class="d-flex flex-row-reverse p-0">
-        <a id="downloadAllBtn" href="./img/Anicons_by_Eran_Darki.zip" download data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-title="Download all anicons">
+        <a id="downloadAllBtn" href="./img/elasticons_by_Eran_Darki.zip" download data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-title="Download all">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="17.5" viewBox="0 0 21.5 17.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.54,3.74C9.04,1.01,12.58-.05,15.42,1.4c2.3,1.16,3.51,3.64,2.99,6.08,2.43,1.56,3.06,4.7,1.45,7.02-.98,1.4-2.63,2.25-4.39,2.25H4.91c-2.3,0-4.16-1.79-4.16-4,0-1.36.72-2.63,1.93-3.37-.82-2.21.39-4.66,2.7-5.45.69-.23,1.44-.31,2.16-.2"/><line x1="10.75" y1="5.76" x2="10.75" y2="13.54"/><line x1="7.6" y1="10.4" x2="10.75" y2="13.54"/><line x1="13.89" y1="10.4" x2="10.75" y2="13.54"/></svg>
         </a>
       </div>
@@ -152,7 +152,7 @@
   </main>
 
   <footer class="container text-center px-5 py-4 text-secondary mt-auto">
-    <small>&copy; Anicons by <a href="/" target="_blank">Eran Darki</a></small>
+    <small>&copy; elasticons by <a href="/" target="_blank">Eran Darki</a></small>
   </footer>
 
   <!-- Toast message -->
@@ -195,7 +195,7 @@
       tooltip.setContent({ '.tooltip-inner': 'Downloading...' });
       // Reset default
       downloadAllBtn.addEventListener('mouseout', function() {
-        tooltip.setContent({ '.tooltip-inner': 'Download all anicons' });
+        tooltip.setContent({ '.tooltip-inner': 'Download all' });
       });
     } catch (error) {
       // Optional: Display an error message to the user
@@ -215,16 +215,16 @@
     toastTrigger.addEventListener('click', ()=> {
       // Take the icon's name from the alt text
       if (toastTrigger.querySelector('img')) {
-        toastIconName.innerHTML = `${toastTrigger.querySelector('img').alt} anicon`;
+        toastIconName.innerHTML = `${toastTrigger.querySelector('img').alt} elasticon`;
       } else {
-        toastIconName.innerHTML = 'All anicons'
+        toastIconName.innerHTML = 'All elasticons'
       }
       // Restart Check SVG animation
       document.querySelectorAll('animate').forEach((element) => {
         element.beginElement();
       });
       // Display toast message
-      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastMessage)
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastMessage);
       toastBootstrap.show();
       toastMessage.classList.add('slideIn');
       // Remove the animation when toast message is done
