@@ -1,0 +1,91 @@
+{
+  "AI": [
+    "sparks",
+    "binary-code"
+  ],
+  "Connectivity": [
+    "bluetooth",
+    "globe-team",
+    "globe",
+    "antenna",
+    "touch-id",
+    "binary-code",
+    "hourglass",
+    "refresh"
+  ],
+  "Fitness": [
+    "woman-figure",
+    "bicycle",
+    "treadmill-workout"
+  ],
+  "Nature": [
+    "fire",
+    "star-spark",
+    "day-night",
+    "recycle"
+  ],
+  "Science": [
+    "head-gears",
+    "brain-gear",
+    "atom"
+  ],
+  "Home": [
+    "shower-head",
+    "recycle",
+    "trash-bin"
+  ],
+  "Access": [
+    "lock-unlock",
+    "menu-arrow",
+    "menu-close",
+    "approve",
+    "deny",
+    "globe",
+    "cloud-download",
+    "cloud-upload",
+    "bell",
+    "hourglass",
+    "refresh"
+  ],
+  "Gaming": [
+    "maze",
+    "star-spark",
+    "sparks",
+    "happy-sad-masks",
+    "hourglass",
+    "happy-sad",
+    "refresh"
+  ],
+  "Medical": [
+    "headache"
+  ],
+  "Multimedia": [
+    "happy-sad-masks",
+    "infinite",
+    "heartbreak",
+    "binary-code",
+    "headphones",
+    "happy-sad",
+    "refresh"
+  ],
+  "Animals": [
+    "dog-love",
+    "cat-love"
+  ],
+  "Devices": [
+    "shredder",
+    "printer"
+  ],
+  "Food & Drink": [
+    "coffee-love",
+    "recycle"
+  ],
+  "Social": [
+    "love-letter",
+    "heartbreak",
+    "happy-sad"
+  ],
+  "Weather": [
+    "sunny-rainy"
+  ]
+}
