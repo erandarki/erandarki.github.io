@@ -16,29 +16,25 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   btnSpinner.classList.remove('visually-hidden');
   alertWrapper.classList.remove('alert-animation'); // Reset animation class
 
-  fetch('../send-email.php', {
-    method: 'POST',
-    body: formData
+  fetch('/', {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
   })
-  .then(response => response.json())
-  .then(data => {
-    // 1. Show the alert and trigger animation
-    alertWrapper.classList.add('alert-animation');
-
-    if(data.status === 'success') {
+  .then((response) => {
+    if (response.ok) {
       // Success State
+      alertWrapper.classList.add('alert-animation');
       alertBox.classList.replace('alert-danger', 'alert-primary');
       iconUse.setAttribute('href', '#formSuccess');
       responseSpan.innerText = 'Message sent! We will get back to you soon.';
       this.reset();
     } else {
-      // Error State
-      alertBox.classList.replace('alert-primary', 'alert-danger');
-      iconUse.setAttribute('href', '#formFail');
-      responseSpan.innerText = 'Error: ' + data.message;
+      throw new Error('Form submission failed');
     }
   })
-  .catch(error => {
+  .catch((error) => {
+    // Error State
     alertBox.classList.replace('alert-primary', 'alert-danger');
     alertWrapper.classList.add('alert-animation');
     iconUse.setAttribute('href', '#formFail');

@@ -810,7 +810,10 @@
         </div>
         <div class="modal-body">
           <p>Have questions, comments, or icon suggestions? Drop us an email using the form below or contact us via email at <a href="mailto:contact@elasticons.com">contact@elasticons.com</a>.</p>
-          <form id="contactForm">
+          <form id="contactForm" name="contact" method="POST" data-netlify="true">
+            <p class="d-none">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
             <div class="mb-3">
               <label for="emailInput" class="form-label small">Email</label>
               <input type="email" name="email" class="form-control py-2" id="emailInput" placeholder="your.email@address.com" required>
