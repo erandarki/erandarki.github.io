@@ -11,7 +11,8 @@
     "touch-id",
     "binary-code",
     "hourglass",
-    "refresh"
+    "refresh",
+    "confetti"
   ],
   "Fitness": [
     "woman-figure",
@@ -45,7 +46,8 @@
     "cloud-upload",
     "bell",
     "hourglass",
-    "refresh"
+    "refresh",
+    "confetti"
   ],
   "Gaming": [
     "maze",
@@ -54,7 +56,8 @@
     "happy-sad-masks",
     "hourglass",
     "happy-sad",
-    "refresh"
+    "refresh",
+    "confetti"
   ],
   "Medical": [
     "headache"
