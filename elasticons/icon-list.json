@@ -3,6 +3,9 @@
     "sparks",
     "binary-code"
   ],
+  "Analytics": [
+    "bar-chart"
+  ],
   "Connectivity": [
     "bluetooth",
     "globe-team",
@@ -47,7 +50,8 @@
     "bell",
     "hourglass",
     "refresh",
-    "confetti"
+    "confetti",
+    "sliders-horizontal"
   ],
   "Gaming": [
     "maze",
