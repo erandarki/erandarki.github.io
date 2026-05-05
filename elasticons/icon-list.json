@@ -38,7 +38,7 @@
     "recycle",
     "trash-bin"
   ],
-  "Access": [
+  "Account & Access": [
     "lock-unlock",
     "menu-arrow",
     "menu-close",
@@ -51,7 +51,8 @@
     "hourglass",
     "refresh",
     "confetti",
-    "sliders-horizontal"
+    "sliders-horizontal",
+    "envelope-bounce"
   ],
   "Gaming": [
     "maze",
