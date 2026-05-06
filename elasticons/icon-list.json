@@ -15,7 +15,8 @@
     "binary-code",
     "hourglass",
     "refresh",
-    "confetti"
+    "confetti",
+    "globe-bounce"
   ],
   "Fitness": [
     "woman-figure",
@@ -52,7 +53,9 @@
     "refresh",
     "confetti",
     "sliders-horizontal",
-    "envelope-bounce"
+    "envelope-bounce",
+    "globe-bounce",
+    "inbox-arrow-down"
   ],
   "Gaming": [
     "maze",
