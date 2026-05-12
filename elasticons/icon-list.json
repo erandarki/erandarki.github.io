@@ -1,10 +1,25 @@
 {
   "AI": [
     "sparks",
-    "binary-code"
+    "binary-code",
+    "code-flip"
+  ],
+  "Arrows": [
+    "download",
+    "upload",
+    "menu-arrow",
+    "cloud-download",
+    "cloud-upload",
+    "refresh",
+    "inbox-arrow-down",
+    "up-down-arrows",
+    "code-flip",
+    "log-out",
+    "log-in"
   ],
   "Analytics": [
-    "bar-chart"
+    "bar-chart",
+    "checklist"
   ],
   "Connectivity": [
     "bluetooth",
@@ -16,7 +31,11 @@
     "hourglass",
     "refresh",
     "confetti",
-    "globe-bounce"
+    "globe-bounce",
+    "network-connection",
+    "log-out",
+    "log-in",
+    "link"
   ],
   "Fitness": [
     "woman-figure",
@@ -27,7 +46,11 @@
     "fire",
     "star-spark",
     "day-night",
-    "recycle"
+    "recycle",
+    "sunny-rainy",
+    "sun-moon",
+    "sun",
+    "moon"
   ],
   "Science": [
     "head-gears",
@@ -37,7 +60,8 @@
   "Home": [
     "shower-head",
     "recycle",
-    "trash-bin"
+    "trash-bin",
+    "checklist"
   ],
   "Account & Access": [
     "lock-unlock",
@@ -52,10 +76,16 @@
     "hourglass",
     "refresh",
     "confetti",
-    "sliders-horizontal",
+    "control-horizontal",
+    "slider-vertical",
     "envelope-bounce",
     "globe-bounce",
-    "inbox-arrow-down"
+    "inbox-arrow-down",
+    "lock-shake",
+    "user-bounce",
+    "log-out",
+    "log-in",
+    "checklist"
   ],
   "Gaming": [
     "maze",
@@ -65,7 +95,8 @@
     "hourglass",
     "happy-sad",
     "refresh",
-    "confetti"
+    "confetti",
+    "carousel-slider"
   ],
   "Medical": [
     "headache"
@@ -77,7 +108,9 @@
     "binary-code",
     "headphones",
     "happy-sad",
-    "refresh"
+    "refresh",
+    "group-bounce",
+    "user-bounce"
   ],
   "Animals": [
     "dog-love",
@@ -94,9 +127,15 @@
   "Social": [
     "love-letter",
     "heartbreak",
-    "happy-sad"
+    "happy-sad",
+    "group-bounce",
+    "user-bounce",
+    "link"
   ],
   "Weather": [
-    "sunny-rainy"
+    "sunny-rainy",
+    "sun-moon",
+    "sun",
+    "moon"
   ]
 }
