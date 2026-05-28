@@ -23,17 +23,72 @@
 </head>
 
 <body>
-  <header class="px-4 pt-5 pb-2">
-    <div class="logos d-flex justify-content-between align-items-center fixed-top p-4 mb-5">
+  <header class="p-4">
+    <div id="topNav" class="d-flex justify-content-between align-items-center fixed-top px-4 py-3 mb-5">
+      <button class="btn btn-outline-light border-0 rounded-circle p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="position:relative; z-index: 9999; margin-left: -0.5rem;">
+        <svg id="menu-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="1.6rem" height="1.6rem" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+        <style>
+        #menu-close.forward{stroke:black} #menu-close.reverse{stroke:currentColor}
+        #menu-close.forward #menu-close-s-g1_tr {animation: menu-close-s-g1_tr__tr 600ms linear 1 normal forwards} @keyframes menu-close-s-g1_tr__tr { 0% {transform: translate(12px,12px) rotate(0deg)} 20% {transform: translate(12px,12px) rotate(0deg);animation-timing-function: cubic-bezier(0.645,0.045,0.25,1.195)} 60% {transform: translate(12px,12px) rotate(45deg)} 100% {transform: translate(12px,12px) rotate(45deg)}} #menu-close.forward #menu-close-s-path1_to {animation: menu-close-s-path1_to__to 600ms linear 1 normal forwards} @keyframes menu-close-s-path1_to__to { 0% {transform: translate(9.5px,11.2998px)} 20% {transform: translate(9.5px,5.8999px)} 100% {transform: translate(9.5px,5.8999px)}} #menu-close.forward #menu-close-s-path1_tr {animation: menu-close-s-path1_tr__tr 600ms linear 1 normal forwards} @keyframes menu-close-s-path1_tr__tr { 0% {transform: rotate(0deg)} 20% {transform: rotate(0deg);animation-timing-function: cubic-bezier(0.645,0.045,0.25,1.195)} 60% {transform: rotate(90deg)} 100% {transform: rotate(90deg)}} #menu-close.forward #menu-close-s-path3_to {animation: menu-close-s-path3_to__to 600ms linear 1 normal forwards} @keyframes menu-close-s-path3_to__to { 0% {transform: translate(9.5px,0.5px)} 20% {transform: translate(9.5px,5.8999px)} 100% {transform: translate(9.5px,5.8999px)}} #menu-close.forward #menu-close-s-path3 {animation: menu-close-s-path3_c_o 600ms linear 1 normal forwards} @keyframes menu-close-s-path3_c_o { 0% {opacity: 1;animation-timing-function: step-end} 20% {opacity: 0} 100% {opacity: 0}} #menu-close.reverse #menu-close-s-g1_tr {animation: menu-close-s-g1_tr__tr_rev 600ms linear 1 normal forwards} @keyframes menu-close-s-g1_tr__tr_rev { 0% {transform: translate(12px,12px) rotate(45deg); animation-timing-function: cubic-bezier(0.645,0.045,0.25,1.195)} 50% {transform: translate(12px,12px) rotate(0deg)} 100% {transform: translate(12px,12px) rotate(0deg)}} #menu-close.reverse #menu-close-s-path1_to {animation: menu-close-s-path1_to__to_rev 600ms linear 1 normal forwards} @keyframes menu-close-s-path1_to__to_rev { 0% {transform: translate(9.5px,5.8999px)} 40% {transform: translate(9.5px,5.8999px)} 80% {transform: translate(9.5px,11.2998px)}} #menu-close.reverse #menu-close-s-path1_tr {animation: menu-close-s-path1_tr__tr_rev 600ms linear 1 normal forwards} @keyframes menu-close-s-path1_tr__tr_rev { 0% {transform: rotate(90deg); animation-timing-function: cubic-bezier(0.645,0.045,0.25,1.195)} 50% {transform: rotate(0deg)} 100% {transform: rotate(0deg)}} #menu-close.reverse #menu-close-s-path3_to {animation: menu-close-s-path3_to__to_rev 600ms linear 1 normal forwards} @keyframes menu-close-s-path3_to__to_rev { 0% {transform: translate(9.5px,5.8999px)} 40% {transform: translate(9.5px,5.8999px)} 80% {transform: translate(9.5px,0.5px)}} #menu-close.reverse #menu-close-s-path3 {animation: menu-close-s-path3_c_o_rev 600ms linear 1 normal forwards} @keyframes menu-close-s-path3_c_o_rev { 0% {opacity: 0;animation-timing-function: step-start} 100% {opacity: 1}}
+        </style>
+        <g id="menu-close-s-g1_tr" transform="translate(12,12) rotate(0)"><g id="menu-close-s-g1" transform="translate(-9.5,-5.8999)"><g id="menu-close-s-path1_to" transform="translate(9.5,11.2998)"><g id="menu-close-s-path1_tr" transform="rotate(0)"><path id="menu-close-s-path1" d="M0.5,11.2998h18" transform="translate(-9.5,-11.2998)" fill="none"/></g></g><path id="menu-close-s-path2" d="M0.5,5.8999h18" fill="none"/><g id="menu-close-s-path3_to" transform="translate(9.5,0.5)"><path id="menu-close-s-path3" d="M0.5,0.5h18" transform="translate(-9.5,-0.5)" fill="none"/></g></g></g></svg>
+      </button>
+
       <img src="./img/logo.svg" height="24" alt="">
-      <!-- <img src="./img/ilans-logo.svg" height="23" alt=""> -->
+
+      <div class="offcanvas offcanvas-start border-0" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width:80%; height: 100vh;">
+        <div class="offcanvas-body p-0 pt-5 d-flex flex-column justify-content-between">
+          <ul class="navbar-nav justify-content-end pt-4 pe-3">
+            <li class="nav-item px-4 py-2">
+              <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                <img class="me-3" src="./img/home.svg" alt="">
+                Home
+              </a>
+            </li>
+            <li class="nav-item px-4 py-2 bg-success-subtle rounded-end-pill">
+              <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                <img class="me-3" src="./img/coffee.svg" alt="">
+                Coupons
+              </a>
+            </li>
+            <li class="nav-item px-4 py-2">
+              <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                <img class="me-3" src="./img/gift.svg" alt="">
+                Gift Cards
+              </a>
+            </li>
+            <li class="nav-item px-4 py-2">
+              <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                <img class="me-3" src="./img/grid.svg" alt="">
+                Collections
+              </a>
+            </li>
+            <li class="nav-item px-4 pb-3">
+              <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                <img class="me-3" src="./img/star.svg" alt="">
+                Rewards
+              </a>
+            </li>
+          </ul>
+  
+          <ul class="navbar-nav">
+            <li class="nav-item px-4 py-3 border-top">
+              <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                <img class="me-3" src="./img/settings.svg" alt="">
+                Settings
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="cup text-center px-5 pt-5">
+    
+    <div class="cup text-center p-5">
       <img src="./img/coffee-cup.png" class="cup-img img-fluid" alt="">
       <img src="./img/coffee-cup-shadow.png" class="cup-img-shadow img-fluid" alt="">
     </div>
     <h5 class="user-name color-secodary mb-2">Hi, Diana</h5>
-    <h1>Enjoy Original Coffee with Friends at ILAN'S</h1>
+    <h1>Enjoy Original Coffee with Friends at Starbucks</h1>
   </header>
 
   <div class="read-more text-secondary-emphasis px-4 pb-2 mb-5">
@@ -155,9 +210,9 @@
   </div>
 
   <!-- Footer -->
-<!--   <footer class="p-4">
-    <small class="text-body">All coffee coupons can be redeemed at <strong>ILAN'S — Gibor House</strong> only.</small>
-  </footer> -->
+  <footer class="p-4">
+    <small class="text-body">All coffee coupons can be redeemed at any Starbucks.</small>
+  </footer>
 
   <!-- Modal virtual card -->
   <div class="modal fade" tabindex="-1" role="dialog" id="modalSheet" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
@@ -243,7 +298,7 @@
   <!-- Intro -->
   <section class="intro fadeOut fixed-top w-100 h-100 d-flex justify-content-center align-items-center">
     <div class="logos d-flex justify-content-between align-items-center fixed-top p-4 mb-5">
-      <img src="./img/logo-black.svg" height="24" alt="">
+      <img class="ms-auto" src="./img/logo-black.svg" height="24" alt="">
     </div>
     <img src="./img/intro-animation.gif" alt="" class="intro-animation img-fluid">
   </section>
@@ -371,5 +426,42 @@
       
     });   
   })();
+</script>
+
+<script>
+window.addEventListener('scroll', () => {
+  const topNav = document.querySelector('#topNav');
+  // Toggles class 'scrolled' if window.scrollY > 0
+  topNav.classList.toggle('logos', window.scrollY > 0);
+});
+</script>
+
+<script>
+  // SVG menu animation logic
+  function animateMenu(shouldClose) {
+    let el = document.getElementById('menu-close'); 
+    if (!el) return;
+    
+    // If shouldClose is true, we want the 'reverse' animation. Otherwise, 'forward'.
+    let targetClass = shouldClose ? 'reverse' : 'forward';
+    
+    // Only trigger if it's not already in that state
+    if (!el.classList.contains(targetClass)) {
+      el.classList.remove('forward', 'reverse'); 
+      void el.offsetWidth; // Force reflow
+      el.classList.add(targetClass);
+    }
+  }
+
+  // Hook into Bootstrap's menu backdrops explicit open and close events
+  const myOffcanvas = document.getElementById('offcanvasNavbar');
+
+  myOffcanvas.addEventListener('show.bs.offcanvas', function () {
+    animateMenu(false); // Play forward (opens menu icon)
+  });
+
+  myOffcanvas.addEventListener('hide.bs.offcanvas', function () {
+    animateMenu(true); // Play reverse (closes menu icon back to original)
+  });
 </script>
 </html>
