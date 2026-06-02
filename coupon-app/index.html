@@ -22,7 +22,7 @@
   <title>Coffee Coupons</title>
 </head>
 
-<body>
+<body class="p-0">
   <header class="p-4 pb-3">
     <div id="topNav" class="d-flex justify-content-between align-items-center fixed-top p-4 mb-5">
       <button class="btn text-white border-0 rounded-circle p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="position:relative; z-index: 9999; margin-left: -0.5rem;">
@@ -451,10 +451,6 @@ window.addEventListener('scroll', () => {
       void el.offsetWidth; // Force reflow
       el.classList.add(targetClass);
     }
-
-    if (document.body.classList.contains('overflow-hidden')) {
-      document.body.classList.remove('overflow-hidden');
-    }
   }
 
   // Hook into Bootstrap's menu backdrops explicit open and close events
@@ -462,7 +458,6 @@ window.addEventListener('scroll', () => {
 
   myOffcanvas.addEventListener('show.bs.offcanvas', function () {
     animateMenu(false); // Play forward (opens menu icon)
-    document.body.classList.add('overflow-hidden'); // Prevent background scrolling when menu is open
   });
 
   myOffcanvas.addEventListener('hide.bs.offcanvas', function () {
