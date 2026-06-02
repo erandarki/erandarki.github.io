@@ -451,6 +451,10 @@ window.addEventListener('scroll', () => {
       void el.offsetWidth; // Force reflow
       el.classList.add(targetClass);
     }
+
+    if (document.body.classList.contains('overflow-hidden')) {
+      document.body.classList.remove('overflow-hidden');
+    }
   }
 
   // Hook into Bootstrap's menu backdrops explicit open and close events
@@ -458,6 +462,7 @@ window.addEventListener('scroll', () => {
 
   myOffcanvas.addEventListener('show.bs.offcanvas', function () {
     animateMenu(false); // Play forward (opens menu icon)
+    document.body.classList.add('overflow-hidden'); // Prevent background scrolling when menu is open
   });
 
   myOffcanvas.addEventListener('hide.bs.offcanvas', function () {
