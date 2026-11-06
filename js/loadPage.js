@@ -1,6 +1,8 @@
+let snippetLenis = null;
+
 // Show html snippet section
 function showSnippetSection(name) {
-  mainLenis.stop(); // Stop the main background page from scrolling
+  mainLenis.stop(); // Stop main page scroll
   if (name === 'cv') {
     $('.projects-nav').addClass('d-none');
   }
@@ -12,6 +14,21 @@ function showSnippetSection(name) {
     $('.html-snippet').removeClass('d-none');
   });
   $('.html-snippet').scrollTop(0);
+
+  // Initialize a separate Lenis instance for the snippet container element
+  const snippetEl = document.querySelector('.html-snippet');
+  snippetLenis = new Lenis({
+    wrapper: snippetEl,
+    content: snippetEl.querySelector('.container.target') || snippetEl,
+    smoothWheel: true,
+    syncTouch: true
+  });
+
+  function snippetRaf(time) {
+    snippetLenis?.raf(time);
+    requestAnimationFrame(snippetRaf);
+  }
+  requestAnimationFrame(snippetRaf);
 }
 
 // Adjust padding on scroll
@@ -26,11 +43,17 @@ $('.html-snippet').scroll(function() {
 
 // Close html-snippet section
 $('.close-html-snippet').click(function() {
+  // Destroy snippet Lenis instance when closing
+  if (snippetLenis) {
+    snippetLenis.destroy();
+    snippetLenis = null;
+  }
+  
   $('.html-snippet').removeClass('fadeIn');
   $('.html-snippet').addClass('fadeOut').on('animationend webkitAnimationEnd oAnimationEnd', function() {
     $('.html-snippet').addClass('d-none');
   });
-  mainLenis.start(); // Restart the main page scroll
+  mainLenis.start(); // Restart main page scroll
 });
 
 // Esc key triggers a click event
